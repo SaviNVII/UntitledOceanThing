@@ -2374,3 +2374,245 @@ events:
       Running the CXX compiler's linker: "C:/Program Files/JetBrains/CLion 2025.3.3/bin/mingw/bin/ld.exe" "-v"
       GNU ld (GNU Binutils) 2.40
 ...
+
+---
+events:
+  -
+    kind: "find_package-v1"
+    backtrace:
+      - "CMakeLists.txt:6 (find_package)"
+    name: "Allegro"
+    configs:
+      -
+        filename: "AllegroConfig.cmake"
+        kind: "cmake"
+      -
+        filename: "allegro-config.cmake"
+        kind: "cmake"
+    version_request:
+      exact: false
+    settings:
+      required: "required_explicit"
+      quiet: false
+      global: false
+      policy_scope: true
+      bypass_provider: false
+      names:
+        - "Allegro"
+      path_suffixes:
+        - ""
+      paths:
+        CMAKE_FIND_USE_CMAKE_PATH: true
+        CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+        CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+        CMAKE_FIND_USE_INSTALL_PREFIX: true
+        CMAKE_FIND_USE_PACKAGE_ROOT_PATH: true
+        CMAKE_FIND_USE_CMAKE_PACKAGE_REGISTRY: true
+        CMAKE_FIND_USE_SYSTEM_PACKAGE_REGISTRY: true
+        CMAKE_FIND_ROOT_PATH_MODE: "BOTH"
+    candidates:
+      -
+        path: "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/pkgRedirects/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/pkgRedirects/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/JetBrains/CLion 2025.3.3/bin/mingw/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/JetBrains/CLion 2025.3.3/bin/mingw/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/wbem/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/WindowsPowerShell/v1.0/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Windows/System32/OpenSSH/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/dotnet/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/IVI Foundation/VISA/WinNT/Bin/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/Windows Kits/10/Windows Performance Toolkit/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Neovim/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Neovim/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/.jdks/openjdk-25/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/.jdks/openjdk-25/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/Git/cmd/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/scoop/shims/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/scoop/shims/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/AppData/Local/Microsoft/WindowsApps/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/AppData/Local/Microsoft/WindowsApps/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/AppData/Local/GitHubDesktop/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/AppData/Local/GitHubDesktop/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/AppData/Local/Programs/Microsoft VS Code/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/AppData/Local/Programs/Microsoft VS Code/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/flutter/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Users/om0002/flutter/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/JetBrains/CLion 2025.3.3/bin/ninja/win/x64/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/JetBrains/CLion 2025.3.3/bin/ninja/win/x64/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files (x86)/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/JetBrains/CLion 2025.3.3/bin/cmake/win/x64/AllegroConfig.cmake"
+        mode: "config"
+        reason: "no_exist"
+      -
+        path: "C:/Program Files/JetBrains/CLion 2025.3.3/bin/cmake/win/x64/allegro-config.cmake"
+        mode: "config"
+        reason: "no_exist"
+    found: null
+    search_context:
+      ENV{PATH}:
+        - "C:\\Program Files\\JetBrains\\CLion 2025.3.3\\bin\\mingw\\bin"
+        - "C:\\Windows\\system32"
+        - "C:\\Windows"
+        - "C:\\Windows\\System32\\Wbem"
+        - "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\"
+        - "C:\\Windows\\System32\\OpenSSH\\"
+        - "C:\\Program Files\\dotnet\\"
+        - "C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin"
+        - "C:\\Program Files (x86)\\Windows Kits\\10\\Windows Performance Toolkit\\"
+        - "C:\\Program Files\\Neovim\\bin"
+        - "C:\\Users\\om0002\\.jdks\\openjdk-25\\bin"
+        - "C:\\Program Files\\Git\\cmd"
+        - "C:\\Users\\om0002\\scoop\\shims"
+        - "C:\\Users\\om0002\\AppData\\Local\\Microsoft\\WindowsApps"
+        - "C:\\Users\\om0002\\AppData\\Local\\GitHubDesktop\\bin"
+        - "C:\\Users\\om0002\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
+        - "C:\\Users\\om0002\\flutter\\bin"
+        - "C:\\Program Files\\JetBrains\\CLion 2025.3.3\\bin\\ninja\\win\\x64"
+      CMAKE_INSTALL_PREFIX: "C:/Program Files (x86)/UntitledOceanThing"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "C:/Program Files"
+        - "C:/Program Files (x86)"
+        - "C:/Program Files/JetBrains/CLion 2025.3.3/bin/cmake/win/x64"
+        - "C:/Program Files (x86)/UntitledOceanThing"
+...
