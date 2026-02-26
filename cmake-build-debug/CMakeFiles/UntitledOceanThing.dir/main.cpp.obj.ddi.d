@@ -209,4 +209,9 @@ CMakeFiles\UntitledOceanThing.dir\main.cpp.obj.ddi: \
  C:/allegro/include/allegro5/alcompat.h \
  C:/allegro/include/allegro5/platform/alwin.h \
  C:/allegro/include/allegro5/allegro_font.h \
- C:/allegro/include/allegro5/allegro_ttf.h
+ C:/allegro/include/allegro5/allegro_ttf.h \
+ C:/allegro/include/allegro5/allegro_native_dialog.h \
+ C:/allegro/include/allegro5/allegro_primitives.h \
+ C:/allegro/include/allegro5/internal/aintern_primitives_types.h \
+ C:/mingw32/i686-w64-mingw32/include/unistd.h \
+ C:/mingw32/i686-w64-mingw32/include/getopt.h

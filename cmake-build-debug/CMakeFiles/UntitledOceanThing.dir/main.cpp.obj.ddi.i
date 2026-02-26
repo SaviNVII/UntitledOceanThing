@@ -44666,24 +44666,432 @@ extern uint32_t al_get_allegro_ttf_version (void);
 
    }
 # 5 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 1 "C:/allegro/include/allegro5/allegro_native_dialog.h" 1
 
+
+
+
+
+
+   extern "C" {
+# 38 "C:/allegro/include/allegro5/allegro_native_dialog.h"
+typedef struct ALLEGRO_FILECHOOSER ALLEGRO_FILECHOOSER;
+
+
+
+typedef struct ALLEGRO_TEXTLOG ALLEGRO_TEXTLOG;
+
+
+
+typedef struct ALLEGRO_MENU ALLEGRO_MENU;
+
+
+
+typedef struct ALLEGRO_MENU_INFO {
+   const char *caption;
+   uint16_t id;
+   int flags;
+   ALLEGRO_BITMAP *icon;
+} ALLEGRO_MENU_INFO;
+
+
+
+
+
+extern bool al_init_native_dialog_addon (void);
+extern bool al_is_native_dialog_addon_initialized (void);
+extern void al_shutdown_native_dialog_addon (void);
+
+extern ALLEGRO_FILECHOOSER * al_create_native_file_dialog (char const *initial_path, char const *title, char const *patterns, int mode)
+                                                      ;
+extern bool al_show_native_file_dialog (ALLEGRO_DISPLAY *display, ALLEGRO_FILECHOOSER *dialog);
+extern int al_get_native_file_dialog_count (const ALLEGRO_FILECHOOSER *dialog);
+extern const char * al_get_native_file_dialog_path (const ALLEGRO_FILECHOOSER *dialog, size_t index)
+                 ;
+extern void al_destroy_native_file_dialog (ALLEGRO_FILECHOOSER *dialog);
+
+extern int al_show_native_message_box (ALLEGRO_DISPLAY *display, char const *title, char const *heading, char const *text, char const *buttons, int flags)
+                                                                          ;
+
+extern ALLEGRO_TEXTLOG * al_open_native_text_log (char const *title, int flags);
+extern void al_close_native_text_log (ALLEGRO_TEXTLOG *textlog);
+extern void al_append_native_text_log (ALLEGRO_TEXTLOG *textlog, char const *format, ...);
+extern ALLEGRO_EVENT_SOURCE * al_get_native_text_log_event_source (ALLEGRO_TEXTLOG *textlog);
+
+
+extern ALLEGRO_MENU * al_create_menu (void);
+extern ALLEGRO_MENU * al_create_popup_menu (void);
+extern ALLEGRO_MENU * al_build_menu (ALLEGRO_MENU_INFO *info);
+extern int al_append_menu_item (ALLEGRO_MENU *parent, char const *title, uint16_t id, int flags, ALLEGRO_BITMAP *icon, ALLEGRO_MENU *submenu)
+                                                ;
+extern int al_insert_menu_item (ALLEGRO_MENU *parent, int pos, char const *title, uint16_t id, int flags, ALLEGRO_BITMAP *icon, ALLEGRO_MENU *submenu)
+                                                           ;
+extern bool al_remove_menu_item (ALLEGRO_MENU *menu, int pos);
+extern ALLEGRO_MENU * al_clone_menu (ALLEGRO_MENU *menu);
+extern ALLEGRO_MENU * al_clone_menu_for_popup (ALLEGRO_MENU *menu);
+extern void al_destroy_menu (ALLEGRO_MENU *menu);
+
+
+extern const char * al_get_menu_item_caption (ALLEGRO_MENU *menu, int pos);
+extern void al_set_menu_item_caption (ALLEGRO_MENU *menu, int pos, const char *caption);
+extern int al_get_menu_item_flags (ALLEGRO_MENU *menu, int pos);
+extern void al_set_menu_item_flags (ALLEGRO_MENU *menu, int pos, int flags);
+extern ALLEGRO_BITMAP * al_get_menu_item_icon (ALLEGRO_MENU *menu, int pos);
+extern void al_set_menu_item_icon (ALLEGRO_MENU *menu, int pos, ALLEGRO_BITMAP *icon);
+
+
+
+
+
+
+extern ALLEGRO_MENU * al_find_menu (ALLEGRO_MENU *haystack, uint16_t id);
+extern bool al_find_menu_item (ALLEGRO_MENU *haystack, uint16_t id, ALLEGRO_MENU **menu, int *index);
+
+
+extern ALLEGRO_EVENT_SOURCE * al_get_default_menu_event_source (void);
+extern ALLEGRO_EVENT_SOURCE * al_enable_menu_event_source (ALLEGRO_MENU *menu);
+extern void al_disable_menu_event_source (ALLEGRO_MENU *menu);
+
+
+extern ALLEGRO_MENU * al_get_display_menu (ALLEGRO_DISPLAY *display);
+extern bool al_set_display_menu (ALLEGRO_DISPLAY *display, ALLEGRO_MENU *menu);
+extern bool al_popup_menu (ALLEGRO_MENU *popup, ALLEGRO_DISPLAY *display);
+extern ALLEGRO_MENU * al_remove_display_menu (ALLEGRO_DISPLAY *display);
+
+extern uint32_t al_get_allegro_native_dialog_version (void);
+
+enum {
+   ALLEGRO_FILECHOOSER_FILE_MUST_EXIST = 1,
+   ALLEGRO_FILECHOOSER_SAVE = 2,
+   ALLEGRO_FILECHOOSER_FOLDER = 4,
+   ALLEGRO_FILECHOOSER_PICTURES = 8,
+   ALLEGRO_FILECHOOSER_SHOW_HIDDEN = 16,
+   ALLEGRO_FILECHOOSER_MULTIPLE = 32
+};
+
+enum {
+   ALLEGRO_MESSAGEBOX_WARN = 1<<0,
+   ALLEGRO_MESSAGEBOX_ERROR = 1<<1,
+   ALLEGRO_MESSAGEBOX_OK_CANCEL = 1<<2,
+   ALLEGRO_MESSAGEBOX_YES_NO = 1<<3,
+   ALLEGRO_MESSAGEBOX_QUESTION = 1<<4
+};
+
+enum {
+   ALLEGRO_TEXTLOG_NO_CLOSE = 1<<0,
+   ALLEGRO_TEXTLOG_MONOSPACE = 1<<1
+};
+
+enum {
+   ALLEGRO_EVENT_NATIVE_DIALOG_CLOSE = 600,
+   ALLEGRO_EVENT_MENU_CLICK = 601
+};
+
+enum {
+   ALLEGRO_MENU_ITEM_ENABLED = 0,
+   ALLEGRO_MENU_ITEM_CHECKBOX = 1,
+   ALLEGRO_MENU_ITEM_CHECKED = 2,
+   ALLEGRO_MENU_ITEM_DISABLED = 4
+};
+
+
+
+   }
+# 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 1 "C:/allegro/include/allegro5/allegro_primitives.h" 1
+
+
+
+
+# 1 "C:/allegro/include/allegro5/internal/aintern_primitives_types.h" 1
+# 10 "C:/allegro/include/allegro5/internal/aintern_primitives_types.h"
+typedef enum ALLEGRO_PRIM_TYPE
+{
+  ALLEGRO_PRIM_LINE_LIST,
+  ALLEGRO_PRIM_LINE_STRIP,
+  ALLEGRO_PRIM_LINE_LOOP,
+  ALLEGRO_PRIM_TRIANGLE_LIST,
+  ALLEGRO_PRIM_TRIANGLE_STRIP,
+  ALLEGRO_PRIM_TRIANGLE_FAN,
+  ALLEGRO_PRIM_POINT_LIST,
+  ALLEGRO_PRIM_NUM_TYPES
+} ALLEGRO_PRIM_TYPE;
+
+enum
+{
+   ALLEGRO_PRIM_MAX_USER_ATTR = 10
+};
+
+
+
+typedef enum ALLEGRO_PRIM_ATTR
+{
+   ALLEGRO_PRIM_POSITION = 1,
+   ALLEGRO_PRIM_COLOR_ATTR,
+   ALLEGRO_PRIM_TEX_COORD,
+   ALLEGRO_PRIM_TEX_COORD_PIXEL,
+   ALLEGRO_PRIM_USER_ATTR,
+   ALLEGRO_PRIM_ATTR_NUM = ALLEGRO_PRIM_USER_ATTR + ALLEGRO_PRIM_MAX_USER_ATTR
+} ALLEGRO_PRIM_ATTR;
+
+
+
+typedef enum ALLEGRO_PRIM_STORAGE
+{
+   ALLEGRO_PRIM_FLOAT_2,
+   ALLEGRO_PRIM_FLOAT_3,
+   ALLEGRO_PRIM_SHORT_2,
+   ALLEGRO_PRIM_FLOAT_1,
+   ALLEGRO_PRIM_FLOAT_4,
+   ALLEGRO_PRIM_UBYTE_4,
+   ALLEGRO_PRIM_SHORT_4,
+   ALLEGRO_PRIM_NORMALIZED_UBYTE_4,
+   ALLEGRO_PRIM_NORMALIZED_SHORT_2,
+   ALLEGRO_PRIM_NORMALIZED_SHORT_4,
+   ALLEGRO_PRIM_NORMALIZED_USHORT_2,
+   ALLEGRO_PRIM_NORMALIZED_USHORT_4,
+   ALLEGRO_PRIM_HALF_FLOAT_2,
+   ALLEGRO_PRIM_HALF_FLOAT_4
+} ALLEGRO_PRIM_STORAGE;
+
+
+
+typedef enum ALLEGRO_PRIM_BUFFER_FLAGS
+{
+   ALLEGRO_PRIM_BUFFER_STREAM = 0x01,
+   ALLEGRO_PRIM_BUFFER_STATIC = 0x02,
+   ALLEGRO_PRIM_BUFFER_DYNAMIC = 0x04,
+   ALLEGRO_PRIM_BUFFER_READWRITE = 0x08
+} ALLEGRO_PRIM_BUFFER_FLAGS;
+
+
+
+typedef struct ALLEGRO_VERTEX_ELEMENT ALLEGRO_VERTEX_ELEMENT;
+
+struct ALLEGRO_VERTEX_ELEMENT {
+   int attribute;
+   int storage;
+   int offset;
+};
+
+
+
+typedef struct ALLEGRO_VERTEX_DECL ALLEGRO_VERTEX_DECL;
+
+
+
+typedef struct ALLEGRO_VERTEX ALLEGRO_VERTEX;
+
+struct ALLEGRO_VERTEX {
+  float x, y, z;
+  float u, v;
+  ALLEGRO_COLOR color;
+};
+
+
+
+typedef struct ALLEGRO_VERTEX_BUFFER ALLEGRO_VERTEX_BUFFER;
+
+
+
+typedef struct ALLEGRO_INDEX_BUFFER ALLEGRO_INDEX_BUFFER;
+# 6 "C:/allegro/include/allegro5/allegro_primitives.h" 2
+# 30 "C:/allegro/include/allegro5/allegro_primitives.h"
+extern "C"
+{
+
+
+
+
+
+typedef enum ALLEGRO_LINE_JOIN
+{
+   ALLEGRO_LINE_JOIN_NONE,
+   ALLEGRO_LINE_JOIN_BEVEL,
+   ALLEGRO_LINE_JOIN_ROUND,
+   ALLEGRO_LINE_JOIN_MITER,
+   ALLEGRO_LINE_JOIN_MITRE = ALLEGRO_LINE_JOIN_MITER
+} ALLEGRO_LINE_JOIN;
+
+
+
+typedef enum ALLEGRO_LINE_CAP
+{
+   ALLEGRO_LINE_CAP_NONE,
+   ALLEGRO_LINE_CAP_SQUARE,
+   ALLEGRO_LINE_CAP_ROUND,
+   ALLEGRO_LINE_CAP_TRIANGLE,
+   ALLEGRO_LINE_CAP_CLOSED
+} ALLEGRO_LINE_CAP;
+
+
+
+
+
+
+
+extern uint32_t al_get_allegro_primitives_version (void);
+
+
+
+
+extern bool al_init_primitives_addon (void);
+extern bool al_is_primitives_addon_initialized (void);
+extern void al_shutdown_primitives_addon (void);
+extern int al_draw_prim (const void* vtxs, const ALLEGRO_VERTEX_DECL* decl, ALLEGRO_BITMAP* texture, int start, int end, int type);
+extern int al_draw_indexed_prim (const void* vtxs, const ALLEGRO_VERTEX_DECL* decl, ALLEGRO_BITMAP* texture, const int* indices, int num_vtx, int type);
+extern int al_draw_vertex_buffer (ALLEGRO_VERTEX_BUFFER* vertex_buffer, ALLEGRO_BITMAP* texture, int start, int end, int type);
+extern int al_draw_indexed_buffer (ALLEGRO_VERTEX_BUFFER* vertex_buffer, ALLEGRO_BITMAP* texture, ALLEGRO_INDEX_BUFFER* index_buffer, int start, int end, int type);
+
+extern ALLEGRO_VERTEX_DECL* al_create_vertex_decl (const ALLEGRO_VERTEX_ELEMENT* elements, int stride);
+extern void al_destroy_vertex_decl (ALLEGRO_VERTEX_DECL* decl);
+
+
+
+
+extern ALLEGRO_VERTEX_BUFFER* al_create_vertex_buffer (ALLEGRO_VERTEX_DECL* decl, const void* initial_data, int num_vertices, int flags);
+extern void al_destroy_vertex_buffer (ALLEGRO_VERTEX_BUFFER* buffer);
+extern void* al_lock_vertex_buffer (ALLEGRO_VERTEX_BUFFER* buffer, int offset, int length, int flags);
+extern void al_unlock_vertex_buffer (ALLEGRO_VERTEX_BUFFER* buffer);
+extern int al_get_vertex_buffer_size (ALLEGRO_VERTEX_BUFFER* buffer);
+
+
+
+
+extern ALLEGRO_INDEX_BUFFER* al_create_index_buffer (int index_size, const void* initial_data, int num_indices, int flags);
+extern void al_destroy_index_buffer (ALLEGRO_INDEX_BUFFER* buffer);
+extern void* al_lock_index_buffer (ALLEGRO_INDEX_BUFFER* buffer, int offset, int length, int flags);
+extern void al_unlock_index_buffer (ALLEGRO_INDEX_BUFFER* buffer);
+extern int al_get_index_buffer_size (ALLEGRO_INDEX_BUFFER* buffer);
+
+
+
+
+extern bool al_triangulate_polygon (const float* vertices, size_t vertex_stride, const int* vertex_counts, void (*emit_triangle)(int, int, int, void*), void* userdata);
+
+
+
+
+
+extern void al_draw_soft_triangle (ALLEGRO_VERTEX* v1, ALLEGRO_VERTEX* v2, ALLEGRO_VERTEX* v3, uintptr_t state, void (*init)(uintptr_t, ALLEGRO_VERTEX*, ALLEGRO_VERTEX*, ALLEGRO_VERTEX*), void (*first)(uintptr_t, int, int, int, int), void (*step)(uintptr_t, int), void (*draw)(uintptr_t, int, int, int))
+
+
+
+                                                                                   ;
+extern void al_draw_soft_line (ALLEGRO_VERTEX* v1, ALLEGRO_VERTEX* v2, uintptr_t state, void (*first)(uintptr_t, int, int, ALLEGRO_VERTEX*, ALLEGRO_VERTEX*), void (*step)(uintptr_t, int), void (*draw)(uintptr_t, int, int))
+
+
+                                                                          ;
+
+
+
+
+extern void al_draw_line (float x1, float y1, float x2, float y2, ALLEGRO_COLOR color, float thickness);
+extern void al_draw_triangle (float x1, float y1, float x2, float y2, float x3, float y3, ALLEGRO_COLOR color, float thickness);
+extern void al_draw_rectangle (float x1, float y1, float x2, float y2, ALLEGRO_COLOR color, float thickness);
+extern void al_draw_rounded_rectangle (float x1, float y1, float x2, float y2, float rx, float ry, ALLEGRO_COLOR color, float thickness);
+
+extern void al_calculate_arc (float* dest, int stride, float cx, float cy, float rx, float ry, float start_theta, float delta_theta, float thickness, int num_points);
+extern void al_draw_circle (float cx, float cy, float r, ALLEGRO_COLOR color, float thickness);
+extern void al_draw_ellipse (float cx, float cy, float rx, float ry, ALLEGRO_COLOR color, float thickness);
+extern void al_draw_arc (float cx, float cy, float r, float start_theta, float delta_theta, ALLEGRO_COLOR color, float thickness);
+extern void al_draw_elliptical_arc (float cx, float cy, float rx, float ry, float start_theta, float delta_theta, ALLEGRO_COLOR color, float thickness);
+extern void al_draw_pieslice (float cx, float cy, float r, float start_theta, float delta_theta, ALLEGRO_COLOR color, float thickness);
+
+extern void al_calculate_spline (float* dest, int stride, const float points[8], float thickness, int num_segments);
+extern void al_draw_spline (const float points[8], ALLEGRO_COLOR color, float thickness);
+
+extern void al_calculate_ribbon (float* dest, int dest_stride, const float *points, int points_stride, float thickness, int num_segments);
+extern void al_draw_ribbon (const float *points, int points_stride, ALLEGRO_COLOR color, float thickness, int num_segments);
+
+extern void al_draw_filled_triangle (float x1, float y1, float x2, float y2, float x3, float y3, ALLEGRO_COLOR color);
+extern void al_draw_filled_rectangle (float x1, float y1, float x2, float y2, ALLEGRO_COLOR color);
+extern void al_draw_filled_ellipse (float cx, float cy, float rx, float ry, ALLEGRO_COLOR color);
+extern void al_draw_filled_circle (float cx, float cy, float r, ALLEGRO_COLOR color);
+extern void al_draw_filled_pieslice (float cx, float cy, float r, float start_theta, float delta_theta, ALLEGRO_COLOR color);
+extern void al_draw_filled_rounded_rectangle (float x1, float y1, float x2, float y2, float rx, float ry, ALLEGRO_COLOR color);
+
+extern void al_draw_polyline (const float* vertices, int vertex_stride, int vertex_count, int join_style, int cap_style, ALLEGRO_COLOR color, float thickness, float miter_limit);
+
+extern void al_draw_polygon (const float* vertices, int vertex_count, int join_style, ALLEGRO_COLOR color, float thickness, float miter_limit);
+extern void al_draw_filled_polygon (const float* vertices, int vertex_count, ALLEGRO_COLOR color);
+extern void al_draw_filled_polygon_with_holes (const float* vertices, const int* vertex_counts, ALLEGRO_COLOR color);
+
+
+
+}
+# 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 1 "C:/mingw32/i686-w64-mingw32/include/unistd.h" 1 3
+# 12 "C:/mingw32/i686-w64-mingw32/include/unistd.h" 3
+# 1 "C:/mingw32/i686-w64-mingw32/include/getopt.h" 1 3
+# 19 "C:/mingw32/i686-w64-mingw32/include/getopt.h" 3
+
+# 19 "C:/mingw32/i686-w64-mingw32/include/getopt.h" 3
+extern "C" {
+
+
+extern int optind;
+extern int optopt;
+extern int opterr;
+
+
+extern char *optarg;
+
+extern int getopt(int nargc, char * const *nargv, const char *options);
+
+
+}
+# 13 "C:/mingw32/i686-w64-mingw32/include/unistd.h" 2 3
+# 41 "C:/mingw32/i686-w64-mingw32/include/unistd.h" 3
+extern "C" {
+
+
+       
+
+unsigned int __attribute__((__cdecl__)) sleep (unsigned int);
+       
+
+
+
+
+int __attribute__((__cdecl__)) __attribute__ ((__nothrow__)) usleep(useconds_t);
+
+
+
+
+
+
+
+int ftruncate(int, off32_t);
+int ftruncate64(int, off64_t);
+int truncate(const char *, off32_t);
+int truncate64(const char *, off64_t);
+# 104 "C:/mingw32/i686-w64-mingw32/include/unistd.h" 3
+}
+# 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+
+
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp"
 int main() {
+    ALLEGRO_DISPLAY* display;
+
     (al_install_system(((5 << 24) | (2 << 16) | (11 << 8) | 4 | 0), atexit));
-    al_init_font_addon();
-    al_init_ttf_addon();
+    al_init_primitives_addon();
+    display = al_create_display(640, 480);
 
-    ALLEGRO_DISPLAY * display = al_create_display(640, 480);
-    ALLEGRO_FONT * font = al_load_ttf_font("font.ttf", 20, 0);
+    if (!display) {
+        std::cout << "Failed to create display!" << std::endl;
+        return -1;
+    }
 
-    std::cout<<"test\n";
+    bool quit = false;
 
-    while (true) {
-        al_clear_to_color(al_map_rgb(255, 255, 255));
-
+    while (!quit) {
+        al_clear_to_color(al_map_rgb(0, 0, 0));
+        al_draw_filled_circle(400, 300, 100, al_map_rgb(0, 0, 255));
         al_flip_display();
     }
 
     al_destroy_display(display);
-    al_destroy_font(font);
     return 0;
 }

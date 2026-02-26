@@ -80,7 +80,7 @@ build CMakeFiles/UntitledOceanThing.dir/CXX.dd | CMakeFiles/UntitledOceanThing.d
 build UntitledOceanThing.exe: CXX_EXECUTABLE_LINKER__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.obj
   CONFIG = Debug
   FLAGS = -g
-  LINK_LIBRARIES = -lallegro  -lallegro_image  -lallegro_font  -lallegro_ttf  -lallegro_audio  -lallegro_acodec  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = -lallegro  -lallegro_image  -lallegro_font  -lallegro_ttf  -lallegro_audio  -lallegro_acodec  -lallegro_primitives  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   LINK_PATH = -LC:/allegro/lib
   OBJECT_DIR = CMakeFiles\UntitledOceanThing.dir
   POST_BUILD = cd .
