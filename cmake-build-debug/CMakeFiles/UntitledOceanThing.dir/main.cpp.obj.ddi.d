@@ -153,4 +153,60 @@ CMakeFiles\UntitledOceanThing.dir\main.cpp.obj.ddi: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/basic_ios.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ostream.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/istream \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/istream.tcc
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/istream.tcc \
+ C:/allegro/include/allegro5/allegro.h C:/allegro/include/allegro5/base.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/stdarg.h \
+ C:/mingw32/i686-w64-mingw32/include/stdarg.h \
+ C:/mingw32/i686-w64-mingw32/include/_mingw_stdarg.h \
+ C:/mingw32/i686-w64-mingw32/include/string.h \
+ C:/mingw32/i686-w64-mingw32/include/sec_api/string_s.h \
+ C:/allegro/include/allegro5/internal/alconfig.h \
+ C:/allegro/include/allegro5/platform/alplatf.h \
+ C:/allegro/include/allegro5/platform/almngw32.h \
+ C:/mingw32/i686-w64-mingw32/include/io.h \
+ C:/mingw32/i686-w64-mingw32/include/fcntl.h \
+ C:/mingw32/i686-w64-mingw32/include/direct.h \
+ C:/allegro/include/allegro5/platform/astdint.h \
+ C:/mingw32/i686-w64-mingw32/include/inttypes.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/stdint.h \
+ C:/mingw32/i686-w64-mingw32/include/stdint.h \
+ C:/allegro/include/allegro5/platform/astdbool.h \
+ C:/allegro/include/allegro5/altime.h \
+ C:/allegro/include/allegro5/bitmap.h C:/allegro/include/allegro5/color.h \
+ C:/allegro/include/allegro5/bitmap_draw.h \
+ C:/allegro/include/allegro5/bitmap_io.h \
+ C:/allegro/include/allegro5/file.h C:/allegro/include/allegro5/path.h \
+ C:/allegro/include/allegro5/utf8.h \
+ C:/allegro/include/allegro5/bitmap_lock.h \
+ C:/allegro/include/allegro5/blender.h \
+ C:/allegro/include/allegro5/clipboard.h \
+ C:/allegro/include/allegro5/display.h \
+ C:/allegro/include/allegro5/events.h \
+ C:/allegro/include/allegro5/config.h C:/allegro/include/allegro5/cpu.h \
+ C:/allegro/include/allegro5/debug.h \
+ C:/mingw32/i686-w64-mingw32/include/assert.h \
+ C:/allegro/include/allegro5/drawing.h \
+ C:/allegro/include/allegro5/error.h C:/allegro/include/allegro5/fixed.h \
+ C:/allegro/include/allegro5/fmaths.h \
+ C:/allegro/include/allegro5/inline/fmaths.inl \
+ C:/allegro/include/allegro5/fshook.h \
+ C:/allegro/include/allegro5/fullscreen_mode.h \
+ C:/allegro/include/allegro5/haptic.h \
+ C:/allegro/include/allegro5/joystick.h \
+ C:/allegro/include/allegro5/keyboard.h \
+ C:/allegro/include/allegro5/keycodes.h \
+ C:/allegro/include/allegro5/mouse.h \
+ C:/allegro/include/allegro5/touch_input.h \
+ C:/allegro/include/allegro5/memory.h \
+ C:/allegro/include/allegro5/monitor.h \
+ C:/allegro/include/allegro5/mouse_cursor.h \
+ C:/allegro/include/allegro5/render_state.h \
+ C:/allegro/include/allegro5/shader.h \
+ C:/allegro/include/allegro5/transformations.h \
+ C:/allegro/include/allegro5/system.h \
+ C:/allegro/include/allegro5/threads.h \
+ C:/allegro/include/allegro5/timer.h C:/allegro/include/allegro5/tls.h \
+ C:/allegro/include/allegro5/alcompat.h \
+ C:/allegro/include/allegro5/platform/alwin.h \
+ C:/allegro/include/allegro5/allegro_font.h \
+ C:/allegro/include/allegro5/allegro_ttf.h
