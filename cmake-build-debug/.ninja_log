@@ -1,0 +1,15 @@
+# ninja log v6
+3	382	7938307042814369	CMakeFiles/UntitledOceanThing.dir/main.cpp.obj	1a92485ca340d070
+361	498	7938302083742978	UntitledOceanThing.exe	86d1210b71fb0fa0
+10	652	7938312713664716	CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.ddi	301cad8435f86bbf
+652	832	7938312721796899	CMakeFiles/UntitledOceanThing.dir/CXX.dd	c28af3b5160a0221
+652	832	7938312721796899	CMakeFiles/UntitledOceanThing.dir/CXXModules.json	c28af3b5160a0221
+652	832	7938312721796899	CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.modmap	c28af3b5160a0221
+833	1672	7938312721879898	CMakeFiles/UntitledOceanThing.dir/main.cpp.obj	cabbdd66fba8b3ab
+1676	1996	7938312730314730	UntitledOceanThing.exe	55c987774cc7f22
+6	253	7938312849011126	CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.ddi	301cad8435f86bbf
+253	305	7938312851478595	CMakeFiles/UntitledOceanThing.dir/CXX.dd	c28af3b5160a0221
+253	305	7938312851478595	CMakeFiles/UntitledOceanThing.dir/CXXModules.json	c28af3b5160a0221
+253	305	7938312851478595	CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.modmap	c28af3b5160a0221
+306	695	7938312852009720	CMakeFiles/UntitledOceanThing.dir/main.cpp.obj	cabbdd66fba8b3ab
+695	872	7938312855894155	UntitledOceanThing.exe	55c987774cc7f22

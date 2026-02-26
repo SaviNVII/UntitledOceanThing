@@ -1,0 +1,30 @@
+{
+	"bmi-installation" : null,
+	"compiler-frontend-variant" : "GNU",
+	"compiler-id" : "GNU",
+	"compiler-simulate-id" : "",
+	"config" : "Debug",
+	"cxx-modules" : {},
+	"database-info" : null,
+	"dir-cur-bld" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug",
+	"dir-cur-src" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing",
+	"dir-top-bld" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug",
+	"dir-top-src" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing",
+	"exports" : [],
+	"forward-modules-from-target-dirs" : [],
+	"include-dirs" : 
+	[
+		"C:\\allegro\\include"
+	],
+	"language" : "CXX",
+	"linked-target-dirs" : [],
+	"module-dir" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir",
+	"sources" : 
+	{
+		"CMakeFiles/UntitledOceanThing.dir/main.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp"
+		}
+	}
+}
