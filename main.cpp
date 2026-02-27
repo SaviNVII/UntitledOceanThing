@@ -18,9 +18,7 @@ int main() {
         return -1;
     }
 
-    bool quit = false;
-
-    while (!quit) {
+    while (true) {
         al_clear_to_color(al_map_rgb(0, 0, 0));
         al_draw_filled_circle(400, 300, 100, al_map_rgb(0, 0, 255));
         al_flip_display();
