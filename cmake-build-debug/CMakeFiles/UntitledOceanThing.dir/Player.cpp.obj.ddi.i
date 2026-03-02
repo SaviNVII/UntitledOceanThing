@@ -42652,15 +42652,14 @@ Player::Player(float x, float y, float width, float height) {
 }
 
 void Player::moveX(int mod) {
-    x += mod;
+    posX -= mod;
 }
 
 void Player::moveY(int mod) {
-    y += mod;
+    posY -= mod;
 }
 
 void Player::render() {
-    std::cout << posX;
     if (bitmap) {
         al_draw_scaled_bitmap(bitmap, 0, 0,
             al_get_bitmap_width(bitmap),
