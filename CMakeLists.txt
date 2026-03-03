@@ -12,7 +12,9 @@ link_directories(${ALLEGRO_DIR}/lib)
 add_executable(UntitledOceanThing main.cpp
         Player.cpp
         Player.h
-        MainData.h)
+        MainData.h
+        Block.cpp
+        Block.h)
 
 target_link_libraries(${PROJECT_NAME}
         allegro

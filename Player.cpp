@@ -9,20 +9,29 @@
 #include <allegro5/bitmap_draw.h>
 #include <allegro5/bitmap_io.h>
 
-Player::Player(float x, float y, float width, float height) {
+Player::Player(float x, float y, float width, float height, float speed) {
     this->x = x;
     this->y = y;
     this->width = width;
     this->height = height;
+    this->speed = speed;
     this->bitmap = al_load_bitmap("images/PlayerSprite.bmp");
 }
 
-void Player::moveX(int mod) {
-    posX -= mod;
+void Player::moveLeft() {
+    posX = speed;
 }
 
-void Player::moveY(int mod) {
-    posY -= mod;
+void Player::moveRight() {
+    posX = -speed;
+}
+
+void Player::moveUp() {
+    posY = speed;
+}
+
+void Player::moveDown() {
+    posY = -speed;
 }
 
 void Player::render() {

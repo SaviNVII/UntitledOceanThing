@@ -8,16 +8,19 @@
 
 
 class Player {
-    int x;
-    int y;
-    int width;
-    int height;
+    float x;
+    float y;
+    float width;
+    float height;
+    float speed;
 
     ALLEGRO_BITMAP* bitmap;
 public:
-    Player(float x, float y, float width, float height);
-    void moveX(int mod);
-    void moveY(int mod);
+    Player(float x, float y, float width, float height, float speed);
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
 
     void render();
 };

@@ -2511,16 +2511,19 @@ extern void al_convert_memory_bitmaps (void);
 
 
 class Player {
-    int x;
-    int y;
-    int width;
-    int height;
+    float x;
+    float y;
+    float width;
+    float height;
+    float speed;
 
     ALLEGRO_BITMAP* bitmap;
 public:
-    Player(float x, float y, float width, float height);
-    void moveX(int mod);
-    void moveY(int mod);
+    Player(float x, float y, float width, float height, float speed);
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
 
     void render();
 };
@@ -42643,20 +42646,29 @@ extern char const * al_identify_bitmap (char const *filename);
    }
 # 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 
-Player::Player(float x, float y, float width, float height) {
+Player::Player(float x, float y, float width, float height, float speed) {
     this->x = x;
     this->y = y;
     this->width = width;
     this->height = height;
+    this->speed = speed;
     this->bitmap = al_load_bitmap("images/PlayerSprite.bmp");
 }
 
-void Player::moveX(int mod) {
-    posX -= mod;
+void Player::moveLeft() {
+    posX = speed;
 }
 
-void Player::moveY(int mod) {
-    posY -= mod;
+void Player::moveRight() {
+    posX = -speed;
+}
+
+void Player::moveUp() {
+    posY = speed;
+}
+
+void Player::moveDown() {
+    posY = -speed;
 }
 
 void Player::render() {

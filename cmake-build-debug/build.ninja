@@ -85,7 +85,25 @@ build CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj: CXX_COMPILER__UntitledOc
   OBJECT_FILE_DIR = CMakeFiles\UntitledOceanThing.dir
   dyndep = CMakeFiles/UntitledOceanThing.dir/CXX.dd
 
-build CMakeFiles/UntitledOceanThing.dir/CXX.dd | CMakeFiles/UntitledOceanThing.dir/CXXModules.json CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.modmap CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj.modmap: CXX_DYNDEP__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.ddi CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj.ddi | C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/CXXDependInfo.json
+build CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj.ddi: CXX_SCAN__UntitledOceanThing_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp || cmake_object_order_depends_target_UntitledOceanThing
+  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\Block.cpp.obj.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\UntitledOceanThing.dir\Block.cpp.obj.ddi
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/allegro/include
+  OBJ_FILE = CMakeFiles\UntitledOceanThing.dir\Block.cpp.obj
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles\UntitledOceanThing.dir\Block.cpp.obj.ddi.i
+
+build CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj: CXX_COMPILER__UntitledOceanThing_scanned_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp | CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\Block.cpp.obj.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles\UntitledOceanThing.dir\Block.cpp.obj.modmap
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -IC:/allegro/include
+  OBJECT_DIR = CMakeFiles\UntitledOceanThing.dir
+  OBJECT_FILE_DIR = CMakeFiles\UntitledOceanThing.dir
+  dyndep = CMakeFiles/UntitledOceanThing.dir/CXX.dd
+
+build CMakeFiles/UntitledOceanThing.dir/CXX.dd | CMakeFiles/UntitledOceanThing.dir/CXXModules.json CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.modmap CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj.modmap CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj.modmap: CXX_DYNDEP__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.ddi CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj.ddi CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj.ddi | C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/CXXDependInfo.json
 
 
 # =============================================================================
@@ -95,7 +113,7 @@ build CMakeFiles/UntitledOceanThing.dir/CXX.dd | CMakeFiles/UntitledOceanThing.d
 #############################################
 # Link the executable UntitledOceanThing.exe
 
-build UntitledOceanThing.exe: CXX_EXECUTABLE_LINKER__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.obj CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj
+build UntitledOceanThing.exe: CXX_EXECUTABLE_LINKER__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.obj CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj
   CONFIG = Debug
   FLAGS = -g
   LINK_LIBRARIES = -lallegro  -lallegro_image  -lallegro_font  -lallegro_ttf  -lallegro_audio  -lallegro_acodec  -lallegro_primitives  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

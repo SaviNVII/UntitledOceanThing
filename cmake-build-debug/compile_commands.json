@@ -10,5 +10,11 @@
   "command": "C:\\mingw32\\bin\\c++.exe -IC:/allegro/include -g -std=gnu++20 -fdiagnostics-color=always -fmodules-ts -fmodule-mapper=CMakeFiles\\UntitledOceanThing.dir\\Player.cpp.obj.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles\\UntitledOceanThing.dir\\Player.cpp.obj -c C:\\Users\\om0002\\Documents\\GitHub\\UntitledOceanThing\\Player.cpp",
   "file": "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp",
   "output": "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj"
+},
+{
+  "directory": "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug",
+  "command": "C:\\mingw32\\bin\\c++.exe -IC:/allegro/include -g -std=gnu++20 -fdiagnostics-color=always -fmodules-ts -fmodule-mapper=CMakeFiles\\UntitledOceanThing.dir\\Block.cpp.obj.modmap -MD -fdeps-format=p1689r5 -x c++ -o CMakeFiles\\UntitledOceanThing.dir\\Block.cpp.obj -c C:\\Users\\om0002\\Documents\\GitHub\\UntitledOceanThing\\Block.cpp",
+  "file": "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp",
+  "output": "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj"
 }
 ]
