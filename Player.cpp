@@ -16,13 +16,16 @@ Player::Player(float x, float y, float width, float height, float speed) {
     this->height = height;
     this->speed = speed;
     this->bitmap = al_load_bitmap("images/PlayerSprite.bmp");
+    this->flipped = false;
 }
 
 void Player::moveLeft() {
+    flipped = true;
     posX = speed;
 }
 
 void Player::moveRight() {
+    flipped = false;
     posX = -speed;
 }
 
@@ -35,12 +38,19 @@ void Player::moveDown() {
 }
 
 void Player::render() {
-    if (bitmap) {
+    if (bitmap && !flipped) {
         al_draw_scaled_bitmap(bitmap, 0, 0,
             al_get_bitmap_width(bitmap),
             al_get_bitmap_height(bitmap),
             x, y,
             width, height,
+            0);
+    }else if (bitmap && flipped) {
+        al_draw_scaled_bitmap(bitmap, 0, 0,
+            al_get_bitmap_width(bitmap),
+            al_get_bitmap_height(bitmap),
+            x + width, y,
+            -width, height,
             0);
     }
 }

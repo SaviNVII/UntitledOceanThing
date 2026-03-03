@@ -62751,6 +62751,7 @@ class Player {
     float width;
     float height;
     float speed;
+    bool flipped;
 
     ALLEGRO_BITMAP* bitmap;
 public:
