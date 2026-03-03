@@ -20,8 +20,11 @@ class Block {
     float y;
     float width;
     float height;
+    int r;
+    int g;
+    int b;
 public:
-    Block(float x, float y, float width, float height);
+    Block(float x, float y, float width, float height, int r, int g, int b);
     void render();
 };
 # 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
@@ -44818,16 +44821,18 @@ namespace std
 
 
 # 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp"
-Block::Block(float x, float y, float width, float height) {
+Block::Block(float x, float y, float width, float height, int r, int g, int b) {
     this->x = x;
     this->y = y;
     this->width = width;
     this->height = height;
+    this->r = r;
+    this->g = g;
+    this->b = b;
 }
 
 void Block::render() {
-    al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(255, 255, 255));
+    al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(r, g, b));
     x += posX;
     y += posY;
-
 }

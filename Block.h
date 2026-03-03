@@ -10,8 +10,11 @@ class Block {
     float y;
     float width;
     float height;
+    int r;
+    int g;
+    int b;
 public:
-    Block(float x, float y, float width, float height);
+    Block(float x, float y, float width, float height, int r, int g, int b);
     void render();
 };
 

@@ -33,8 +33,8 @@ int main() {
     }
     Player player = Player(screenWidth/2-25, screenHeight/2-12.5, 50, 25, 0.1);
 
-    Block block = Block(100, 100, 50, 50);
-    Block block2 = Block(200, 200, 50, 50);
+    Block block = Block(100, 100, 50, 50, 255, 255, 255);
+    Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
 
     while (true) {
         al_clear_to_color(al_map_rgb(0, 0, 255));

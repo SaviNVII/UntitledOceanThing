@@ -7,15 +7,18 @@
 #include <allegro5/allegro_primitives.h>
 #include <iostream>
 
-Block::Block(float x, float y, float width, float height) {
+Block::Block(float x, float y, float width, float height, int r, int g, int b) {
     this->x = x;
     this->y = y;
     this->width = width;
     this->height = height;
+    this->r = r;
+    this->g = g;
+    this->b = b;
 }
 
 void Block::render() {
-    al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(255, 255, 255));
+    al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(r, g, b));
     x += posX;
     y += posY;
 }
