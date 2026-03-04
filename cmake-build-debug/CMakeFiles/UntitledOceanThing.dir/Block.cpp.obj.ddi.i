@@ -26,6 +26,7 @@ class Block {
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
     void render();
+    void collideWithPlayer();
 };
 # 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
@@ -38,6 +39,11 @@ public:
 
 extern float posX;
 extern float posY;
+
+extern float playerX;
+extern float playerY;
+extern float playerWidth;
+extern float playerHeight;
 # 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro_primitives.h" 1
 
@@ -44835,4 +44841,8 @@ void Block::render() {
     al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(r, g, b));
     x += posX;
     y += posY;
+}
+
+void Block::collideWithPlayer() {
+
 }

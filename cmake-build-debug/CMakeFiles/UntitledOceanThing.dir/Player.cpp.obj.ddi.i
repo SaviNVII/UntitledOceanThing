@@ -2511,6 +2511,7 @@ extern void al_convert_memory_bitmaps (void);
 
 
 class Player {
+public:
     float x;
     float y;
     float width;
@@ -2519,7 +2520,7 @@ class Player {
     bool flipped;
 
     ALLEGRO_BITMAP* bitmap;
-public:
+
     Player(float x, float y, float width, float height, float speed);
     void moveLeft();
     void moveRight();
@@ -2539,6 +2540,11 @@ public:
 
 extern float posX;
 extern float posY;
+
+extern float playerX;
+extern float playerY;
+extern float playerWidth;
+extern float playerHeight;
 # 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 1 3

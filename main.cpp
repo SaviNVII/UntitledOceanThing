@@ -15,9 +15,16 @@
 float posX = 0;
 float posY = 0;
 
+int screenWidth = 640;
+int screenHeight = 480;
+
+float playerWidth = 50;
+float playerHeight = 25;
+float playerX =  screenWidth/2-(playerWidth/2);
+float playerY = screenHeight/2-(playerHeight/2);
+
+
 int main() {
-    int screenWidth = 640;
-    int screenHeight = 480;
 
     ALLEGRO_DISPLAY* display;
 
@@ -31,7 +38,8 @@ int main() {
         std::cout << "Failed to create display!\n";
         return -1;
     }
-    Player player = Player(screenWidth/2-25, screenHeight/2-12.5, 50, 25, 0.1);
+
+    Player player = Player(playerX, playerY, playerWidth, playerHeight, 0.1);
 
     Block block = Block(100, 100, 50, 50, 255, 255, 255);
     Block block2 = Block(200, 200, 50, 50, 255, 0, 0);

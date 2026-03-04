@@ -22,3 +22,7 @@ void Block::render() {
     x += posX;
     y += posY;
 }
+
+void Block::collideWithPlayer() {
+
+}

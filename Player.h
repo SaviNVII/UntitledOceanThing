@@ -8,6 +8,7 @@
 
 
 class Player {
+public:
     float x;
     float y;
     float width;
@@ -16,7 +17,7 @@ class Player {
     bool flipped;
 
     ALLEGRO_BITMAP* bitmap;
-public:
+
     Player(float x, float y, float width, float height, float speed);
     void moveLeft();
     void moveRight();

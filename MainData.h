@@ -8,4 +8,9 @@
 extern float posX;
 extern float posY;
 
+extern float playerX;
+extern float playerY;
+extern float playerWidth;
+extern float playerHeight;
+
 #endif //UNTITLEDOCEANTHING_MAINDATA_H

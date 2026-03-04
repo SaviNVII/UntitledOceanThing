@@ -62733,6 +62733,7 @@ class Block {
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
     void render();
+    void collideWithPlayer();
 };
 # 12 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
@@ -62745,10 +62746,16 @@ public:
 
 extern float posX;
 extern float posY;
+
+extern float playerX;
+extern float playerY;
+extern float playerWidth;
+extern float playerHeight;
 # 13 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 1
 # 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h"
 class Player {
+public:
     float x;
     float y;
     float width;
@@ -62757,7 +62764,7 @@ class Player {
     bool flipped;
 
     ALLEGRO_BITMAP* bitmap;
-public:
+
     Player(float x, float y, float width, float height, float speed);
     void moveLeft();
     void moveRight();
@@ -62771,9 +62778,16 @@ public:
 float posX = 0;
 float posY = 0;
 
+int screenWidth = 640;
+int screenHeight = 480;
+
+float playerWidth = 50;
+float playerHeight = 25;
+float playerX = screenWidth/2-(playerWidth/2);
+float playerY = screenHeight/2-(playerHeight/2);
+
+
 int main() {
-    int screenWidth = 640;
-    int screenHeight = 480;
 
     ALLEGRO_DISPLAY* display;
 
@@ -62787,7 +62801,8 @@ int main() {
         std::cout << "Failed to create display!\n";
         return -1;
     }
-    Player player = Player(screenWidth/2-25, screenHeight/2-12.5, 50, 25, 0.1);
+
+    Player player = Player(playerX, playerY, playerWidth, playerHeight, 0.1);
 
     Block block = Block(100, 100, 50, 50, 255, 255, 255);
     Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
