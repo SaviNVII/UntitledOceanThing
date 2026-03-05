@@ -42666,23 +42666,19 @@ Player::Player(float x, float y, float width, float height, float speed) {
 
 void Player::moveLeft() {
     flipped = true;
-
     posX += speed;
 }
 
 void Player::moveRight() {
     flipped = false;
-
     posX -= speed;
 }
 
 void Player::moveUp() {
-
     posY += speed;
 }
 
 void Player::moveDown() {
-
     posY -= speed;
 }
 

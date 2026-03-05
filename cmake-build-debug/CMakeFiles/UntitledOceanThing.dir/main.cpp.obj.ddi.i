@@ -62832,8 +62832,14 @@ int main() {
         block.render();
         block2.render();
 
-        posX = 0;
-        posY = 0;
+        if ((!al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) ||
+            (!al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) ||
+            (!al_key_down(&keyboardState, ALLEGRO_KEY_UP)) ||
+            (!al_key_down(&keyboardState, ALLEGRO_KEY_DOWN))) {
+            posX = 0;
+            posY = 0;
+        }
+
 
         al_flip_display();
 
