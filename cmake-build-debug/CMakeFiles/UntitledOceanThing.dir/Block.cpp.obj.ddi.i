@@ -44,6 +44,7 @@ extern float playerX;
 extern float playerY;
 extern float playerWidth;
 extern float playerHeight;
+extern float playerSpeed;
 # 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro_primitives.h" 1
 
@@ -44839,8 +44840,13 @@ Block::Block(float x, float y, float width, float height, int r, int g, int b) {
 
 void Block::render() {
     al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(r, g, b));
-    x += posX;
-    y += posY;
+    x = x + posX;
+    y = y + posY;
+    std::cout <<posX<<"\n";
+
+    if (playerX < x + width && playerY < y + height) {
+        posX -= playerSpeed*2;
+    }
 }
 
 void Block::collideWithPlayer() {

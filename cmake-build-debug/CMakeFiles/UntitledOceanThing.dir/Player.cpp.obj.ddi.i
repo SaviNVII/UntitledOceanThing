@@ -2545,6 +2545,7 @@ extern float playerX;
 extern float playerY;
 extern float playerWidth;
 extern float playerHeight;
+extern float playerSpeed;
 # 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 1 3
@@ -42665,20 +42666,24 @@ Player::Player(float x, float y, float width, float height, float speed) {
 
 void Player::moveLeft() {
     flipped = true;
-    posX = speed;
+
+    posX += speed;
 }
 
 void Player::moveRight() {
     flipped = false;
-    posX = -speed;
+
+    posX -= speed;
 }
 
 void Player::moveUp() {
-    posY = speed;
+
+    posY += speed;
 }
 
 void Player::moveDown() {
-    posY = -speed;
+
+    posY -= speed;
 }
 
 void Player::render() {

@@ -21,20 +21,24 @@ Player::Player(float x, float y, float width, float height, float speed) {
 
 void Player::moveLeft() {
     flipped = true;
-    posX = speed;
+    //posX = speed;
+    posX += speed;
 }
 
 void Player::moveRight() {
     flipped = false;
-    posX = -speed;
+    //posX = -speed;
+    posX -= speed;
 }
 
 void Player::moveUp() {
-    posY = speed;
+    //posY = speed;
+    posY += speed;
 }
 
 void Player::moveDown() {
-    posY = -speed;
+    //posY = -speed;
+    posY -= speed;
 }
 
 void Player::render() {

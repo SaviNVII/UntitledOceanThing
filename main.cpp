@@ -22,6 +22,7 @@ float playerWidth = 50;
 float playerHeight = 25;
 float playerX =  screenWidth/2-(playerWidth/2);
 float playerY = screenHeight/2-(playerHeight/2);
+float playerSpeed = 0.1;
 
 
 int main() {
@@ -39,7 +40,7 @@ int main() {
         return -1;
     }
 
-    Player player = Player(playerX, playerY, playerWidth, playerHeight, 0.1);
+    Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
     Block block = Block(100, 100, 50, 50, 255, 255, 255);
     Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
