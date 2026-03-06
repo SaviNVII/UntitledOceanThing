@@ -62733,7 +62733,6 @@ class Block {
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
     void render();
-    void collideWithPlayer();
 };
 # 12 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
@@ -62807,7 +62806,7 @@ int main() {
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
     Block block = Block(100, 100, 50, 50, 255, 255, 255);
-    Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
+    Block block2 = Block(200, 200, 100, 100, 255, 0, 0);
 
     while (true) {
         al_clear_to_color(al_map_rgb(0, 0, 255));

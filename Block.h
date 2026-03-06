@@ -16,7 +16,6 @@ class Block {
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
     void render();
-    void collideWithPlayer();
 };
 
 

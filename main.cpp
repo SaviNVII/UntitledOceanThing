@@ -43,7 +43,7 @@ int main() {
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
     Block block = Block(100, 100, 50, 50, 255, 255, 255);
-    Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
+    Block block2 = Block(200, 200, 100, 100, 255, 0, 0);
 
     while (true) {
         al_clear_to_color(al_map_rgb(0, 0, 255));
