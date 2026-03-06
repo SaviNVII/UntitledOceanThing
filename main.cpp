@@ -15,6 +15,9 @@
 float posX = 0;
 float posY = 0;
 
+float collisionOverlapX = 0;
+float collisionOverlapY = 0;
+
 int screenWidth = 640;
 int screenHeight = 480;
 
@@ -23,6 +26,8 @@ float playerHeight = 25;
 float playerX =  screenWidth/2-(playerWidth/2);
 float playerY = screenHeight/2-(playerHeight/2);
 float playerSpeed = 0.1;
+
+bool isCollision = false;
 
 
 int main() {
@@ -43,13 +48,17 @@ int main() {
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
     Block block = Block(100, 100, 50, 50, 255, 255, 255);
-    Block block2 = Block(200, 200, 100, 100, 255, 0, 0);
+    Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
 
     while (true) {
         al_clear_to_color(al_map_rgb(0, 0, 255));
 
         ALLEGRO_KEYBOARD_STATE keyboardState;
         al_get_keyboard_state(&keyboardState);
+
+        collisionOverlapX = 0;
+        collisionOverlapY = 0;
+        isCollision = false;
 
         if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) {
             player.moveLeft();
@@ -64,9 +73,13 @@ int main() {
             player.moveDown();
         }
 
+        isCollision = isCollision || block.checkCollision();
+        isCollision = isCollision || block2.checkCollision();
+
         player.render();
         block.render();
         block2.render();
+
 
         if ((!al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) ||
             (!al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) ||

@@ -8,10 +8,15 @@
 extern float posX;
 extern float posY;
 
+extern float collisionOverlapX;
+extern float collisionOverlapY;
+
 extern float playerX;
 extern float playerY;
 extern float playerWidth;
 extern float playerHeight;
 extern float playerSpeed;
+
+extern bool isCollision;
 
 #endif //UNTITLEDOCEANTHING_MAINDATA_H

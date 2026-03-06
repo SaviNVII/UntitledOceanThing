@@ -26,6 +26,7 @@ class Block {
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
     void render();
+    bool checkCollision();
 };
 # 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
@@ -39,11 +40,16 @@ public:
 extern float posX;
 extern float posY;
 
+extern float collisionOverlapX;
+extern float collisionOverlapY;
+
 extern float playerX;
 extern float playerY;
 extern float playerWidth;
 extern float playerHeight;
 extern float playerSpeed;
+
+extern bool isCollision;
 # 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro_primitives.h" 1
 
@@ -44840,20 +44846,38 @@ Block::Block(float x, float y, float width, float height, int r, int g, int b) {
 void Block::render() {
     al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(r, g, b));
 
+    if (isCollision) {
+        x += collisionOverlapX;
+        y += collisionOverlapY;
+    }
+
+    if (!isCollision) {
+        x += posX;
+        y += posY;
+    }
+
+}
+
+bool Block::checkCollision() {
+
     if (playerX < x + width && playerX > x + 1 && playerY < y + height && playerY + playerHeight > y) {
-        posX-=1;
+        collisionOverlapX = -((x + width) - playerX);
+        return true;
     }
+
     if (playerX + playerWidth > x && playerX < x + width - 1 && playerY < y + height && playerY + playerHeight > y) {
-        posX +=1;
+        collisionOverlapX = (playerX + playerWidth) - x;
+        return true;
     }
+
     if (playerX + playerWidth > x && playerX < x + width && playerY < y + height && playerY > y + height - 1) {
-        posY -=1;
+        collisionOverlapY = -((y + height) - playerY);
+        return true;
     }
+
     if (playerX + playerWidth > x && playerX < x + width && playerY + playerHeight > y && playerY + playerHeight < y + 1) {
-        posY +=1;
+        collisionOverlapY = (playerY + playerHeight) - y;
+        return true;
     }
-
-    x += posX;
-    y += posY;
-
+    return false;
 }

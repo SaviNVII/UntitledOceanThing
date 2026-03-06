@@ -62733,6 +62733,7 @@ class Block {
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
     void render();
+    bool checkCollision();
 };
 # 12 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
@@ -62746,11 +62747,16 @@ public:
 extern float posX;
 extern float posY;
 
+extern float collisionOverlapX;
+extern float collisionOverlapY;
+
 extern float playerX;
 extern float playerY;
 extern float playerWidth;
 extern float playerHeight;
 extern float playerSpeed;
+
+extern bool isCollision;
 # 13 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 1
 # 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h"
@@ -62778,6 +62784,9 @@ public:
 float posX = 0;
 float posY = 0;
 
+float collisionOverlapX = 0;
+float collisionOverlapY = 0;
+
 int screenWidth = 640;
 int screenHeight = 480;
 
@@ -62786,6 +62795,8 @@ float playerHeight = 25;
 float playerX = screenWidth/2-(playerWidth/2);
 float playerY = screenHeight/2-(playerHeight/2);
 float playerSpeed = 0.1;
+
+bool isCollision = false;
 
 
 int main() {
@@ -62806,13 +62817,17 @@ int main() {
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
     Block block = Block(100, 100, 50, 50, 255, 255, 255);
-    Block block2 = Block(200, 200, 100, 100, 255, 0, 0);
+    Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
 
     while (true) {
         al_clear_to_color(al_map_rgb(0, 0, 255));
 
         ALLEGRO_KEYBOARD_STATE keyboardState;
         al_get_keyboard_state(&keyboardState);
+
+        collisionOverlapX = 0;
+        collisionOverlapY = 0;
+        isCollision = false;
 
         if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) {
             player.moveLeft();
@@ -62827,9 +62842,13 @@ int main() {
             player.moveDown();
         }
 
+        isCollision = isCollision || block.checkCollision();
+        isCollision = isCollision || block2.checkCollision();
+
         player.render();
         block.render();
         block2.render();
+
 
         if ((!al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) ||
             (!al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) ||

@@ -2541,11 +2541,16 @@ public:
 extern float posX;
 extern float posY;
 
+extern float collisionOverlapX;
+extern float collisionOverlapY;
+
 extern float playerX;
 extern float playerY;
 extern float playerWidth;
 extern float playerHeight;
 extern float playerSpeed;
+
+extern bool isCollision;
 # 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 1 3
