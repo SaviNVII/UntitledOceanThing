@@ -47,7 +47,7 @@ int main() {
 
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
-    Block block = Block(100, 100, 50, 50, 255, 255, 255);
+    //Block block = Block(100, 100, 50, 50, 255, 255, 255);
     Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
 
     while (true) {
@@ -73,11 +73,11 @@ int main() {
             player.moveDown();
         }
 
-        isCollision = isCollision || block.checkCollision();
+        //isCollision = isCollision || block.checkCollision();
         isCollision = isCollision || block2.checkCollision();
 
         player.render();
-        block.render();
+        //block.render();
         block2.render();
 
 

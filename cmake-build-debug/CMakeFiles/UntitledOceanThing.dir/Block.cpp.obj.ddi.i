@@ -44859,24 +44859,34 @@ void Block::render() {
 }
 
 bool Block::checkCollision() {
+    float bCenterX = x + width / 2;
+    float bCenterY = y + height / 2;
+    float bCornerX = x + width;
+    float bCornerY = y;
+    float pCenterX = playerX + playerWidth / 2;
+    float pCenterY = playerY + playerHeight / 2;
 
-    if (playerX < x + width && playerX > x + 1 && playerY < y + height && playerY + playerHeight > y) {
-        collisionOverlapX = -((x + width) - playerX);
-        return true;
-    }
+    float bCenterPCenterSlope = abs((pCenterY - bCenterY) / (pCenterX - bCenterX));
+    float bCenterBCornerSlope = abs((bCornerY - bCenterY) / (bCornerX - bCenterX));
 
-    if (playerX + playerWidth > x && playerX < x + width - 1 && playerY < y + height && playerY + playerHeight > y) {
-        collisionOverlapX = (playerX + playerWidth) - x;
-        return true;
-    }
 
-    if (playerX + playerWidth > x && playerX < x + width && playerY < y + height && playerY > y + height - 1) {
-        collisionOverlapY = -((y + height) - playerY);
-        return true;
-    }
+    if (playerX < x + width && playerX + playerWidth > x &&
+        playerY < y + height && playerY + playerHeight > y) {
+# 64 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp"
+        if (bCenterPCenterSlope > bCenterBCornerSlope) {
+            if (pCenterY > bCenterY) {
+                collisionOverlapY = -((y + height) - playerY);
+            }else {
+                collisionOverlapY = (playerY + playerHeight) - y;
+            }
+        }else {
+            if (pCenterY > bCenterX) {
+                collisionOverlapX = -((x + width) - playerX);
+            }else {
+                collisionOverlapX = (playerX + playerWidth) - x;
+            }
+        }
 
-    if (playerX + playerWidth > x && playerX < x + width && playerY + playerHeight > y && playerY + playerHeight < y + 1) {
-        collisionOverlapY = (playerY + playerHeight) - y;
         return true;
     }
     return false;
