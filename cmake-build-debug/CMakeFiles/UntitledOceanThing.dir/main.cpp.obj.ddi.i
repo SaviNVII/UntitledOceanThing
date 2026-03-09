@@ -59189,6 +59189,2499 @@ namespace filesystem
 }
 # 57 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/filesystem" 2 3
 # 3 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/list" 1 3
+# 67 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/list" 3
+# 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 1 3
+# 81 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+namespace std
+{
+
+
+  namespace __detail
+  {
+
+
+
+
+
+
+
+    struct _List_node_base
+    {
+      typedef _List_node_base* _Base_ptr;
+
+      _List_node_base* _M_next;
+      _List_node_base* _M_prev;
+
+      static void
+      swap(_List_node_base& __x, _List_node_base& __y) noexcept;
+
+      void
+      _M_transfer(_List_node_base* const __first,
+    _List_node_base* const __last) noexcept;
+
+      void
+      _M_reverse() noexcept;
+
+      void
+      _M_hook(_List_node_base* const __position) noexcept;
+
+      void
+      _M_unhook() noexcept;
+
+      _List_node_base* _M_base() { return this; }
+      const _List_node_base* _M_base() const { return this; }
+    };
+
+    struct _List_size
+    {
+
+
+      size_t _M_size;
+
+    };
+
+
+    struct _List_node_header : public _List_node_base, _List_size
+    {
+      _List_node_header() noexcept
+      { _M_init(); }
+
+
+      _List_node_header(_List_node_header&& __x) noexcept
+      : _List_node_base(__x), _List_size(__x)
+      {
+ if (__x._M_base()->_M_next == __x._M_base())
+   this->_M_next = this->_M_prev = this;
+ else
+   {
+     this->_M_next->_M_prev = this->_M_prev->_M_next = this->_M_base();
+     __x._M_init();
+   }
+      }
+
+      void
+      _M_move_nodes(_List_node_header&& __x)
+      {
+ _List_node_base* const __xnode = __x._M_base();
+ if (__xnode->_M_next == __xnode)
+   _M_init();
+ else
+   {
+     _List_node_base* const __node = this->_M_base();
+     __node->_M_next = __xnode->_M_next;
+     __node->_M_prev = __xnode->_M_prev;
+     __node->_M_next->_M_prev = __node->_M_prev->_M_next = __node;
+     _List_size::operator=(__x);
+     __x._M_init();
+   }
+      }
+
+
+      void
+      _M_init() noexcept
+      {
+ this->_M_next = this->_M_prev = this;
+ _List_size::operator=(_List_size());
+      }
+
+      using _List_node_base::_M_base;
+
+      _List_node_base* _M_base() { return this; }
+
+    };
+
+  }
+
+
+
+namespace __cxx11 {
+  template<typename _Tp, typename _Allocator> class list;
+}
+
+
+namespace __list
+{
+
+  template<typename _VoidPtr>
+    struct _Node_base
+    {
+      using _Base_ptr = __ptr_rebind<_VoidPtr, _Node_base>;
+      _Base_ptr _M_next;
+      _Base_ptr _M_prev;
+
+      static void
+      swap(_Node_base& __x, _Node_base& __y) noexcept;
+
+      void
+      _M_transfer(_Base_ptr const __first, _Base_ptr const __last) noexcept;
+
+      void
+      _M_hook(_Base_ptr const __position) noexcept
+      {
+ auto __self = this->_M_base();
+ this->_M_next = __position;
+ this->_M_prev = __position->_M_prev;
+ __position->_M_prev->_M_next = __self;
+ __position->_M_prev = __self;
+      }
+
+      void
+      _M_unhook() noexcept
+      {
+ auto const __next_node = this->_M_next;
+ auto const __prev_node = this->_M_prev;
+ __prev_node->_M_next = __next_node;
+ __next_node->_M_prev = __prev_node;
+      }
+
+
+
+
+
+
+
+      _Base_ptr
+      _M_base() const noexcept
+      {
+ return pointer_traits<_Base_ptr>::
+   pointer_to(const_cast<_Node_base&>(*this));
+      }
+    };
+
+  using ::std::__detail::_List_size;
+
+
+
+
+  template<typename _VoidPtr>
+    struct _Node_header
+    : public _Node_base<_VoidPtr>, _List_size
+    {
+      _Node_header() noexcept
+      { _M_init(); }
+
+      _Node_header(_Node_header&& __x) noexcept
+      : _Node_base<_VoidPtr>(__x), _List_size(__x)
+      {
+ if (__x._M_base()->_M_next == __x._M_base())
+   this->_M_next = this->_M_prev = this->_M_base();
+ else
+   {
+     this->_M_next->_M_prev = this->_M_prev->_M_next = this->_M_base();
+     __x._M_init();
+   }
+      }
+
+      void
+      _M_move_nodes(_Node_header&& __x) noexcept
+      {
+ auto const __xnode = __x._M_base();
+ if (__xnode->_M_next == __xnode)
+   _M_init();
+ else
+   {
+     auto const __node = this->_M_base();
+     __node->_M_next = __xnode->_M_next;
+     __node->_M_prev = __xnode->_M_prev;
+     __node->_M_next->_M_prev = __node->_M_prev->_M_next = __node;
+     _List_size::operator=(__x);
+     __x._M_init();
+   }
+      }
+
+      void
+      _M_init() noexcept
+      {
+ this->_M_next = this->_M_prev = this->_M_base();
+ _List_size::operator=(_List_size());
+      }
+
+      void _M_reverse() noexcept;
+    };
+
+
+  template<typename _ValPtr>
+    struct _Node : public __list::_Node_base<__ptr_rebind<_ValPtr, void>>
+    {
+      using value_type = typename pointer_traits<_ValPtr>::element_type;
+      using _Node_ptr = __ptr_rebind<_ValPtr, _Node>;
+
+      _Node() noexcept { }
+      ~_Node() { }
+      _Node(_Node&&) = delete;
+
+      union _Uninit_storage
+      {
+ _Uninit_storage() noexcept { }
+ ~_Uninit_storage() { }
+
+ value_type _M_data;
+      };
+      _Uninit_storage _M_u;
+
+      value_type*
+      _M_valptr() noexcept { return std::__addressof(_M_u._M_data); }
+
+      value_type const*
+      _M_valptr() const noexcept { return std::__addressof(_M_u._M_data); }
+
+      _Node_ptr
+      _M_node_ptr()
+      { return pointer_traits<_Node_ptr>::pointer_to(*this); }
+    };
+
+  template<bool _Const, typename _Ptr> class _Iterator;
+
+  template<bool _Const, typename _Ptr>
+    class _Iterator
+    {
+      using _Node = __list::_Node<_Ptr>;
+      using _Base_ptr
+ = typename __list::_Node_base<__ptr_rebind<_Ptr, void>>::_Base_ptr;
+
+      template<typename _Tp>
+ using __maybe_const = __conditional_t<_Const, const _Tp, _Tp>;
+
+    public:
+      using value_type = typename pointer_traits<_Ptr>::element_type;
+      using difference_type = ptrdiff_t;
+      using iterator_category = bidirectional_iterator_tag;
+      using pointer = __maybe_const<value_type>*;
+      using reference = __maybe_const<value_type>&;
+
+      constexpr _Iterator() noexcept : _M_node() { }
+
+      _Iterator(const _Iterator&) = default;
+      _Iterator& operator=(const _Iterator&) = default;
+
+
+      constexpr
+      _Iterator(const _Iterator<false, _Ptr>& __i) requires _Const
+
+
+
+
+
+
+ : _M_node(__i._M_node) { }
+
+      constexpr explicit
+      _Iterator(_Base_ptr __x) noexcept
+      : _M_node(__x) { }
+
+
+      [[__nodiscard__]]
+      constexpr reference
+      operator*() const noexcept
+      { return static_cast<_Node&>(*_M_node)._M_u._M_data; }
+
+      [[__nodiscard__]]
+      constexpr pointer
+      operator->() const noexcept
+      { return std::__addressof(operator*()); }
+
+      constexpr _Iterator&
+      operator++() noexcept
+      {
+ _M_node = _M_node->_M_next;
+ return *this;
+      }
+
+      constexpr _Iterator
+      operator++(int) noexcept
+      {
+ auto __tmp = *this;
+ _M_node = _M_node->_M_next;
+ return __tmp;
+      }
+
+      constexpr _Iterator&
+      operator--() noexcept
+      {
+ _M_node = _M_node->_M_prev;
+ return *this;
+      }
+
+      constexpr _Iterator
+      operator--(int) noexcept
+      {
+ auto __tmp = *this;
+ _M_node = _M_node->_M_prev;
+ return __tmp;
+      }
+
+      [[__nodiscard__]]
+      friend constexpr bool
+      operator==(const _Iterator& __x, const _Iterator& __y) noexcept
+      { return __x._M_node == __y._M_node; }
+# 411 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+    private:
+      template<typename _Tp, typename _Allocator>
+ friend class std::list;
+
+      friend _Iterator<!_Const, _Ptr>;
+
+      constexpr _Iterator<false, _Ptr>
+      _M_const_cast() const noexcept
+      { return _Iterator<false, _Ptr>(_M_node); }
+
+      _Base_ptr _M_node;
+    };
+}
+
+
+
+  template<typename _Tp> struct _List_node;
+  template<typename _Tp> struct _List_iterator;
+  template<typename _Tp> struct _List_const_iterator;
+
+
+namespace __list
+{
+
+  template<typename _Tp, typename _Ptr>
+    struct _Node_traits;
+
+
+
+
+
+  template<typename _Tp>
+    struct _Node_traits<_Tp, _Tp*>
+    {
+      typedef __detail::_List_node_base _Node_base;
+      typedef __detail::_List_node_header _Node_header;
+      typedef std::_List_node<_Tp> _Node;
+      typedef std::_List_iterator<_Tp> _Iterator;
+      typedef std::_List_const_iterator<_Tp> _Const_iterator;
+    };
+# 461 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+  template<typename _Tp, typename _Ptr>
+    struct _Node_traits
+    {
+    private:
+      using _VoidPtr = __ptr_rebind<_Ptr, void>;
+      using _ValPtr = __ptr_rebind<_Ptr, _Tp>;
+
+    public:
+      using _Node_base = __list::_Node_base<_VoidPtr>;
+      using _Node_header = __list::_Node_header<_VoidPtr>;
+      using _Node = __list::_Node<_ValPtr>;
+      using _Iterator = __list::_Iterator<false, _ValPtr>;
+      using _Const_iterator = __list::_Iterator<true, _ValPtr>;
+    };
+
+
+
+  template<typename _NodeBaseT>
+    struct _Scratch_list
+    : _NodeBaseT
+    {
+      typedef _NodeBaseT _Base;
+      typedef typename _Base::_Base_ptr _Base_ptr;
+
+      _Scratch_list() { this->_M_next = this->_M_prev = this->_M_base(); }
+
+      bool empty() const { return this->_M_next == this->_M_base(); }
+
+      void swap(_Base& __l) { _Base::swap(*this, __l); }
+
+      template<typename _Iter, typename _Cmp>
+ struct _Ptr_cmp
+ {
+   _Cmp _M_cmp;
+
+   bool
+   operator()(_Base_ptr __lhs, _Base_ptr __rhs)
+   { return _M_cmp(*_Iter(__lhs), *_Iter(__rhs)); }
+ };
+
+      template<typename _Iter>
+ struct _Ptr_cmp<_Iter, void>
+ {
+   bool
+   operator()(_Base_ptr __lhs, _Base_ptr __rhs) const
+   { return *_Iter(__lhs) < *_Iter(__rhs); }
+ };
+
+
+      template<typename _Cmp>
+ void
+ merge(_Base& __x, _Cmp __comp)
+ {
+   _Base_ptr __first1 = this->_M_next;
+   _Base_ptr const __last1 = this->_M_base();
+   _Base_ptr __first2 = __x._M_next;
+   _Base_ptr const __last2 = __x._M_base();
+
+   while (__first1 != __last1 && __first2 != __last2)
+     {
+       if (__comp(__first2, __first1))
+  {
+    _Base_ptr __next = __first2->_M_next;
+    __first1->_M_transfer(__first2, __next);
+    __first2 = __next;
+  }
+       else
+  __first1 = __first1->_M_next;
+     }
+   if (__first2 != __last2)
+     this->_M_transfer(__first2, __last2);
+ }
+
+
+      void _M_take_one(_Base_ptr __i)
+      { this->_M_transfer(__i, __i->_M_next); }
+
+
+      void _M_put_all(_Base_ptr __i)
+      {
+ if (!empty())
+   __i->_M_transfer(this->_M_next, this->_M_base());
+      }
+    };
+}
+
+
+
+
+  template<typename _Tp>
+    struct _List_node : public __detail::_List_node_base
+    {
+      typedef _List_node* _Node_ptr;
+
+
+      __gnu_cxx::__aligned_membuf<_Tp> _M_storage;
+      _Tp* _M_valptr() { return _M_storage._M_ptr(); }
+      _Tp const* _M_valptr() const { return _M_storage._M_ptr(); }
+
+
+
+
+
+
+      _Node_ptr _M_node_ptr() { return this; }
+    };
+
+
+
+
+
+
+  template<typename _Tp>
+    struct _List_iterator
+    {
+      typedef _List_node<_Tp> _Node;
+
+      typedef ptrdiff_t difference_type;
+      typedef std::bidirectional_iterator_tag iterator_category;
+      typedef _Tp value_type;
+      typedef _Tp* pointer;
+      typedef _Tp& reference;
+
+      _List_iterator() noexcept
+      : _M_node() { }
+
+      explicit
+      _List_iterator(__detail::_List_node_base* __x) noexcept
+      : _M_node(__x) { }
+
+      _List_iterator
+      _M_const_cast() const noexcept
+      { return *this; }
+
+
+      [[__nodiscard__]]
+      reference
+      operator*() const noexcept
+      { return *static_cast<_Node*>(_M_node)->_M_valptr(); }
+
+      [[__nodiscard__]]
+      pointer
+      operator->() const noexcept
+      { return static_cast<_Node*>(_M_node)->_M_valptr(); }
+
+      _List_iterator&
+      operator++() noexcept
+      {
+ _M_node = _M_node->_M_next;
+ return *this;
+      }
+
+      _List_iterator
+      operator++(int) noexcept
+      {
+ _List_iterator __tmp = *this;
+ _M_node = _M_node->_M_next;
+ return __tmp;
+      }
+
+      _List_iterator&
+      operator--() noexcept
+      {
+ _M_node = _M_node->_M_prev;
+ return *this;
+      }
+
+      _List_iterator
+      operator--(int) noexcept
+      {
+ _List_iterator __tmp = *this;
+ _M_node = _M_node->_M_prev;
+ return __tmp;
+      }
+
+      [[__nodiscard__]]
+      friend bool
+      operator==(const _List_iterator& __x,
+   const _List_iterator& __y) noexcept
+      { return __x._M_node == __y._M_node; }
+# 651 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      __detail::_List_node_base* _M_node;
+    };
+
+
+
+
+
+
+  template<typename _Tp>
+    struct _List_const_iterator
+    {
+      typedef const _List_node<_Tp> _Node;
+      typedef _List_iterator<_Tp> iterator;
+
+      typedef ptrdiff_t difference_type;
+      typedef std::bidirectional_iterator_tag iterator_category;
+      typedef _Tp value_type;
+      typedef const _Tp* pointer;
+      typedef const _Tp& reference;
+
+      _List_const_iterator() noexcept
+      : _M_node() { }
+
+      explicit
+      _List_const_iterator(const __detail::_List_node_base* __x)
+      noexcept
+      : _M_node(__x) { }
+
+      _List_const_iterator(const iterator& __x) noexcept
+      : _M_node(__x._M_node) { }
+
+      iterator
+      _M_const_cast() const noexcept
+      { return iterator(const_cast<__detail::_List_node_base*>(_M_node)); }
+
+
+      [[__nodiscard__]]
+      reference
+      operator*() const noexcept
+      { return *static_cast<_Node*>(_M_node)->_M_valptr(); }
+
+      [[__nodiscard__]]
+      pointer
+      operator->() const noexcept
+      { return static_cast<_Node*>(_M_node)->_M_valptr(); }
+
+      _List_const_iterator&
+      operator++() noexcept
+      {
+ _M_node = _M_node->_M_next;
+ return *this;
+      }
+
+      _List_const_iterator
+      operator++(int) noexcept
+      {
+ _List_const_iterator __tmp = *this;
+ _M_node = _M_node->_M_next;
+ return __tmp;
+      }
+
+      _List_const_iterator&
+      operator--() noexcept
+      {
+ _M_node = _M_node->_M_prev;
+ return *this;
+      }
+
+      _List_const_iterator
+      operator--(int) noexcept
+      {
+ _List_const_iterator __tmp = *this;
+ _M_node = _M_node->_M_prev;
+ return __tmp;
+      }
+
+      [[__nodiscard__]]
+      friend bool
+      operator==(const _List_const_iterator& __x,
+   const _List_const_iterator& __y) noexcept
+      { return __x._M_node == __y._M_node; }
+# 742 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      const __detail::_List_node_base* _M_node;
+    };
+
+namespace __cxx11 {
+
+  template<typename _Tp, typename _Alloc>
+    class _List_base
+    {
+    protected:
+      typedef typename __gnu_cxx::__alloc_traits<_Alloc>::template
+ rebind<_Tp>::other _Tp_alloc_type;
+      typedef __gnu_cxx::__alloc_traits<_Tp_alloc_type> _Tp_alloc_traits;
+
+      typedef __list::_Node_traits<_Tp, typename _Tp_alloc_traits::pointer>
+ _Node_traits;
+      typedef typename _Tp_alloc_traits::template
+ rebind<typename _Node_traits::_Node>::other _Node_alloc_type;
+      typedef __gnu_cxx::__alloc_traits<_Node_alloc_type> _Node_alloc_traits;
+
+
+
+
+      using _Node_ptr = typename _Node_alloc_traits::pointer;
+
+
+      struct _List_impl
+      : public _Node_alloc_type
+      {
+ typename _Node_traits::_Node_header _M_node;
+
+ _List_impl() noexcept(is_nothrow_default_constructible<_Node_alloc_type>::value)
+
+ : _Node_alloc_type()
+ { }
+
+ _List_impl(const _Node_alloc_type& __a) noexcept
+ : _Node_alloc_type(__a)
+ { }
+
+
+ _List_impl(_List_impl&&) = default;
+
+ _List_impl(_Node_alloc_type&& __a, _List_impl&& __x)
+ : _Node_alloc_type(std::move(__a)), _M_node(std::move(__x._M_node))
+ { }
+
+ _List_impl(_Node_alloc_type&& __a) noexcept
+ : _Node_alloc_type(std::move(__a))
+ { }
+
+      };
+
+      _List_impl _M_impl;
+
+
+      size_t _M_get_size() const { return _M_impl._M_node._M_size; }
+
+      void _M_set_size(size_t __n) { _M_impl._M_node._M_size = __n; }
+
+      void _M_inc_size(size_t __n) { _M_impl._M_node._M_size += __n; }
+
+      void _M_dec_size(size_t __n) { _M_impl._M_node._M_size -= __n; }
+# 812 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      typename _Node_alloc_traits::pointer
+      _M_get_node()
+      { return _Node_alloc_traits::allocate(_M_impl, 1); }
+
+      void
+      _M_put_node(_Node_ptr __p) noexcept
+      {
+
+ _Node_alloc_traits::deallocate(_M_impl, __p, 1);
+# 836 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      }
+
+      void
+      _M_destroy_node(_Node_ptr __p)
+      {
+
+
+
+
+ _Node_alloc_traits::destroy(_M_impl, __p->_M_valptr());
+
+ using _Node = typename _Node_traits::_Node;
+ using _Base_ptr = typename _Node_traits::_Node_base::_Base_ptr;
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wc++17-extensions"
+ if constexpr (!is_trivially_destructible<_Base_ptr>::value)
+   __p->~_Node();
+#pragma GCC diagnostic pop
+
+ this->_M_put_node(__p);
+      }
+
+  public:
+      typedef _Alloc allocator_type;
+
+      _Node_alloc_type&
+      _M_get_Node_allocator() noexcept
+      { return _M_impl; }
+
+      const _Node_alloc_type&
+      _M_get_Node_allocator() const noexcept
+      { return _M_impl; }
+
+
+      _List_base() = default;
+
+
+
+
+      _List_base(const _Node_alloc_type& __a) noexcept
+      : _M_impl(__a)
+      { }
+
+
+      _List_base(_List_base&&) = default;
+
+
+      _List_base(_Node_alloc_type&& __a, _List_base&& __x)
+      : _M_impl(std::move(__a), std::move(__x._M_impl))
+      { }
+
+
+      _List_base(_Node_alloc_type&& __a)
+      : _M_impl(std::move(__a))
+      { }
+
+      void
+      _M_move_nodes(_List_base&& __x)
+      { _M_impl._M_node._M_move_nodes(std::move(__x._M_impl._M_node)); }
+
+
+
+      ~_List_base() noexcept
+      { _M_clear(); }
+
+      void
+      _M_clear() noexcept;
+
+      void
+      _M_init() noexcept
+      { this->_M_impl._M_node._M_init(); }
+# 921 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wc++17-extensions"
+
+
+      _List_base(_List_base&& __x, _Node_alloc_type&& __a)
+      : _M_impl(std::move(__a))
+      {
+
+ if constexpr (is_same<typename _Tp_alloc_traits::pointer, _Tp*>::value)
+
+   if (__x._M_get_Node_allocator() == _M_get_Node_allocator())
+     _M_move_nodes(std::move(__x));
+
+      }
+
+
+      static size_t
+      _S_distance(const __detail::_List_node_base* __first,
+    const __detail::_List_node_base* __last)
+      {
+
+ if constexpr (!is_same<typename _Tp_alloc_traits::pointer, _Tp*>::value)
+   return 0;
+ else
+
+   {
+     size_t __n = 0;
+     while (__first != __last)
+       {
+  __first = __first->_M_next;
+  ++__n;
+       }
+     return __n;
+   }
+      }
+
+
+      size_t
+      _M_distance(const __detail::_List_node_base* __first,
+    const __detail::_List_node_base* __last) const
+      { return _S_distance(__first, __last); }
+
+
+      size_t _M_node_count() const { return _M_get_size(); }
+# 974 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+#pragma GCC diagnostic pop
+
+    };
+# 1024 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+  template<typename _Tp, typename _Alloc = std::allocator<_Tp> >
+    class list : protected _List_base<_Tp, _Alloc>
+    {
+# 1037 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      static_assert(is_same<typename remove_cv<_Tp>::type, _Tp>::value,
+   "std::list must have a non-const, non-volatile value_type");
+
+      static_assert(is_same<typename _Alloc::value_type, _Tp>::value,
+   "std::list must have the same value_type as its allocator");
+
+
+
+      typedef _List_base<_Tp, _Alloc> _Base;
+      typedef typename _Base::_Tp_alloc_type _Tp_alloc_type;
+      typedef typename _Base::_Tp_alloc_traits _Tp_alloc_traits;
+      typedef typename _Base::_Node_alloc_type _Node_alloc_type;
+      typedef typename _Base::_Node_alloc_traits _Node_alloc_traits;
+      typedef typename _Base::_Node_traits _Node_traits;
+
+    public:
+      typedef _Tp value_type;
+      typedef typename _Tp_alloc_traits::pointer pointer;
+      typedef typename _Tp_alloc_traits::const_pointer const_pointer;
+      typedef typename _Tp_alloc_traits::reference reference;
+      typedef typename _Tp_alloc_traits::const_reference const_reference;
+      typedef typename _Node_traits::_Iterator iterator;
+      typedef typename _Node_traits::_Const_iterator const_iterator;
+      typedef std::reverse_iterator<const_iterator> const_reverse_iterator;
+      typedef std::reverse_iterator<iterator> reverse_iterator;
+      typedef size_t size_type;
+      typedef ptrdiff_t difference_type;
+      typedef _Alloc allocator_type;
+
+    protected:
+
+
+      typedef typename _Node_alloc_traits::pointer _Node_ptr;
+
+      using _Base::_M_impl;
+      using _Base::_M_put_node;
+      using _Base::_M_get_node;
+      using _Base::_M_get_Node_allocator;
+# 1100 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename... _Args>
+ _Node_ptr
+ _M_create_node(_Args&&... __args)
+ {
+   auto& __alloc = _M_get_Node_allocator();
+   auto __guard = std::__allocate_guarded_obj(__alloc);
+   _Node_alloc_traits::construct(__alloc, __guard->_M_valptr(),
+     std::forward<_Args>(__args)...);
+   return __guard.release();
+ }
+
+
+    public:
+
+
+
+
+
+
+
+      list() = default;
+# 1129 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      explicit
+      list(const allocator_type& __a) noexcept
+      : _Base(_Node_alloc_type(__a)) { }
+# 1142 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      explicit
+      list(size_type __n, const allocator_type& __a = allocator_type())
+      : _Base(_Node_alloc_type(__a))
+      { _M_default_initialize(__n); }
+# 1155 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      list(size_type __n, const value_type& __value,
+    const allocator_type& __a = allocator_type())
+      : _Base(_Node_alloc_type(__a))
+      { _M_fill_initialize(__n, __value); }
+# 1182 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      list(const list& __x)
+      : _Base(_Node_alloc_traits::
+       _S_select_on_copy(__x._M_get_Node_allocator()))
+      { _M_initialize_dispatch(__x.begin(), __x.end(), __false_type()); }
+# 1195 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      list(list&&) = default;
+# 1205 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      list(initializer_list<value_type> __l,
+    const allocator_type& __a = allocator_type())
+      : _Base(_Node_alloc_type(__a))
+      { _M_initialize_dispatch(__l.begin(), __l.end(), __false_type()); }
+
+      list(const list& __x, const __type_identity_t<allocator_type>& __a)
+      : _Base(_Node_alloc_type(__a))
+      { _M_initialize_dispatch(__x.begin(), __x.end(), __false_type()); }
+
+    private:
+      list(list&& __x, const allocator_type& __a, true_type) noexcept
+      : _Base(_Node_alloc_type(__a), std::move(__x))
+      { }
+
+      list(list&& __x, const allocator_type& __a, false_type)
+      : _Base(_Node_alloc_type(__a))
+      {
+ if (__x._M_get_Node_allocator() == this->_M_get_Node_allocator())
+   this->_M_move_nodes(std::move(__x));
+ else
+   insert(begin(), std::__make_move_if_noexcept_iterator(__x.begin()),
+     std::__make_move_if_noexcept_iterator(__x.end()));
+      }
+
+    public:
+      list(list&& __x, const __type_identity_t<allocator_type>& __a)
+      noexcept(_Node_alloc_traits::_S_always_equal())
+      : list(std::move(__x), __a,
+      typename _Node_alloc_traits::is_always_equal{})
+      { }
+# 1248 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename _InputIterator,
+        typename = std::_RequireInputIter<_InputIterator>>
+ list(_InputIterator __first, _InputIterator __last,
+      const allocator_type& __a = allocator_type())
+ : _Base(_Node_alloc_type(__a))
+ { _M_initialize_dispatch(__first, __last, __false_type()); }
+# 1290 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      ~list() = default;
+# 1301 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      list&
+      operator=(const list& __x);
+
+
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Wc++17-extensions"
+# 1317 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      list&
+      operator=(list&& __x)
+      noexcept(_Node_alloc_traits::_S_nothrow_move())
+      {
+ constexpr bool __move_storage =
+   _Node_alloc_traits::_S_propagate_on_move_assign()
+   || _Node_alloc_traits::_S_always_equal();
+ if constexpr (!__move_storage)
+   {
+     if (__x._M_get_Node_allocator() != this->_M_get_Node_allocator())
+       {
+
+
+  _M_assign_dispatch(std::make_move_iterator(__x.begin()),
+       std::make_move_iterator(__x.end()),
+       __false_type{});
+  return *this;
+       }
+   }
+
+ this->clear();
+ this->_M_move_nodes(std::move(__x));
+
+ if constexpr (_Node_alloc_traits::_S_propagate_on_move_assign())
+   this->_M_get_Node_allocator()
+       = std::move(__x._M_get_Node_allocator());
+
+ return *this;
+      }
+#pragma GCC diagnostic pop
+# 1355 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      list&
+      operator=(initializer_list<value_type> __l)
+      {
+ this->assign(__l.begin(), __l.end());
+ return *this;
+      }
+# 1399 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      assign(size_type __n, const value_type& __val)
+      { _M_fill_assign(__n, __val); }
+# 1416 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename _InputIterator,
+        typename = std::_RequireInputIter<_InputIterator>>
+ void
+ assign(_InputIterator __first, _InputIterator __last)
+ { _M_assign_dispatch(__first, __last, __false_type()); }
+# 1440 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      assign(initializer_list<value_type> __l)
+      { this->_M_assign_dispatch(__l.begin(), __l.end(), __false_type()); }
+
+
+
+      allocator_type
+      get_allocator() const noexcept
+      { return allocator_type(_Base::_M_get_Node_allocator()); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      iterator
+      begin() noexcept
+      { return iterator(this->_M_impl._M_node._M_next); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      const_iterator
+      begin() const noexcept
+      { return const_iterator(this->_M_impl._M_node._M_next); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      iterator
+      end() noexcept
+      { return iterator(this->_M_impl._M_node._M_base()); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      const_iterator
+      end() const noexcept
+      { return const_iterator(this->_M_impl._M_node._M_base()); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      reverse_iterator
+      rbegin() noexcept
+      { return reverse_iterator(end()); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      const_reverse_iterator
+      rbegin() const noexcept
+      { return const_reverse_iterator(end()); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      reverse_iterator
+      rend() noexcept
+      { return reverse_iterator(begin()); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      const_reverse_iterator
+      rend() const noexcept
+      { return const_reverse_iterator(begin()); }
+
+
+
+
+
+
+
+      [[__nodiscard__]]
+      const_iterator
+      cbegin() const noexcept
+      { return const_iterator(this->_M_impl._M_node._M_next); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      const_iterator
+      cend() const noexcept
+      { return const_iterator(this->_M_impl._M_node._M_base()); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      const_reverse_iterator
+      crbegin() const noexcept
+      { return const_reverse_iterator(end()); }
+
+
+
+
+
+
+      [[__nodiscard__]]
+      const_reverse_iterator
+      crend() const noexcept
+      { return const_reverse_iterator(begin()); }
+
+
+
+
+
+
+
+      [[__nodiscard__]] bool
+      empty() const noexcept
+      {
+ return this->_M_impl._M_node._M_next == this->_M_impl._M_node._M_base();
+      }
+
+
+      [[__nodiscard__]]
+      size_type
+      size() const noexcept
+      {
+
+ return this->_M_get_size();
+
+
+
+      }
+
+
+      [[__nodiscard__]]
+      size_type
+      max_size() const noexcept
+      { return _Node_alloc_traits::max_size(_M_get_Node_allocator()); }
+# 1611 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      resize(size_type __new_size);
+# 1624 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      resize(size_type __new_size, const value_type& __x);
+# 1646 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      [[__nodiscard__]]
+      reference
+      front() noexcept
+      {
+ do { if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail("C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h", 1650, __PRETTY_FUNCTION__, "!this->empty()"); } while (false);
+ return *begin();
+      }
+
+
+
+
+
+      [[__nodiscard__]]
+      const_reference
+      front() const noexcept
+      {
+ do { if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail("C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h", 1662, __PRETTY_FUNCTION__, "!this->empty()"); } while (false);
+ return *begin();
+      }
+
+
+
+
+
+      [[__nodiscard__]]
+      reference
+      back() noexcept
+      {
+ do { if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail("C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h", 1674, __PRETTY_FUNCTION__, "!this->empty()"); } while (false);
+ iterator __tmp = end();
+ --__tmp;
+ return *__tmp;
+      }
+
+
+
+
+
+      [[__nodiscard__]]
+      const_reference
+      back() const noexcept
+      {
+ do { if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail("C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h", 1688, __PRETTY_FUNCTION__, "!this->empty()"); } while (false);
+ const_iterator __tmp = end();
+ --__tmp;
+ return *__tmp;
+      }
+# 1705 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      push_front(const value_type& __x)
+      { this->_M_insert(begin(), __x); }
+
+
+      void
+      push_front(value_type&& __x)
+      { this->_M_insert(begin(), std::move(__x)); }
+
+      template<typename... _Args>
+
+ reference
+
+
+
+ emplace_front(_Args&&... __args)
+ {
+   this->_M_insert(begin(), std::forward<_Args>(__args)...);
+
+   return front();
+
+ }
+# 1785 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      pop_front() noexcept
+      {
+ do { if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail("C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h", 1788, __PRETTY_FUNCTION__, "!this->empty()"); } while (false);
+ this->_M_erase(begin());
+      }
+# 1802 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      push_back(const value_type& __x)
+      { this->_M_insert(end(), __x); }
+
+
+      void
+      push_back(value_type&& __x)
+      { this->_M_insert(end(), std::move(__x)); }
+
+      template<typename... _Args>
+
+ reference
+
+
+
+ emplace_back(_Args&&... __args)
+ {
+   this->_M_insert(end(), std::forward<_Args>(__args)...);
+
+   return back();
+
+ }
+# 1837 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      pop_back() noexcept
+      {
+ do { if (__builtin_expect(!bool(!this->empty()), false)) std::__glibcxx_assert_fail("C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h", 1840, __PRETTY_FUNCTION__, "!this->empty()"); } while (false);
+ this->_M_erase(iterator(this->_M_impl._M_node._M_prev));
+      }
+# 1857 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename... _Args>
+ iterator
+ emplace(const_iterator __position, _Args&&... __args);
+# 1876 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      iterator
+      insert(const_iterator __position, const value_type& __x);
+
+      iterator
+      insert(const_iterator __position, value_type&& __x)
+      { return emplace(__position, std::move(__x)); }
+# 1904 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      iterator
+      insert(const_iterator __p, initializer_list<value_type> __l)
+      { return this->insert(__p, __l.begin(), __l.end()); }
+# 1924 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      iterator
+      insert(const_iterator __position, size_type __n, const value_type& __x);
+# 1951 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename _InputIterator,
+        typename = std::_RequireInputIter<_InputIterator>>
+ iterator
+ insert(const_iterator __position, _InputIterator __first,
+        _InputIterator __last);
+# 2013 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      iterator
+
+      erase(const_iterator __position) noexcept;
+# 2038 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      iterator
+
+      erase(const_iterator __first, const_iterator __last) noexcept
+
+
+
+      {
+ while (__first != __last)
+   __first = erase(__first);
+ return __last._M_const_cast();
+      }
+# 2061 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      swap(list& __x) noexcept
+      {
+ _Node_traits::_Node_base::swap(this->_M_impl._M_node,
+           __x._M_impl._M_node);
+
+ size_t __xsize = __x._M_get_size();
+ __x._M_set_size(this->_M_get_size());
+ this->_M_set_size(__xsize);
+
+ _Node_alloc_traits::_S_on_swap(this->_M_get_Node_allocator(),
+           __x._M_get_Node_allocator());
+      }
+
+
+
+
+
+
+
+      void
+      clear() noexcept
+      {
+ _Base::_M_clear();
+ _Base::_M_init();
+      }
+# 2100 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+
+      splice(const_iterator __position, list&& __x) noexcept
+
+
+
+      {
+ if (!__x.empty())
+   {
+     _M_check_equal_allocators(__x);
+
+     this->_M_transfer(__position._M_const_cast(),
+         __x.begin(), __x.end());
+
+     this->_M_inc_size(__x._M_get_size());
+     __x._M_set_size(0);
+   }
+      }
+
+
+      void
+      splice(const_iterator __position, list& __x) noexcept
+      { splice(__position, std::move(__x)); }
+# 2137 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      splice(const_iterator __position, list&& __x, const_iterator __i) noexcept
+
+
+
+
+      {
+ iterator __j = __i._M_const_cast();
+ ++__j;
+ if (__position == __i || __position == __j)
+   return;
+
+ if (this != std::__addressof(__x))
+   _M_check_equal_allocators(__x);
+
+ this->_M_transfer(__position._M_const_cast(),
+     __i._M_const_cast(), __j);
+
+ this->_M_inc_size(1);
+ __x._M_dec_size(1);
+      }
+
+
+      void
+      splice(const_iterator __position, list& __x, const_iterator __i) noexcept
+      { splice(__position, std::move(__x), __i); }
+# 2179 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      splice(const_iterator __position, list&& __x, const_iterator __first,
+      const_iterator __last) noexcept
+
+
+
+
+
+      {
+ if (__first != __last)
+   {
+     if (this != std::__addressof(__x))
+       _M_check_equal_allocators(__x);
+
+
+     size_t __n = std::distance(__first, __last);
+     this->_M_inc_size(__n);
+     __x._M_dec_size(__n);
+
+
+     this->_M_transfer(__position._M_const_cast(),
+         __first._M_const_cast(),
+         __last._M_const_cast());
+   }
+      }
+# 2219 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      splice(const_iterator __position, list& __x, const_iterator __first,
+      const_iterator __last) noexcept
+      { splice(__position, std::move(__x), __first, __last); }
+
+
+    private:
+
+      typedef size_type __remove_return_type;
+
+
+
+
+
+
+    public:
+# 2247 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      __attribute__((__abi_tag__("__cxx20")))
+      __remove_return_type
+      remove(const _Tp& __value);
+# 2262 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename _Predicate>
+ __remove_return_type
+ remove_if(_Predicate);
+# 2276 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      __attribute__((__abi_tag__("__cxx20")))
+      __remove_return_type
+      unique();
+# 2292 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename _BinaryPredicate>
+ __remove_return_type
+ unique(_BinaryPredicate);
+# 2308 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      merge(list&& __x);
+
+      void
+      merge(list& __x)
+      { merge(std::move(__x)); }
+# 2333 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename _StrictWeakOrdering>
+ void
+ merge(list&& __x, _StrictWeakOrdering __comp);
+
+      template<typename _StrictWeakOrdering>
+ void
+ merge(list& __x, _StrictWeakOrdering __comp)
+ { merge(std::move(__x), __comp); }
+# 2352 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      void
+      reverse() noexcept
+      { this->_M_impl._M_node._M_reverse(); }
+
+
+
+
+
+
+
+      void
+      sort();
+
+
+
+
+
+
+
+      template<typename _StrictWeakOrdering>
+ void
+ sort(_StrictWeakOrdering);
+
+    protected:
+
+
+
+
+
+
+      template<typename _Integer>
+ void
+ _M_initialize_dispatch(_Integer __n, _Integer __x, __true_type)
+ { _M_fill_initialize(static_cast<size_type>(__n), __x); }
+
+
+      template<typename _InputIterator>
+ void
+ _M_initialize_dispatch(_InputIterator __first, _InputIterator __last,
+          __false_type)
+ {
+   bool __notempty = __first != __last;
+   for (; __first != __last; ++__first)
+
+     emplace_back(*__first);
+
+
+
+  if (__notempty)
+    {
+      if (begin() == end())
+        __builtin_unreachable();
+    }
+ }
+
+
+
+      void
+      _M_fill_initialize(size_type __n, const value_type& __x)
+      {
+ for (; __n; --__n)
+   push_back(__x);
+      }
+
+
+
+      void
+      _M_default_initialize(size_type __n)
+      {
+ for (; __n; --__n)
+   emplace_back();
+      }
+
+
+      void
+      _M_default_append(size_type __n);
+# 2436 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      template<typename _Integer>
+ void
+ _M_assign_dispatch(_Integer __n, _Integer __val, __true_type)
+ { _M_fill_assign(__n, __val); }
+
+
+      template<typename _InputIterator>
+ void
+ _M_assign_dispatch(_InputIterator __first, _InputIterator __last,
+      __false_type);
+
+
+
+      void
+      _M_fill_assign(size_type __n, const value_type& __val);
+
+
+
+      void
+      _M_transfer(iterator __position, iterator __first, iterator __last)
+      { __position._M_node->_M_transfer(__first._M_node, __last._M_node); }
+# 2468 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+     template<typename... _Args>
+       void
+       _M_insert(iterator __position, _Args&&... __args)
+       {
+  _Node_ptr __tmp = _M_create_node(std::forward<_Args>(__args)...);
+  __tmp->_M_hook(__position._M_node);
+  this->_M_inc_size(1);
+       }
+
+
+
+      void
+      _M_erase(iterator __position) noexcept
+      {
+ typedef typename _Node_traits::_Node _Node;
+ this->_M_dec_size(1);
+ __position._M_node->_M_unhook();
+ _Node& __n = static_cast<_Node&>(*__position._M_node);
+ this->_M_destroy_node(__n._M_node_ptr());
+      }
+
+
+      void
+      _M_check_equal_allocators(const list& __x) noexcept
+      {
+ if (_M_get_Node_allocator() != __x._M_get_Node_allocator())
+   __builtin_abort();
+      }
+
+
+      const_iterator
+      _M_resize_pos(size_type& __new_size) const;
+
+
+
+
+
+      void
+      _M_move_assign(list&& __x, true_type) noexcept
+      {
+ this->clear();
+ this->_M_move_nodes(std::move(__x));
+ std::__alloc_on_move(this->_M_get_Node_allocator(),
+        __x._M_get_Node_allocator());
+      }
+
+      void
+      _M_move_assign(list&& __x, false_type)
+      {
+ if (__x._M_get_Node_allocator() == this->_M_get_Node_allocator())
+   _M_move_assign(std::move(__x), true_type{});
+ else
+
+
+   _M_assign_dispatch(std::make_move_iterator(__x.begin()),
+        std::make_move_iterator(__x.end()),
+        __false_type{});
+      }
+
+
+
+
+      struct _Finalize_merge
+      {
+ explicit
+ _Finalize_merge(list& __dest, list& __src, const iterator& __src_next)
+ : _M_dest(__dest), _M_src(__src), _M_next(__src_next)
+ { }
+
+ ~_Finalize_merge()
+ {
+
+
+
+   const size_t __num_unmerged = std::distance(_M_next, _M_src.end());
+   const size_t __orig_size = _M_src._M_get_size();
+   _M_dest._M_inc_size(__orig_size - __num_unmerged);
+   _M_src._M_set_size(__num_unmerged);
+ }
+
+ list& _M_dest;
+ list& _M_src;
+ const iterator& _M_next;
+
+
+ _Finalize_merge(const _Finalize_merge&) = delete;
+
+      };
+# 2569 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+      static size_t
+      _S_distance(const_iterator __first, const_iterator __last)
+      { return std::distance(__first, __last); }
+
+      size_t
+      _M_node_count() const
+      { return this->_M_get_size(); }
+# 2586 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+    };
+
+
+  template<typename _InputIterator, typename _ValT
+      = typename iterator_traits<_InputIterator>::value_type,
+    typename _Allocator = allocator<_ValT>,
+    typename = _RequireInputIter<_InputIterator>,
+    typename = _RequireAllocator<_Allocator>>
+    list(_InputIterator, _InputIterator, _Allocator = _Allocator())
+      -> list<_ValT, _Allocator>;
+# 2605 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+}
+# 2617 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+  template<typename _Tp, typename _Alloc>
+    [[__nodiscard__]]
+    inline bool
+    operator==(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+    {
+
+      if (__x.size() != __y.size())
+ return false;
+
+
+      typedef typename list<_Tp, _Alloc>::const_iterator const_iterator;
+      const_iterator __end1 = __x.end();
+      const_iterator __end2 = __y.end();
+
+      const_iterator __i1 = __x.begin();
+      const_iterator __i2 = __y.begin();
+      while (__i1 != __end1 && __i2 != __end2 && *__i1 == *__i2)
+ {
+   ++__i1;
+   ++__i2;
+ }
+      return __i1 == __end1 && __i2 == __end2;
+    }
+# 2653 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+  template<typename _Tp, typename _Alloc>
+    [[nodiscard]]
+    inline __detail::__synth3way_t<_Tp>
+    operator<=>(const list<_Tp, _Alloc>& __x, const list<_Tp, _Alloc>& __y)
+    {
+      return std::lexicographical_compare_three_way(__x.begin(), __x.end(),
+          __y.begin(), __y.end(),
+          __detail::__synth3way);
+    }
+# 2711 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h" 3
+  template<typename _Tp, typename _Alloc>
+    inline void
+    swap(list<_Tp, _Alloc>& __x, list<_Tp, _Alloc>& __y)
+    noexcept(noexcept(__x.swap(__y)))
+    { __x.swap(__y); }
+
+
+
+
+
+
+  template<typename _Tp>
+    inline ptrdiff_t
+    __distance(std::_List_iterator<_Tp> __first,
+        std::_List_iterator<_Tp> __last,
+        input_iterator_tag __tag)
+    {
+      typedef std::_List_const_iterator<_Tp> _CIter;
+      return std::__distance(_CIter(__first), _CIter(__last), __tag);
+    }
+
+  template<typename _Tp>
+    inline ptrdiff_t
+    __distance(std::_List_const_iterator<_Tp> __first,
+        std::_List_const_iterator<_Tp> __last,
+        input_iterator_tag)
+    {
+      typedef __detail::_List_node_header _Sentinel;
+      std::_List_const_iterator<_Tp> __beyond = __last;
+      ++__beyond;
+      const bool __whole = __first == __beyond;
+      if (__builtin_constant_p (__whole) && __whole)
+ return static_cast<const _Sentinel*>(__last._M_node)->_M_size;
+
+      ptrdiff_t __n = 0;
+      while (__first != __last)
+ {
+   ++__first;
+   ++__n;
+ }
+      return __n;
+    }
+
+
+  template<bool _Const, typename _Ptr>
+    inline ptrdiff_t
+    __distance(__list::_Iterator<_Const, _Ptr> __first,
+        __list::_Iterator<_Const, _Ptr> __last,
+        input_iterator_tag __tag)
+    {
+      using _Tp = typename __list::_Iterator<_Const, _Ptr>::value_type;
+      using _Sentinel = typename __list::_Node_traits<_Tp, _Ptr>::_Node_header;
+      auto __beyond = __last;
+      ++__beyond;
+      const bool __whole = __first == __beyond;
+      if (__builtin_constant_p (__whole) && __whole)
+ return static_cast<const _Sentinel&>(*__last._M_node)._M_size;
+
+      ptrdiff_t __n = 0;
+      while (__first != __last)
+ {
+   ++__first;
+   ++__n;
+ }
+      return __n;
+    }
+
+
+
+
+namespace __list
+{
+  template<typename _VoidPtr>
+    void
+    _Node_base<_VoidPtr>::swap(_Node_base& __x, _Node_base& __y) noexcept
+    {
+      auto __px = __x._M_base();
+      auto __py = __x._M_base();
+
+      if (__x._M_next != __px)
+ {
+   if (__y._M_next != __py)
+     {
+       using std::swap;
+
+       swap(__x._M_next,__y._M_next);
+       swap(__x._M_prev,__y._M_prev);
+       __x._M_next->_M_prev = __x._M_prev->_M_next = __px;
+       __y._M_next->_M_prev = __y._M_prev->_M_next = __py;
+     }
+   else
+     {
+
+       __y._M_next = __x._M_next;
+       __y._M_prev = __x._M_prev;
+       __y._M_next->_M_prev = __y._M_prev->_M_next = __py;
+       __x._M_next = __x._M_prev = __px;
+     }
+ }
+      else if (__y._M_next != __py)
+ {
+
+   __x._M_next = __y._M_next;
+   __x._M_prev = __y._M_prev;
+   __x._M_next->_M_prev = __x._M_prev->_M_next = __px;
+   __y._M_next = __y._M_prev = __py;
+ }
+    }
+
+  template<typename _VoidPtr>
+    void
+    _Node_base<_VoidPtr>::_M_transfer(_Base_ptr const __first,
+          _Base_ptr const __last) noexcept
+    {
+      do { if (__builtin_expect(!bool(__first != __last), false)) std::__glibcxx_assert_fail("C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_list.h", 2825, __PRETTY_FUNCTION__, "__first != __last"); } while (false);
+
+      auto __self = _M_base();
+      if (__self != __last)
+ {
+
+   __last->_M_prev->_M_next = __self;
+   __first->_M_prev->_M_next = __last;
+   this->_M_prev->_M_next = __first;
+
+
+   auto const __tmp = this->_M_prev;
+   this->_M_prev = __last->_M_prev;
+   __last->_M_prev = __first->_M_prev;
+   __first->_M_prev = __tmp;
+ }
+    }
+
+  template<typename _VoidPtr>
+    void
+    _Node_header<_VoidPtr>::_M_reverse() noexcept
+    {
+      const auto __self = this->_M_base();
+      auto __tmp = __self;
+      do
+ {
+   using std::swap;
+   swap(__tmp->_M_next, __tmp->_M_prev);
+
+
+   __tmp = __tmp->_M_prev;
+ }
+      while (__tmp != __self);
+    }
+}
+
+
+
+}
+# 68 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/list" 2 3
+# 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/list.tcc" 1 3
+# 59 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/list.tcc" 3
+namespace std
+{
+
+
+
+  template<typename _Tp, typename _Alloc>
+    void
+    _List_base<_Tp, _Alloc>::
+    _M_clear() noexcept
+    {
+      typedef typename _Node_traits::_Node _Node;
+      typedef typename _Node_traits::_Node_base _Node_base;
+      typename _Node_base::_Base_ptr __cur = _M_impl._M_node._M_next;
+      while (__cur != _M_impl._M_node._M_base())
+ {
+   _Node& __tmp = static_cast<_Node&>(*__cur);
+   __cur = __tmp._M_next;
+   this->_M_destroy_node(__tmp._M_node_ptr());
+ }
+    }
+
+
+  template<typename _Tp, typename _Alloc>
+    template<typename... _Args>
+      typename list<_Tp, _Alloc>::iterator
+      list<_Tp, _Alloc>::
+      emplace(const_iterator __position, _Args&&... __args)
+      {
+ _Node_ptr __tmp = _M_create_node(std::forward<_Args>(__args)...);
+ __tmp->_M_hook(__position._M_const_cast()._M_node);
+ this->_M_inc_size(1);
+ return iterator(__tmp->_M_base());
+      }
+
+
+  template<typename _Tp, typename _Alloc>
+    typename list<_Tp, _Alloc>::iterator
+    list<_Tp, _Alloc>::
+
+    insert(const_iterator __position, const value_type& __x)
+
+
+
+    {
+      _Node_ptr __tmp = _M_create_node(__x);
+      __tmp->_M_hook(__position._M_const_cast()._M_node);
+      this->_M_inc_size(1);
+      return iterator(__tmp->_M_base());
+    }
+
+
+  template<typename _Tp, typename _Alloc>
+    typename list<_Tp, _Alloc>::iterator
+    list<_Tp, _Alloc>::
+    insert(const_iterator __position, size_type __n, const value_type& __x)
+    {
+      if (__n)
+ {
+   list __tmp(__n, __x, get_allocator());
+   iterator __it = __tmp.begin();
+   splice(__position, __tmp);
+   return __it;
+ }
+      return __position._M_const_cast();
+    }
+
+  template<typename _Tp, typename _Alloc>
+    template<typename _InputIterator, typename>
+      typename list<_Tp, _Alloc>::iterator
+      list<_Tp, _Alloc>::
+      insert(const_iterator __position, _InputIterator __first,
+      _InputIterator __last)
+      {
+ list __tmp(__first, __last, get_allocator());
+ if (!__tmp.empty())
+   {
+     iterator __it = __tmp.begin();
+     splice(__position, __tmp);
+     return __it;
+   }
+ return __position._M_const_cast();
+      }
+
+
+  template<typename _Tp, typename _Alloc>
+    typename list<_Tp, _Alloc>::iterator
+    list<_Tp, _Alloc>::
+
+    erase(const_iterator __position) noexcept
+
+
+
+    {
+      iterator __ret = iterator(__position._M_node->_M_next);
+      _M_erase(__position._M_const_cast());
+      return __ret;
+    }
+# 168 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/list.tcc" 3
+  template<typename _Tp, typename _Alloc>
+    typename list<_Tp, _Alloc>::const_iterator
+    list<_Tp, _Alloc>::
+    _M_resize_pos(size_type& __new_size) const
+    {
+      const_iterator __i;
+
+      const size_type __len = size();
+      if (__new_size < __len)
+ {
+   if (__new_size <= __len / 2)
+     {
+       __i = begin();
+       std::advance(__i, __new_size);
+     }
+   else
+     {
+       __i = end();
+       ptrdiff_t __num_erase = __len - __new_size;
+       std::advance(__i, -__num_erase);
+     }
+   __new_size = 0;
+   return __i;
+ }
+      else
+ __i = end();
+
+
+
+
+
+      __new_size -= __len;
+      return __i;
+    }
+
+
+  template<typename _Tp, typename _Alloc>
+    void
+    list<_Tp, _Alloc>::
+    _M_default_append(size_type __n)
+    {
+      size_type __i = 0;
+      try
+ {
+   for (; __i < __n; ++__i)
+     emplace_back();
+ }
+      catch(...)
+ {
+   for (; __i; --__i)
+     pop_back();
+   throw;
+ }
+    }
+
+  template<typename _Tp, typename _Alloc>
+    void
+    list<_Tp, _Alloc>::
+    resize(size_type __new_size)
+    {
+      const_iterator __i = _M_resize_pos(__new_size);
+      if (__new_size)
+ _M_default_append(__new_size);
+      else
+        erase(__i, end());
+    }
+
+  template<typename _Tp, typename _Alloc>
+    void
+    list<_Tp, _Alloc>::
+    resize(size_type __new_size, const value_type& __x)
+    {
+      const_iterator __i = _M_resize_pos(__new_size);
+      if (__new_size)
+        insert(end(), __new_size, __x);
+      else
+        erase(__i, end());
+    }
+# 260 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/list.tcc" 3
+  template<typename _Tp, typename _Alloc>
+    list<_Tp, _Alloc>&
+    list<_Tp, _Alloc>::
+    operator=(const list& __x)
+    {
+      if (this != std::__addressof(__x))
+ {
+
+   if (_Node_alloc_traits::_S_propagate_on_copy_assign())
+     {
+              auto& __this_alloc = this->_M_get_Node_allocator();
+              auto& __that_alloc = __x._M_get_Node_allocator();
+              if (!_Node_alloc_traits::_S_always_equal()
+           && __this_alloc != __that_alloc)
+         {
+
+    clear();
+  }
+       std::__alloc_on_copy(__this_alloc, __that_alloc);
+            }
+
+   _M_assign_dispatch(__x.begin(), __x.end(), __false_type());
+ }
+      return *this;
+    }
+
+  template<typename _Tp, typename _Alloc>
+    void
+    list<_Tp, _Alloc>::
+    _M_fill_assign(size_type __n, const value_type& __val)
+    {
+      iterator __i = begin();
+      for (; __i != end() && __n > 0; ++__i, --__n)
+        *__i = __val;
+      if (__n > 0)
+        insert(end(), __n, __val);
+      else
+        erase(__i, end());
+    }
+
+  template<typename _Tp, typename _Alloc>
+    template <typename _InputIterator>
+      void
+      list<_Tp, _Alloc>::
+      _M_assign_dispatch(_InputIterator __first2, _InputIterator __last2,
+    __false_type)
+      {
+        iterator __first1 = begin();
+        iterator __last1 = end();
+        for (; __first1 != __last1 && __first2 != __last2;
+      ++__first1, (void)++__first2)
+          *__first1 = *__first2;
+        if (__first2 == __last2)
+          erase(__first1, __last1);
+        else
+          insert(__last1, __first2, __last2);
+      }
+
+
+
+
+
+
+
+  template<typename _Tp, typename _Alloc>
+    typename list<_Tp, _Alloc>::__remove_return_type
+    list<_Tp, _Alloc>::
+    remove(const value_type& __value)
+    {
+
+
+
+      list __to_destroy(get_allocator());
+      iterator __first = begin();
+      iterator __last = end();
+      while (__first != __last)
+ {
+   iterator __next = __first;
+   ++__next;
+   if (*__first == __value)
+     {
+
+
+
+       __to_destroy.splice(__to_destroy.begin(), *this, __first);
+
+
+
+     }
+
+   __first = __next;
+ }
+
+
+
+
+ return __to_destroy.size();
+
+    }
+
+  template<typename _Tp, typename _Alloc>
+    typename list<_Tp, _Alloc>::__remove_return_type
+    list<_Tp, _Alloc>::
+    unique()
+    {
+      iterator __first = begin();
+      iterator __last = end();
+      if (__first == __last)
+ return 0;
+
+
+
+      list __to_destroy(get_allocator());
+      iterator __next = __first;
+      while (++__next != __last)
+ {
+   if (*__first == *__next)
+     {
+       __to_destroy.splice(__to_destroy.begin(), *this, __next);
+
+
+
+     }
+   else
+     __first = __next;
+   __next = __first;
+ }
+
+
+
+
+      return __to_destroy.size();
+
+    }
+
+  template<typename _Tp, typename _Alloc>
+    void
+    list<_Tp, _Alloc>::
+
+    merge(list&& __x)
+
+
+
+    {
+
+
+      if (this != std::__addressof(__x))
+ {
+   _M_check_equal_allocators(__x);
+
+   iterator __first1 = begin();
+   iterator __last1 = end();
+   iterator __first2 = __x.begin();
+   iterator __last2 = __x.end();
+
+   const _Finalize_merge __fin(*this, __x, __first2);
+
+   while (__first1 != __last1 && __first2 != __last2)
+     if (*__first2 < *__first1)
+       {
+  iterator __next = __first2;
+  _M_transfer(__first1, __first2, ++__next);
+  __first2 = __next;
+       }
+     else
+       ++__first1;
+   if (__first2 != __last2)
+     {
+       _M_transfer(__last1, __first2, __last2);
+       __first2 = __last2;
+     }
+ }
+    }
+
+  template<typename _Tp, typename _Alloc>
+    template <typename _StrictWeakOrdering>
+      void
+      list<_Tp, _Alloc>::
+
+      merge(list&& __x, _StrictWeakOrdering __comp)
+
+
+
+      {
+
+
+ if (this != std::__addressof(__x))
+   {
+     _M_check_equal_allocators(__x);
+
+     iterator __first1 = begin();
+     iterator __last1 = end();
+     iterator __first2 = __x.begin();
+     iterator __last2 = __x.end();
+
+     const _Finalize_merge __fin(*this, __x, __first2);
+
+     while (__first1 != __last1 && __first2 != __last2)
+       if (__comp(*__first2, *__first1))
+  {
+    iterator __next = __first2;
+    _M_transfer(__first1, __first2, ++__next);
+    __first2 = __next;
+  }
+       else
+  ++__first1;
+     if (__first2 != __last2)
+       {
+  _M_transfer(__last1, __first2, __last2);
+  __first2 = __last2;
+       }
+   }
+      }
+
+  template<typename _Tp, typename _Alloc>
+    void
+    list<_Tp, _Alloc>::
+    sort()
+    {
+
+      if (empty() || ++begin() == end())
+ return;
+
+      {
+ typedef __list::_Scratch_list<typename _Node_traits::_Node_base>
+   _Scratch_list;
+# 495 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/list.tcc" 3
+ _Scratch_list __carry;
+ _Scratch_list __tmp[64];
+ _Scratch_list* __fill = __tmp;
+ _Scratch_list* __counter;
+
+ typename _Scratch_list::template _Ptr_cmp<iterator, void> __ptr_comp;
+
+ try
+   {
+     do
+       {
+  __carry._M_take_one(begin()._M_node);
+
+  for(__counter = __tmp;
+      __counter != __fill && !__counter->empty();
+      ++__counter)
+    {
+
+      __counter->merge(__carry, __ptr_comp);
+      __carry.swap(*__counter);
+    }
+  __carry.swap(*__counter);
+  if (__counter == __fill)
+    ++__fill;
+       }
+     while ( !empty() );
+
+     for (__counter = __tmp + 1; __counter != __fill; ++__counter)
+       __counter->merge(__counter[-1], __ptr_comp);
+     __fill[-1].swap(this->_M_impl._M_node);
+   }
+ catch(...)
+   {
+
+     __carry._M_put_all(end()._M_node);
+     for (int __i = 0; __i < sizeof(__tmp)/sizeof(__tmp[0]); ++__i)
+       __tmp[__i]._M_put_all(end()._M_node);
+     throw;
+   }
+      }
+    }
+
+  template<typename _Tp, typename _Alloc>
+    template <typename _Predicate>
+      typename list<_Tp, _Alloc>::__remove_return_type
+      list<_Tp, _Alloc>::
+      remove_if(_Predicate __pred)
+      {
+
+
+
+ list __to_destroy(get_allocator());
+ iterator __first = begin();
+ iterator __last = end();
+ while (__first != __last)
+   {
+     iterator __next = __first;
+     ++__next;
+     if (__pred(*__first))
+       {
+  __to_destroy.splice(__to_destroy.begin(), *this, __first);
+
+
+
+       }
+     __first = __next;
+   }
+
+
+
+
+ return __to_destroy.size();
+
+      }
+
+  template<typename _Tp, typename _Alloc>
+    template <typename _BinaryPredicate>
+      typename list<_Tp, _Alloc>::__remove_return_type
+      list<_Tp, _Alloc>::
+      unique(_BinaryPredicate __binary_pred)
+      {
+        iterator __first = begin();
+        iterator __last = end();
+        if (__first == __last)
+   return 0;
+
+
+
+ list __to_destroy(get_allocator());
+        iterator __next = __first;
+        while (++__next != __last)
+   {
+     if (__binary_pred(*__first, *__next))
+       {
+  __to_destroy.splice(__to_destroy.begin(), *this, __next);
+
+
+
+       }
+     else
+       __first = __next;
+     __next = __first;
+   }
+
+
+
+
+ return __to_destroy.size();
+
+      }
+
+
+
+  template<typename _Tp, typename _Alloc>
+    template <typename _StrictWeakOrdering>
+      void
+      list<_Tp, _Alloc>::
+      sort(_StrictWeakOrdering __comp)
+      {
+
+ if (empty() || ++begin() == end())
+   return;
+
+ {
+   typedef __list::_Scratch_list<typename _Node_traits::_Node_base>
+     _Scratch_list;
+
+   _Scratch_list __carry;
+   _Scratch_list __tmp[64];
+   _Scratch_list* __fill = __tmp;
+   _Scratch_list* __counter;
+
+   typename _Scratch_list::
+     template _Ptr_cmp<iterator, _StrictWeakOrdering> __ptr_comp
+     = { __comp };
+
+   try
+     {
+       do
+  {
+    __carry._M_take_one(begin()._M_node);
+
+    for(__counter = __tmp;
+        __counter != __fill && !__counter->empty();
+        ++__counter)
+      {
+
+        __counter->merge(__carry, __ptr_comp);
+        __carry.swap(*__counter);
+      }
+    __carry.swap(*__counter);
+    if (__counter == __fill)
+      ++__fill;
+  }
+       while ( !empty() );
+
+       for (__counter = __tmp + 1; __counter != __fill; ++__counter)
+  __counter->merge(__counter[-1], __ptr_comp);
+       __fill[-1].swap(this->_M_impl._M_node);
+     }
+   catch(...)
+     {
+
+       __carry._M_put_all(end()._M_node);
+       for (size_t __i = 0; __i < sizeof(__tmp)/sizeof(__tmp[0]); ++__i)
+  __tmp[__i]._M_put_all(end()._M_node);
+       throw;
+     }
+ }
+      }
+
+
+
+}
+# 69 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/list" 2 3
+# 81 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/list" 3
+# 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/version.h" 1 3
+# 82 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/list" 2 3
+
+
+
+namespace std
+{
+
+  namespace pmr
+  {
+    template<typename _Tp>
+      using list = std::list<_Tp, polymorphic_allocator<_Tp>>;
+  }
+
+}
+
+
+
+namespace std
+{
+
+  template<typename _Tp, typename _Alloc, typename _Predicate>
+    inline typename list<_Tp, _Alloc>::size_type
+    erase_if(list<_Tp, _Alloc>& __cont, _Predicate __pred)
+    { return __cont.remove_if(__pred); }
+
+  template<typename _Tp, typename _Alloc,
+    typename _Up >
+    inline typename list<_Tp, _Alloc>::size_type
+    erase(list<_Tp, _Alloc>& __cont, const _Up& __value)
+    {
+
+
+      return std::erase_if(__cont, [&](const auto& __elem) -> bool {
+   return __elem == __value;
+      });
+    }
+
+}
+# 4 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro.h" 1
 # 26 "C:/allegro/include/allegro5/allegro.h"
 # 1 "C:/allegro/include/allegro5/base.h" 1
@@ -62184,7 +64677,7 @@ extern __attribute__((dllimport)) struct ALLEGRO_HAPTIC_DRIVER _al_hapdrv_window
 
 }
 # 74 "C:/allegro/include/allegro5/allegro.h" 2
-# 4 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 5 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro_font.h" 1
 # 42 "C:/allegro/include/allegro5/allegro_font.h"
    extern "C" {
@@ -62270,7 +64763,7 @@ extern ALLEGRO_FONT * al_get_fallback_font ( ALLEGRO_FONT *font)
 
 
    }
-# 5 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro_ttf.h" 1
 
 
@@ -62292,7 +64785,7 @@ extern uint32_t al_get_allegro_ttf_version (void);
 
 
    }
-# 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro_native_dialog.h" 1
 
 
@@ -62424,7 +64917,7 @@ enum {
 
 
    }
-# 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro_image.h" 1
 # 30 "C:/allegro/include/allegro5/allegro_image.h"
 extern "C" {
@@ -62439,7 +64932,7 @@ extern uint32_t al_get_allegro_image_version (void);
 
 
 }
-# 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/allegro/include/allegro5/allegro_primitives.h" 1
 
 
@@ -62662,7 +65155,7 @@ extern void al_draw_filled_polygon_with_holes (const float* vertices, const int*
 
 
 }
-# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/mingw32/i686-w64-mingw32/include/unistd.h" 1 3
 # 12 "C:/mingw32/i686-w64-mingw32/include/unistd.h" 3
 # 1 "C:/mingw32/i686-w64-mingw32/include/getopt.h" 1 3
@@ -62710,7 +65203,7 @@ int truncate(const char *, off32_t);
 int truncate64(const char *, off64_t);
 # 104 "C:/mingw32/i686-w64-mingw32/include/unistd.h" 3
 }
-# 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.h" 1
 
@@ -62735,7 +65228,7 @@ public:
     void render();
     bool checkCollision();
 };
-# 12 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 13 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
 
 
@@ -62757,7 +65250,7 @@ extern float playerHeight;
 extern float playerSpeed;
 
 extern bool isCollision;
-# 13 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 1
 # 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h"
 class Player {
@@ -62779,7 +65272,7 @@ public:
 
     void render();
 };
-# 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 15 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 
 float posX = 0;
 float posY = 0;
@@ -62816,8 +65309,10 @@ int main() {
 
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
+    std::list<Block> blockList;
 
-    Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
+    blockList.emplace_back(100, 100, 50, 50, 255, 255, 255);
+    blockList.emplace_back(200, 200, 50, 50, 255, 0, 0);
 
     while (true) {
         al_clear_to_color(al_map_rgb(0, 0, 255));
@@ -62843,11 +65338,20 @@ int main() {
         }
 
 
-        isCollision = isCollision || block2.checkCollision();
+
+
+
+
+        for (Block block : blockList) {
+            isCollision = isCollision || block.checkCollision();
+        }
 
         player.render();
 
-        block2.render();
+        for (Block block : blockList) {
+            block.render();
+        }
+
 
 
         if ((!al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) ||

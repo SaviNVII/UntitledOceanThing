@@ -44869,10 +44869,8 @@ bool Block::checkCollision() {
     float bCenterPCenterSlope = abs((pCenterY - bCenterY) / (pCenterX - bCenterX));
     float bCenterBCornerSlope = abs((bCornerY - bCenterY) / (bCornerX - bCenterX));
 
-
     if (playerX < x + width && playerX + playerWidth > x &&
         playerY < y + height && playerY + playerHeight > y) {
-# 64 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp"
         if (bCenterPCenterSlope > bCenterBCornerSlope) {
             if (pCenterY > bCenterY) {
                 collisionOverlapY = -((y + height) - playerY);
@@ -44888,6 +44886,6 @@ bool Block::checkCollision() {
         }
 
         return true;
-    }
+        }
     return false;
 }

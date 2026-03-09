@@ -1,5 +1,6 @@
 #include <iostream>
 #include <filesystem>
+#include <list>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_font.h>
 #include <allegro5/allegro_ttf.h>
@@ -47,8 +48,10 @@ int main() {
 
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
-    //Block block = Block(100, 100, 50, 50, 255, 255, 255);
-    Block block2 = Block(200, 200, 50, 50, 255, 0, 0);
+    std::list<Block> blockList;
+
+    blockList.emplace_back(100, 100, 50, 50, 255, 255, 255);
+    blockList.emplace_back(200, 200, 50, 50, 255, 0, 0);
 
     while (true) {
         al_clear_to_color(al_map_rgb(0, 0, 255));
@@ -74,11 +77,20 @@ int main() {
         }
 
         //isCollision = isCollision || block.checkCollision();
-        isCollision = isCollision || block2.checkCollision();
+        //isCollision = isCollision || block2.checkCollision();
+        //block.render();
+        //block2.render();
+
+        for (Block block : blockList) {
+            isCollision = isCollision || block.checkCollision();
+        }
 
         player.render();
-        //block.render();
-        block2.render();
+
+        for (Block block : blockList) {
+            block.render();
+        }
+
 
 
         if ((!al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) ||
