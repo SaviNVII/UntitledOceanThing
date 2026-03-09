@@ -44880,7 +44880,7 @@ bool Block::checkCollision() {
                 collisionOverlapY = (playerY + playerHeight) - y;
             }
         }else {
-            if (pCenterY > bCenterX) {
+            if (pCenterX > bCenterX) {
                 collisionOverlapX = -((x + width) - playerX);
             }else {
                 collisionOverlapX = (playerX + playerWidth) - x;

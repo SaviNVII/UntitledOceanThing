@@ -42,25 +42,9 @@ bool Block::checkCollision() {
 
     float bCenterPCenterSlope = abs((pCenterY - bCenterY) / (pCenterX - bCenterX));
     float bCenterBCornerSlope = abs((bCornerY - bCenterY) / (bCornerX - bCenterX));
-    //std::cout << bCenterBCornerSlope<<":" <<bCenterPCenterSlope  << "\n";
 
     if (playerX < x + width && playerX + playerWidth > x &&
         playerY < y + height &&  playerY + playerHeight > y) {
-        /*
-         if ((B.center -> P.center slope) > (B.center -> B.corner slope)) {
-             if (P.centerY > B.centerY) {
-                Collide with top
-             }else {
-                Collide with bottom
-             }
-         }else {
-        if (P.centerX > B.centerX) {
-                Collide with right
-             }else {
-                Collide with left
-             }
-         }
-        */
         if (bCenterPCenterSlope > bCenterBCornerSlope) {
             if (pCenterY > bCenterY) {
                 collisionOverlapY = -((y + height) - playerY);
@@ -68,7 +52,7 @@ bool Block::checkCollision() {
                 collisionOverlapY = (playerY + playerHeight) - y;
             }
         }else {
-            if (pCenterY > bCenterX) {
+            if (pCenterX > bCenterX) {
                 collisionOverlapX = -((x + width) - playerX);
             }else {
                 collisionOverlapX = (playerX + playerWidth) - x;
@@ -76,6 +60,6 @@ bool Block::checkCollision() {
         }
 
         return true;
-    }
+        }
     return false;
 }
