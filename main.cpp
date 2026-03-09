@@ -81,13 +81,13 @@ int main() {
         //block.render();
         //block2.render();
 
-        for (Block block : blockList) {
+        for (Block& block : blockList) {
             isCollision = isCollision || block.checkCollision();
         }
 
         player.render();
 
-        for (Block block : blockList) {
+        for (Block& block : blockList) {
             block.render();
         }
 
