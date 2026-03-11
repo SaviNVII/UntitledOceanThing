@@ -49,7 +49,9 @@ int main() {
         return -1;
     }
 
-    string scene = "Play";
+    string scene = "Title";
+
+    int titleIteration = 0;
 
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
@@ -68,6 +70,28 @@ int main() {
 
         if (scene == "Title") {
             al_clear_to_color(al_map_rgb(0,0,0));
+            if (al_key_down(&keyboardState, ALLEGRO_KEY_UP)) {
+                titleIteration--;
+            }
+            if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN)) {
+                titleIteration++;
+            }
+            if (titleIteration > 1) {
+                titleIteration = 0;
+            }
+            if (titleIteration < 0) {
+                titleIteration = 1;
+            }
+            switch (titleIteration) {
+                case 0: {
+                    al_draw_filled_triangle(screenWidth/2 + 60, screenHeight/2, screenWidth/2 + 70, screenHeight/2 - 25, screenWidth/2 + 70, screenHeight/2 + 25,al_map_rgb(255,255,255));
+                    break;
+                }
+                case 1: {
+                    al_draw_filled_triangle(screenWidth/2 + 60, screenHeight/2 + 75, screenWidth/2 + 70, screenHeight/2 + 100, screenWidth/2 + 70, screenHeight/2 + 50,al_map_rgb(255,255,255));
+                    break;
+                }
+            }
             for (Button button : titleButtonList) {
                 button.render();
             }
