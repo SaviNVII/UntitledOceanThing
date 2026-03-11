@@ -51,6 +51,7 @@ extern float playerSpeed;
 
 extern bool isCollision;
 # 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
+
 # 1 "C:/allegro/include/allegro5/allegro_primitives.h" 1
 
 
@@ -5106,7 +5107,7 @@ extern void al_draw_filled_polygon_with_holes (const float* vertices, const int*
 
 
 }
-# 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 1 3
 # 40 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 3
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/requires_hosted.h" 1 3
@@ -44829,10 +44830,10 @@ namespace std
 # 87 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 3
 
 }
-# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
+# 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp" 2
 
 
-# 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp"
+# 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp"
 Block::Block(float x, float y, float width, float height, int r, int g, int b) {
     this->x = x;
     this->y = y;

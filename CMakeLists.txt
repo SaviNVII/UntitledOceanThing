@@ -14,7 +14,9 @@ add_executable(UntitledOceanThing main.cpp
         Player.h
         MainData.h
         Block.cpp
-        Block.h)
+        Block.h
+        Button.cpp
+        Button.h)
 
 target_link_libraries(${PROJECT_NAME}
         allegro

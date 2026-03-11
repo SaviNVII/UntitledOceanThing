@@ -12,6 +12,7 @@
 #include "Block.h"
 #include "MainData.h"
 #include "Player.h"
+#include "Button.h"
 
 float posX = 0;
 float posY = 0;
@@ -32,6 +33,8 @@ bool isCollision = false;
 
 
 int main() {
+    using std::string;
+    using std::cout;
 
     ALLEGRO_DISPLAY* display;
 
@@ -39,12 +42,24 @@ int main() {
     al_install_keyboard();
     al_init_primitives_addon();
     al_init_image_addon();
+    al_init_ttf_addon();
     display = al_create_display(screenWidth, screenHeight);
 
     if (!display) {
-        std::cout << "Failed to create display!\n";
+        cout << "Failed to create display!\n";
         return -1;
     }
+
+    ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
+    if (!event_queue) {
+        fprintf(stderr, "Failed to create event queue!\n");
+        al_destroy_display(display);
+        return -1;
+    }
+
+    al_register_event_source(event_queue, al_get_display_event_source(display));
+
+    string scene = "Play";
 
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
@@ -53,62 +68,69 @@ int main() {
     blockList.emplace_back(100, 100, 50, 50, 255, 255, 255);
     blockList.emplace_back(200, 200, 50, 50, 255, 0, 0);
 
-    while (true) {
-        al_clear_to_color(al_map_rgb(0, 0, 255));
+    std::list<Button> titleButtonList;
+    titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 - 25, 100, 50, 255, 255, 255, "Play");
+    titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 + 50, 100, 50, 255, 255, 255, "Credits");
 
+    while (true) {
         ALLEGRO_KEYBOARD_STATE keyboardState;
         al_get_keyboard_state(&keyboardState);
 
-        collisionOverlapX = 0;
-        collisionOverlapY = 0;
-        isCollision = false;
+        // ALLEGRO_EVENT event;
+        // al_wait_for_event(event_queue, &event);
 
-        if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) {
-            player.moveLeft();
+        if (scene == "Title") {
+            al_clear_to_color(al_map_rgb(0,0,0));
+            for (Button button : titleButtonList) {
+                button.render();
+            }
+        }else if (scene == "Play") {
+            al_clear_to_color(al_map_rgb(0, 0, 255));
+
+            collisionOverlapX = 0;
+            collisionOverlapY = 0;
+            isCollision = false;
+
+            if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) {
+                player.moveLeft();
+            }
+            if (al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) {
+                player.moveRight();
+            }
+            if (al_key_down(&keyboardState, ALLEGRO_KEY_UP)) {
+                player.moveUp();
+            }
+            if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN)) {
+                player.moveDown();
+            }
+
+            for (Block& block : blockList) {
+                isCollision = isCollision || block.checkCollision();
+            }
+
+            player.render();
+
+            for (Block& block : blockList) {
+                block.render();
+            }
+
+            if ((!al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) ||
+                (!al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) ||
+                (!al_key_down(&keyboardState, ALLEGRO_KEY_UP)) ||
+                (!al_key_down(&keyboardState, ALLEGRO_KEY_DOWN))) {
+                posX = 0;
+                posY = 0;
+            }
         }
-        if (al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) {
-            player.moveRight();
-        }
-        if (al_key_down(&keyboardState, ALLEGRO_KEY_UP)) {
-            player.moveUp();
-        }
-        if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN)) {
-            player.moveDown();
-        }
-
-        //isCollision = isCollision || block.checkCollision();
-        //isCollision = isCollision || block2.checkCollision();
-        //block.render();
-        //block2.render();
-
-        for (Block& block : blockList) {
-            isCollision = isCollision || block.checkCollision();
-        }
-
-        player.render();
-
-        for (Block& block : blockList) {
-            block.render();
-        }
-
-
-
-        if ((!al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) ||
-            (!al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) ||
-            (!al_key_down(&keyboardState, ALLEGRO_KEY_UP)) ||
-            (!al_key_down(&keyboardState, ALLEGRO_KEY_DOWN))) {
-            posX = 0;
-            posY = 0;
-        }
-
 
         al_flip_display();
 
-        if (al_key_down(&keyboardState, ALLEGRO_KEY_ESCAPE)) {
-            break;
-        }
+        // if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
+        //     break;
+        // }
     }
 
+    al_destroy_event_queue(event_queue);
     al_destroy_display(display);
     return 0;
 }
