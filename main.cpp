@@ -31,7 +31,6 @@ float playerSpeed = 1;//if on Windows set to 0.1, the speed is different on linu
 
 bool isCollision = false;
 
-
 int main() {
     using std::string;
     using std::cout;
