@@ -49,15 +49,6 @@ int main() {
         return -1;
     }
 
-    ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
-    if (!event_queue) {
-        fprintf(stderr, "Failed to create event queue!\n");
-        al_destroy_display(display);
-        return -1;
-    }
-
-    al_register_event_source(event_queue, al_get_display_event_source(display));
-
     string scene = "Play";
 
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
@@ -74,9 +65,6 @@ int main() {
     while (true) {
         ALLEGRO_KEYBOARD_STATE keyboardState;
         al_get_keyboard_state(&keyboardState);
-
-        // ALLEGRO_EVENT event;
-        // al_wait_for_event(event_queue, &event);
 
         if (scene == "Title") {
             al_clear_to_color(al_map_rgb(0,0,0));
@@ -124,12 +112,11 @@ int main() {
 
         al_flip_display();
 
-        // if (event.type == ALLEGRO_EVENT_DISPLAY_CLOSE) {
-        //     break;
-        // }
+        if (al_key_down(&keyboardState, ALLEGRO_KEY_ESCAPE)) {
+            break;
+        }
     }
 
-    al_destroy_event_queue(event_queue);
     al_destroy_display(display);
     return 0;
 }
