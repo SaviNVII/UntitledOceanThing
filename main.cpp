@@ -56,7 +56,6 @@ int main() {
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
     std::list<Block> blockList;
-
     blockList.emplace_back(100, 100, 50, 50, 255, 255, 255);
     blockList.emplace_back(200, 200, 50, 50, 255, 0, 0);
 
@@ -68,7 +67,6 @@ int main() {
     ALLEGRO_KEYBOARD_STATE previousState;
 
     while (true) {
-
         al_get_keyboard_state(&currentState);
 
         if (scene == "Title") {
