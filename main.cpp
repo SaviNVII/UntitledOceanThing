@@ -37,9 +37,6 @@ int main() {
 
     ALLEGRO_DISPLAY* display;
 
-    ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
-    al_register_event_source(event_queue, al_get_keyboard_event_source());
-
     al_init();
     al_install_keyboard();
     al_init_primitives_addon();
@@ -67,23 +64,22 @@ int main() {
     titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 - 25, 100, 50, 255, 255, 255, "Play");
     titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 + 50, 100, 50, 255, 255, 255, "Credits");
 
-    ALLEGRO_EVENT event;
+    ALLEGRO_KEYBOARD_STATE currentState;
+    ALLEGRO_KEYBOARD_STATE previousState;
 
     while (true) {
-        ALLEGRO_KEYBOARD_STATE keyboardState;
-        al_get_keyboard_state(&keyboardState);
 
-        al_wait_for_event(event_queue, &event);
+        al_get_keyboard_state(&currentState);
 
         if (scene == "Title") {
             al_clear_to_color(al_map_rgb(0,0,0));
-            if (al_key_down(&keyboardState, ALLEGRO_KEY_ESCAPE)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_ESCAPE) && !al_key_down(&previousState, ALLEGRO_KEY_ESCAPE)) {
                 break;
             }
-            if (al_key_down(&keyboardState, ALLEGRO_KEY_UP)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_UP)) {
                 titleIteration--;
             }
-            if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_DOWN)) {
                 titleIteration++;
             }
             if (titleIteration > 1) {
@@ -95,7 +91,7 @@ int main() {
             switch (titleIteration) {
                 case 0: {
                     al_draw_filled_triangle(screenWidth/2 + 60, screenHeight/2, screenWidth/2 + 70, screenHeight/2 - 25, screenWidth/2 + 70, screenHeight/2 + 25,al_map_rgb(255,255,255));
-                    if (al_key_down(&keyboardState, ALLEGRO_KEY_ENTER)) {
+                    if (al_key_down(&currentState, ALLEGRO_KEY_ENTER)) {
                         scene = "Play";
                     }
                     break;
@@ -111,20 +107,24 @@ int main() {
         }else if (scene == "Play") {
             al_clear_to_color(al_map_rgb(0, 0, 255));
 
+            if (al_key_down(&currentState, ALLEGRO_KEY_ESCAPE) && !al_key_down(&previousState, ALLEGRO_KEY_ESCAPE)) {
+                scene = "Title";
+            }
+
             collisionOverlapX = 0;
             collisionOverlapY = 0;
             isCollision = false;
 
-            if (al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_LEFT)) {
                 player.moveLeft();
             }
-            if (al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_RIGHT)) {
                 player.moveRight();
             }
-            if (al_key_down(&keyboardState, ALLEGRO_KEY_UP)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_UP)) {
                 player.moveUp();
             }
-            if (al_key_down(&keyboardState, ALLEGRO_KEY_DOWN)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_DOWN)) {
                 player.moveDown();
             }
 
@@ -138,19 +138,20 @@ int main() {
                 block.render();
             }
 
-            if ((!al_key_down(&keyboardState, ALLEGRO_KEY_LEFT)) ||
-                (!al_key_down(&keyboardState, ALLEGRO_KEY_RIGHT)) ||
-                (!al_key_down(&keyboardState, ALLEGRO_KEY_UP)) ||
-                (!al_key_down(&keyboardState, ALLEGRO_KEY_DOWN))) {
+            if ((!al_key_down(&currentState, ALLEGRO_KEY_LEFT)) ||
+                (!al_key_down(&currentState, ALLEGRO_KEY_RIGHT)) ||
+                (!al_key_down(&currentState, ALLEGRO_KEY_UP)) ||
+                (!al_key_down(&currentState, ALLEGRO_KEY_DOWN))) {
                 posX = 0;
                 posY = 0;
             }
         }
 
+        previousState = currentState;
+
         al_flip_display();
     }
 
-    al_destroy_event_queue(event_queue);
     al_destroy_display(display);
     return 0;
 }
