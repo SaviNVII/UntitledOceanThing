@@ -27,7 +27,7 @@ float playerWidth = 50;
 float playerHeight = 25;
 float playerX =  screenWidth/2-(playerWidth/2);
 float playerY = screenHeight/2-(playerHeight/2);
-float playerSpeed = 1;//if on Windows set to 0.1, the speed is different on linux for some reason
+float playerSpeed = 0.1;//if on Windows set to 0.1, the speed is different on linux for some reason
 
 bool isCollision = false;
 
@@ -36,6 +36,9 @@ int main() {
     using std::cout;
 
     ALLEGRO_DISPLAY* display;
+
+    ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();
+    al_register_event_source(event_queue, al_get_keyboard_event_source());
 
     al_init();
     al_install_keyboard();
@@ -64,12 +67,19 @@ int main() {
     titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 - 25, 100, 50, 255, 255, 255, "Play");
     titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 + 50, 100, 50, 255, 255, 255, "Credits");
 
+    ALLEGRO_EVENT event;
+
     while (true) {
         ALLEGRO_KEYBOARD_STATE keyboardState;
         al_get_keyboard_state(&keyboardState);
 
+        al_wait_for_event(event_queue, &event);
+
         if (scene == "Title") {
             al_clear_to_color(al_map_rgb(0,0,0));
+            if (al_key_down(&keyboardState, ALLEGRO_KEY_ESCAPE)) {
+                break;
+            }
             if (al_key_down(&keyboardState, ALLEGRO_KEY_UP)) {
                 titleIteration--;
             }
@@ -77,14 +87,17 @@ int main() {
                 titleIteration++;
             }
             if (titleIteration > 1) {
-                titleIteration = 0;
+                titleIteration = 1;
             }
             if (titleIteration < 0) {
-                titleIteration = 1;
+                titleIteration = 0;
             }
             switch (titleIteration) {
                 case 0: {
                     al_draw_filled_triangle(screenWidth/2 + 60, screenHeight/2, screenWidth/2 + 70, screenHeight/2 - 25, screenWidth/2 + 70, screenHeight/2 + 25,al_map_rgb(255,255,255));
+                    if (al_key_down(&keyboardState, ALLEGRO_KEY_ENTER)) {
+                        scene = "Play";
+                    }
                     break;
                 }
                 case 1: {
@@ -135,12 +148,9 @@ int main() {
         }
 
         al_flip_display();
-
-        if (al_key_down(&keyboardState, ALLEGRO_KEY_ESCAPE)) {
-            break;
-        }
     }
 
+    al_destroy_event_queue(event_queue);
     al_destroy_display(display);
     return 0;
 }

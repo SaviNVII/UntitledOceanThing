@@ -6,40 +6,40 @@
 	"config" : "Debug",
 	"cxx-modules" : {},
 	"database-info" : null,
-	"dir-cur-bld" : "/home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug",
-	"dir-cur-src" : "/home/savin7/Documents/GitHub/UntitledOceanThing",
-	"dir-top-bld" : "/home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug",
-	"dir-top-src" : "/home/savin7/Documents/GitHub/UntitledOceanThing",
+	"dir-cur-bld" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug",
+	"dir-cur-src" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing",
+	"dir-top-bld" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug",
+	"dir-top-src" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing",
 	"exports" : [],
 	"forward-modules-from-target-dirs" : [],
 	"include-dirs" : 
 	[
-		"/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include"
+		"C:\\allegro\\include"
 	],
 	"language" : "CXX",
 	"linked-target-dirs" : [],
-	"module-dir" : "/home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir",
+	"module-dir" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir",
 	"sources" : 
 	{
-		"CMakeFiles/UntitledOceanThing.dir/Block.cpp.o" : 
+		"CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj" : 
 		{
 			"language" : "CXX",
-			"source" : "/home/savin7/Documents/GitHub/UntitledOceanThing/Block.cpp"
+			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.cpp"
 		},
-		"CMakeFiles/UntitledOceanThing.dir/Button.cpp.o" : 
+		"CMakeFiles/UntitledOceanThing.dir/Button.cpp.obj" : 
 		{
 			"language" : "CXX",
-			"source" : "/home/savin7/Documents/GitHub/UntitledOceanThing/Button.cpp"
+			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.cpp"
 		},
-		"CMakeFiles/UntitledOceanThing.dir/Player.cpp.o" : 
+		"CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj" : 
 		{
 			"language" : "CXX",
-			"source" : "/home/savin7/Documents/GitHub/UntitledOceanThing/Player.cpp"
+			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp"
 		},
-		"CMakeFiles/UntitledOceanThing.dir/main.cpp.o" : 
+		"CMakeFiles/UntitledOceanThing.dir/main.cpp.obj" : 
 		{
 			"language" : "CXX",
-			"source" : "/home/savin7/Documents/GitHub/UntitledOceanThing/main.cpp"
+			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp"
 		}
 	}
 }

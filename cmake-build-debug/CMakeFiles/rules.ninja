@@ -16,7 +16,7 @@
 
 rule CXX_SCAN__UntitledOceanThing_Debug
   depfile = $DEP_FILE
-  command = /usr/bin/c++ $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
+  command = C:\mingw32\bin\c++.exe $DEFINES $INCLUDES $FLAGS -E -x c++ $in -MT $DYNDEP_INTERMEDIATE_FILE -MD -MF $DEP_FILE -fmodules-ts -fdeps-file=$DYNDEP_INTERMEDIATE_FILE -fdeps-target=$OBJ_FILE -fdeps-format=p1689r5 -o $PREPROCESSED_OUTPUT_FILE
   description = Scanning $in for CXX dependencies
 
 
@@ -24,7 +24,7 @@ rule CXX_SCAN__UntitledOceanThing_Debug
 # Rule to generate ninja dyndep files for CXX.
 
 rule CXX_DYNDEP__UntitledOceanThing_Debug
-  command = /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/bin/cmake -E cmake_ninja_dyndep --tdi=CMakeFiles/UntitledOceanThing.dir/CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
+  command = "C:\Program Files\JetBrains\CLion 2025.3.3\bin\cmake\win\x64\bin\cmake.exe" -E cmake_ninja_dyndep --tdi=CMakeFiles\UntitledOceanThing.dir\CXXDependInfo.json --lang=CXX --modmapfmt=gcc --dd=$out @$out.rsp
   description = Generating CXX dyndep file $out
   rspfile = $out.rsp
   rspfile_content = $in
@@ -37,7 +37,7 @@ rule CXX_DYNDEP__UntitledOceanThing_Debug
 rule CXX_COMPILER__UntitledOceanThing_scanned_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
+  command = ${LAUNCHER}${CODE_CHECK}C:\mingw32\bin\c++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -fmodules-ts -fmodule-mapper=$DYNDEP_MODULE_MAP_FILE -MD -fdeps-format=p1689r5 -x c++ -o $out -c $in
   description = Building CXX object $out
 
 
@@ -47,7 +47,7 @@ rule CXX_COMPILER__UntitledOceanThing_scanned_Debug
 rule CXX_COMPILER__UntitledOceanThing_unscanned_Debug
   depfile = $DEP_FILE
   deps = gcc
-  command = ${LAUNCHER}${CODE_CHECK}/usr/bin/c++ $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  command = ${LAUNCHER}${CODE_CHECK}C:\mingw32\bin\c++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
   description = Building CXX object $out
 
 
@@ -55,9 +55,7 @@ rule CXX_COMPILER__UntitledOceanThing_unscanned_Debug
 # Rule for linking CXX executable.
 
 rule CXX_EXECUTABLE_LINKER__UntitledOceanThing_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = $PRE_LINK && /usr/bin/c++ $FLAGS $LINK_FLAGS $in -o $TARGET_FILE $LINK_PATH $LINK_LIBRARIES && $POST_BUILD
+  command = C:\Windows\system32\cmd.exe /C "$PRE_LINK && C:\mingw32\bin\c++.exe $FLAGS $LINK_FLAGS $in -o $TARGET_FILE -Wl,--out-implib,$TARGET_IMPLIB -Wl,--major-image-version,0,--minor-image-version,0 $LINK_PATH $LINK_LIBRARIES && $POST_BUILD"
   description = Linking CXX executable $TARGET_FILE
   restat = $RESTAT
 
@@ -74,7 +72,7 @@ rule CUSTOM_COMMAND
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/savin7/Documents/GitHub/UntitledOceanThing -B/home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug
+  command = "C:\Program Files\JetBrains\CLion 2025.3.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\om0002\Documents\GitHub\UntitledOceanThing -BC:\Users\om0002\Documents\GitHub\UntitledOceanThing\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
@@ -83,7 +81,7 @@ rule RERUN_CMAKE
 # Rule for cleaning all built files.
 
 rule CLEAN
-  command = /var/lib/snapd/snap/clion/425/bin/ninja/linux/x64/ninja $FILE_ARG -t clean $TARGETS
+  command = "C:\Program Files\JetBrains\CLion 2025.3.3\bin\ninja\win\x64\ninja.exe" $FILE_ARG -t clean $TARGETS
   description = Cleaning all built files...
 
 
@@ -91,6 +89,6 @@ rule CLEAN
 # Rule for printing all primary targets available.
 
 rule HELP
-  command = /var/lib/snapd/snap/clion/425/bin/ninja/linux/x64/ninja -t targets
+  command = "C:\Program Files\JetBrains\CLion 2025.3.3\bin\ninja\win\x64\ninja.exe" -t targets
   description = All primary targets available:
 
