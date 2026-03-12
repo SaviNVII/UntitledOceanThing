@@ -56,8 +56,9 @@ int main() {
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
     std::list<Block> blockList;
-    blockList.emplace_back(100, 100, 50, 50, 255, 255, 255);
-    blockList.emplace_back(200, 200, 50, 50, 255, 0, 0);
+    blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
+    blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
+    blockList.emplace_back(100, 50, 500, 50, 60, 40, 30);
 
     std::list<Button> titleButtonList;
     titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 - 25, 100, 50, 255, 255, 255, "Play");
@@ -74,17 +75,17 @@ int main() {
             if (al_key_down(&currentState, ALLEGRO_KEY_ESCAPE) && !al_key_down(&previousState, ALLEGRO_KEY_ESCAPE)) {
                 break;
             }
-            if (al_key_down(&currentState, ALLEGRO_KEY_UP)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_UP) && !al_key_down(&previousState, ALLEGRO_KEY_UP)) {
                 titleIteration--;
             }
-            if (al_key_down(&currentState, ALLEGRO_KEY_DOWN)) {
+            if (al_key_down(&currentState, ALLEGRO_KEY_DOWN)&& !al_key_down(&previousState, ALLEGRO_KEY_DOWN)) {
                 titleIteration++;
             }
             if (titleIteration > 1) {
-                titleIteration = 1;
+                titleIteration = 0;
             }
             if (titleIteration < 0) {
-                titleIteration = 0;
+                titleIteration = 1;
             }
             switch (titleIteration) {
                 case 0: {
