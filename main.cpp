@@ -35,6 +35,15 @@ float playerSpeed = 200;
 
 bool isCollision = false;
 
+std::list<Block> blockList;
+std::list<Button> titleButtonList;
+
+void createWorld() {
+    blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
+    blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
+    blockList.emplace_back(100, 50, 500, 50, 60, 40, 30);
+}
+
 int main() {
     using std::string;
     using std::cout;
@@ -59,17 +68,13 @@ int main() {
 
     Player player = Player(playerX, playerY, playerWidth, playerHeight, playerSpeed);
 
-    std::list<Block> blockList;
-    blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
-    blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
-    blockList.emplace_back(100, 50, 500, 50, 60, 40, 30);
-
-    std::list<Button> titleButtonList;
     titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 - 25, 100, 50, 255, 255, 255, "Play");
     titleButtonList.emplace_back(screenWidth/2 - 50, screenHeight/2 + 50, 100, 50, 255, 255, 255, "Credits");
 
     ALLEGRO_KEYBOARD_STATE currentState;
     ALLEGRO_KEYBOARD_STATE previousState;
+
+    bool callCreateWorld = false;
 
     while (true) {
         al_get_keyboard_state(&currentState);
@@ -77,6 +82,11 @@ int main() {
         currentTime = al_get_time();
         deltaTime = currentTime - previousTime;
         previousTime = currentTime;
+
+        if (scene != "Play") {
+            callCreateWorld = true;
+            blockList.clear();
+        }
 
         if (scene == "Title") {
             al_clear_to_color(al_map_rgb(0,0,0));
@@ -112,6 +122,11 @@ int main() {
                 button.render();
             }
         }else if (scene == "Play") {
+            if (callCreateWorld) {
+                createWorld();
+            }
+            callCreateWorld = false;
+
             al_clear_to_color(al_map_rgb(0, 0, 255));
 
             if (al_key_down(&currentState, ALLEGRO_KEY_ESCAPE) && !al_key_down(&previousState, ALLEGRO_KEY_ESCAPE)) {
