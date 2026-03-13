@@ -14,6 +14,10 @@
 #include "Player.h"
 #include "Button.h"
 
+double currentTime = 0.0;
+double previousTime = 0.0;
+double deltaTime = 0.0;
+
 float posX = 0;
 float posY = 0;
 
@@ -27,7 +31,7 @@ float playerWidth = 50;
 float playerHeight = 25;
 float playerX =  screenWidth/2-(playerWidth/2);
 float playerY = screenHeight/2-(playerHeight/2);
-float playerSpeed = 0.1;//if on Windows set to 0.1, the speed is different on linux for some reason
+float playerSpeed = 200;//if on Windows set to 0.1, the speed is different on linux for some reason
 
 bool isCollision = false;
 
@@ -69,6 +73,10 @@ int main() {
 
     while (true) {
         al_get_keyboard_state(&currentState);
+
+        currentTime = al_get_time();
+        deltaTime = currentTime - previousTime;
+        previousTime = currentTime;
 
         if (scene == "Title") {
             al_clear_to_color(al_map_rgb(0,0,0));

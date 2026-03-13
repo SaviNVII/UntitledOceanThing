@@ -2538,6 +2538,10 @@ public:
 
 
 
+extern double currentTime;
+extern double deltaTime;
+extern double previousTime;
+
 extern float posX;
 extern float posY;
 
@@ -42671,20 +42675,20 @@ Player::Player(float x, float y, float width, float height, float speed) {
 
 void Player::moveLeft() {
     flipped = true;
-    posX += speed;
+    posX += speed*deltaTime;
 }
 
 void Player::moveRight() {
     flipped = false;
-    posX -= speed;
+    posX -= speed*deltaTime;
 }
 
 void Player::moveUp() {
-    posY += speed;
+    posY += speed*deltaTime;
 }
 
 void Player::moveDown() {
-    posY -= speed;
+    posY -= speed*deltaTime;
 }
 
 void Player::render() {

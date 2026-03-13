@@ -5,6 +5,10 @@
 #ifndef UNTITLEDOCEANTHING_MAINDATA_H
 #define UNTITLEDOCEANTHING_MAINDATA_H
 
+extern double currentTime;
+extern double deltaTime;
+extern double previousTime;
+
 extern float posX;
 extern float posY;
 

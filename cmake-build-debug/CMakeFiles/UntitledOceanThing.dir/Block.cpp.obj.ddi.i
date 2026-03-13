@@ -37,6 +37,10 @@ public:
 
 
 
+extern double currentTime;
+extern double deltaTime;
+extern double previousTime;
+
 extern float posX;
 extern float posY;
 
