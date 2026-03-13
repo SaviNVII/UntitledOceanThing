@@ -31,7 +31,7 @@ float playerWidth = 50;
 float playerHeight = 25;
 float playerX =  screenWidth/2-(playerWidth/2);
 float playerY = screenHeight/2-(playerHeight/2);
-float playerSpeed = 200;//if on Windows set to 0.1, the speed is different on linux for some reason
+float playerSpeed = 200;
 
 bool isCollision = false;
 
