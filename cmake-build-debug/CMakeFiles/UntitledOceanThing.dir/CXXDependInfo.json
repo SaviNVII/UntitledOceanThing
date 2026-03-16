@@ -36,6 +36,11 @@
 			"language" : "CXX",
 			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp"
 		},
+		"CMakeFiles/UntitledOceanThing.dir/Triangle.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp"
+		},
 		"CMakeFiles/UntitledOceanThing.dir/main.cpp.obj" : 
 		{
 			"language" : "CXX",

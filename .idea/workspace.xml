@@ -27,14 +27,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85834854-574b-4d55-b05e-660d79a75797" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Triangle.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Triangle.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-cb68f5ec9249e5c69b58.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-b1c815a0777438aad64f.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2026-03-12T15-32-51-0218.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/target-UntitledOceanThing-Debug-236e0d372c7014cd1115.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.ddi.i" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.ddi.i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/CXX.dd" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/CXX.dd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/CXXDependInfo.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/CXXDependInfo.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/UntitledOceanThing.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/UntitledOceanThing.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/compile_commands.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,6 +115,11 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UntitledOceanThing" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="UntitledOceanThing" TARGET_NAME="UntitledOceanThing" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="UntitledOceanThing" RUN_TARGET_NAME="UntitledOceanThing">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -131,6 +145,7 @@
       <workItem from="1773260418587" duration="1389000" />
       <workItem from="1773270641489" duration="964000" />
       <workItem from="1773416287230" duration="2616000" />
+      <workItem from="1773675075890" duration="6877000" />
     </task>
     <servers />
   </component>
