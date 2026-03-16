@@ -65294,6 +65294,24 @@ public:
     void render();
 };
 # 16 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.h" 1
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.h"
+class Triangle {
+    float x1;
+    float y1;
+    float x2;
+    float y2;
+    float x3;
+    float y3;
+    int r;
+    int g;
+    int b;
+public:
+    Triangle(float x1, float y1, float x2, float y2, float x3, float y3, int r, int g, int b);
+    void render();
+    bool checkCollision();
+};
+# 17 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 
 double currentTime = 0.0;
 double previousTime = 0.0;
@@ -65317,12 +65335,15 @@ float playerSpeed = 200;
 bool isCollision = false;
 
 std::list<Block> blockList;
+std::list<Triangle> triangleList;
 std::list<Button> titleButtonList;
 
 void createWorld() {
     blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
     blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
-    blockList.emplace_back(100, 50, 500, 50, 60, 40, 30);
+    blockList.emplace_back(100, 50, 100, 50, 60, 40, 30);
+
+    triangleList.emplace_back(400, 100, 500, 100, 450, 0, 255, 255, 255);
 }
 
 int main() {
@@ -65435,10 +65456,18 @@ int main() {
                 isCollision = isCollision || block.checkCollision();
             }
 
+            for (Triangle& triangle : triangleList) {
+                isCollision = isCollision || triangle.checkCollision();
+            }
+
             player.render();
 
             for (Block& block : blockList) {
                 block.render();
+            }
+
+            for (Triangle& triangle : triangleList) {
+                triangle.render();
             }
 
             if ((!al_key_down(&currentState, ALLEGRO_KEY_LEFT)) ||

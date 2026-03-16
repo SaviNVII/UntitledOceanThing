@@ -1,10 +1,17 @@
 CMakeFiles\UntitledOceanThing.dir\Triangle.cpp.obj.ddi: \
  C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp \
  C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.h \
- C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h \
- C:/allegro/include/allegro5/allegro_primitives.h \
- C:/allegro/include/allegro5/allegro.h C:/allegro/include/allegro5/base.h \
- C:/mingw32/i686-w64-mingw32/include/errno.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cmath \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/requires_hosted.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/c++config.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/os_defines.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/cpu_defines.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/pstl/pstl_config.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/cpp_type_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/version.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/type_traits \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/type_traits.h \
+ C:/mingw32/i686-w64-mingw32/include/math.h \
  C:/mingw32/i686-w64-mingw32/include/crtdefs.h \
  C:/mingw32/i686-w64-mingw32/include/corecrt.h \
  C:/mingw32/i686-w64-mingw32/include/_mingw.h \
@@ -12,26 +19,63 @@ CMakeFiles\UntitledOceanThing.dir\Triangle.cpp.obj.ddi: \
  C:/mingw32/i686-w64-mingw32/include/_mingw_secapi.h \
  C:/mingw32/i686-w64-mingw32/include/vadefs.h \
  C:/mingw32/i686-w64-mingw32/include/sdks/_mingw_ddk.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/std_abs.h \
+ C:/mingw32/i686-w64-mingw32/include/stdlib.h \
+ C:/mingw32/i686-w64-mingw32/include/corecrt_wstdlib.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/limits.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/syslimits.h \
  C:/mingw32/i686-w64-mingw32/include/limits.h \
+ C:/mingw32/i686-w64-mingw32/include/sec_api/stdlib_s.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/stdlib.h \
+ C:/mingw32/i686-w64-mingw32/include/malloc.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/mm_malloc.h \
+ C:/mingw32/i686-w64-mingw32/include/errno.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/specfun.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_algobase.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/functexcept.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/exception_defines.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/numeric_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_pair.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/move.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/utility.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/compare \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/concepts \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_types.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/iterator_concepts.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ptr_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_cmp.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_funcs.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/concept_check.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/debug/assertions.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/new \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/exception.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_construct.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/debug/debug.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/predefined_ops.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bit \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/limits \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/gamma.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/special_function_util.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/bessel_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/beta_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/ell_integral.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/exp_integral.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/hypergeometric.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/legendre_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/modified_bessel_func.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/poly_hermite.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/poly_laguerre.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/riemann_zeta.tcc \
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h \
+ C:/allegro/include/allegro5/allegro_primitives.h \
+ C:/allegro/include/allegro5/allegro.h C:/allegro/include/allegro5/base.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/stdarg.h \
  C:/mingw32/i686-w64-mingw32/include/stdarg.h \
  C:/mingw32/i686-w64-mingw32/include/_mingw_stdarg.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/stddef.h \
  C:/mingw32/i686-w64-mingw32/include/stddef.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/stdlib.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cstdlib \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/c++config.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/os_defines.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/cpu_defines.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/pstl/pstl_config.h \
- C:/mingw32/i686-w64-mingw32/include/stdlib.h \
- C:/mingw32/i686-w64-mingw32/include/corecrt_wstdlib.h \
- C:/mingw32/i686-w64-mingw32/include/sec_api/stdlib_s.h \
- C:/mingw32/i686-w64-mingw32/include/malloc.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/mm_malloc.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/std_abs.h \
  C:/mingw32/i686-w64-mingw32/include/time.h \
  C:/mingw32/i686-w64-mingw32/include/sys/timeb.h \
  C:/mingw32/i686-w64-mingw32/include/sec_api/sys/timeb_s.h \
