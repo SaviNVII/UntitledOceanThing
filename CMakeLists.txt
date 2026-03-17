@@ -17,8 +17,11 @@ add_executable(UntitledOceanThing main.cpp
         Block.h
         Button.cpp
         Button.h
-        Triangle.cpp
-        Triangle.h)
+        SAT.cpp
+        SAT.h
+        Polygon.cpp
+        Polygon.h
+)
 
 target_link_libraries(${PROJECT_NAME}
         allegro

@@ -254,4 +254,34 @@ CMakeFiles\UntitledOceanThing.dir\main.cpp.obj.ddi: \
  C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h \
  C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h \
  C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.h \
- C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.h
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/vector \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cmath \
+ C:/mingw32/i686-w64-mingw32/include/math.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/specfun.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/gamma.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/special_function_util.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/bessel_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/beta_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/ell_integral.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/exp_integral.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/hypergeometric.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/legendre_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/modified_bessel_func.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/poly_hermite.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/poly_laguerre.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/riemann_zeta.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/algorithm \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_algo.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/algorithmfwd.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_heap.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/uniform_int_dist.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_tempbuf.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_algo.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_algobase.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/pstl/glue_algorithm_defs.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/pstl/execution_defs.h

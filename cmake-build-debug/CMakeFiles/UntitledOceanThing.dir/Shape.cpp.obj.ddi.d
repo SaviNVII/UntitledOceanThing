@@ -1,6 +1,6 @@
-CMakeFiles\UntitledOceanThing.dir\Triangle.cpp.obj.ddi: \
- C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp \
- C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.h \
+CMakeFiles\UntitledOceanThing.dir\Shape.cpp.obj.ddi: \
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.cpp \
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.h \
  C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h \
  C:/allegro/include/allegro5/allegro_primitives.h \
  C:/allegro/include/allegro5/allegro.h C:/allegro/include/allegro5/base.h \

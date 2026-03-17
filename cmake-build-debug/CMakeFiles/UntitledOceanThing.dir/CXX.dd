@@ -7,5 +7,7 @@ build CMakeFiles/UntitledOceanThing.dir/Block.cpp.obj: dyndep
 
 build CMakeFiles/UntitledOceanThing.dir/Button.cpp.obj: dyndep
 
-build CMakeFiles/UntitledOceanThing.dir/Triangle.cpp.obj: dyndep
+build CMakeFiles/UntitledOceanThing.dir/SAT.cpp.obj: dyndep
+
+build CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.obj: dyndep
 

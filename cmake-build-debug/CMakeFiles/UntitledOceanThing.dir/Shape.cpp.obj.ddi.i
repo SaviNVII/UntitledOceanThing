@@ -1,15 +1,15 @@
-# 0 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp"
+# 0 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.cpp"
 # 1 "C:\\Users\\om0002\\Documents\\GitHub\\UntitledOceanThing\\cmake-build-debug//"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp"
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.cpp"
 
 
 
 
-# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.h" 1
-# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.h"
-class Triangle {
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.h" 1
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.h"
+class Shape {
     float x1;
     float y1;
     float x2;
@@ -20,11 +20,11 @@ class Triangle {
     int g;
     int b;
 public:
-    Triangle(float x1, float y1, float x2, float y2, float x3, float y3, int r, int g, int b);
+    Shape(float x1, float y1, float x2, float y2, float x3, float y3, int r, int g, int b);
     void render();
     bool checkCollision();
 };
-# 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp" 2
+# 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
 
 
@@ -50,7 +50,7 @@ extern float playerHeight;
 extern float playerSpeed;
 
 extern bool isCollision;
-# 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp" 2
+# 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.cpp" 2
 
 # 1 "C:/allegro/include/allegro5/allegro_primitives.h" 1
 
@@ -5107,9 +5107,9 @@ extern void al_draw_filled_polygon_with_holes (const float* vertices, const int*
 
 
 }
-# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp" 2
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Shape.cpp" 2
 
-Triangle::Triangle(float x1, float y1, float x2, float y2, float x3, float y3, int r, int g, int b) {
+Shape::Shape(float x1, float y1, float x2, float y2, float x3, float y3, int r, int g, int b) {
     this->x1 = x1;
     this->y1 = y1;
     this->x2 = x2;
@@ -5121,7 +5121,7 @@ Triangle::Triangle(float x1, float y1, float x2, float y2, float x3, float y3, i
     this->b = b;
 }
 
-void Triangle::render() {
+void Shape::render() {
     al_draw_filled_triangle(x1, y1, x2, y2, x3, y3, al_map_rgb(r, g, b));
 
     if (isCollision) {
@@ -5143,11 +5143,7 @@ void Triangle::render() {
     }
 }
 
-bool Triangle::checkCollision() {
-    float tCenterX = (x1 + x2 + x3) / 3;
-    float tCenterY = (y1 + y2 + y3) / 3;
-    float pCenterX = playerX + playerWidth / 2;
-    float pCenterY = playerY + playerHeight / 2;
+bool Shape::checkCollision() {
 
     return false;
 }

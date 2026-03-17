@@ -13,7 +13,7 @@
 #include "MainData.h"
 #include "Player.h"
 #include "Button.h"
-#include "Triangle.h"
+#include "Polygon.h"
 
 double currentTime = 0.0;
 double previousTime = 0.0;
@@ -37,15 +37,20 @@ float playerSpeed = 200;
 bool isCollision = false;
 
 std::list<Block> blockList;
-std::list<Triangle> triangleList;
+std::list<Polygon> polygonList;
 std::list<Button> titleButtonList;
 
 void createWorld() {
     blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
     blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
     blockList.emplace_back(100, 50, 100, 50, 60, 40, 30);
+    std::vector<Vec2> vertices;
+    vertices.emplace_back(Vec2(100,-100));
+    vertices.emplace_back(Vec2(-100,-100));
+    vertices.emplace_back(Vec2(-100,100));
+    vertices.emplace_back(Vec2(100,100));
 
-    triangleList.emplace_back(400, 100, 500, 100, 450, 0, 255, 255, 255);
+    polygonList.emplace_back(vertices);
 }
 
 int main() {
@@ -158,18 +163,14 @@ int main() {
                 isCollision = isCollision || block.checkCollision();
             }
 
-            for (Triangle& triangle : triangleList) {
-                isCollision = isCollision || triangle.checkCollision();
-            }
-
             player.render();
 
             for (Block& block : blockList) {
                 block.render();
             }
 
-            for (Triangle& triangle : triangleList) {
-                triangle.render();
+            for (Polygon& polygon : polygonList) {
+                polygon.render();
             }
 
             if ((!al_key_down(&currentState, ALLEGRO_KEY_LEFT)) ||

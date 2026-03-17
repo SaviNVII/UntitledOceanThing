@@ -36,10 +36,15 @@
 			"language" : "CXX",
 			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp"
 		},
-		"CMakeFiles/UntitledOceanThing.dir/Triangle.cpp.obj" : 
+		"CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.obj" : 
 		{
 			"language" : "CXX",
-			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Triangle.cpp"
+			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp"
+		},
+		"CMakeFiles/UntitledOceanThing.dir/SAT.cpp.obj" : 
+		{
+			"language" : "CXX",
+			"source" : "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.cpp"
 		},
 		"CMakeFiles/UntitledOceanThing.dir/main.cpp.obj" : 
 		{
