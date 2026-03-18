@@ -55086,11 +55086,17 @@ namespace ShapeFactory {
 class Polygon {
 public:
     std::vector<Vec2> vertices;
-    std::vector<float> v;
+    std::vector<float> floatVertices;
+    int r;
+    int g;
+    int b;
 
 
     Polygon() = default;
-    explicit Polygon(const std::vector<Vec2>& verts);
+    explicit Polygon(const std::vector<Vec2>& verts)
+        : vertices(verts) {}
+
+    explicit Polygon(const std::vector<Vec2>& verts, int r, int g, int b);
 
 
     template<typename... Args>
@@ -55122,6 +55128,10 @@ private:
 
     void validateAndCompute();
     void computeEdgesAndNormals();
+
+    struct Color {
+        int r, g, b;
+    } color;
 };
 # 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp" 2
 
@@ -58687,8 +58697,38 @@ extern void al_draw_filled_polygon_with_holes (const float* vertices, const int*
 }
 # 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp" 2
 
-Polygon::Polygon(const std::vector<Vec2>& verts) {
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
+
+
+
+
+
+
+
+extern double currentTime;
+extern double deltaTime;
+extern double previousTime;
+
+extern float posX;
+extern float posY;
+
+extern float collisionOverlapX;
+extern float collisionOverlapY;
+
+extern float playerX;
+extern float playerY;
+extern float playerWidth;
+extern float playerHeight;
+extern float playerSpeed;
+
+extern bool isCollision;
+# 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp" 2
+
+Polygon::Polygon(const std::vector<Vec2>& verts, int r, int g, int b) {
     setVertices(verts);
+    this->r = r;
+    this->g = g;
+    this->b = b;
 }
 
 void Polygon::setVertices(const std::vector<Vec2>& verts) {
@@ -58802,10 +58842,13 @@ void Polygon::computeEdgesAndNormals() {
 
 
 void Polygon::render() {
-    v.clear();
+    floatVertices.clear();
+
     for (Vec2 vec2 : vertices) {
-        v.push_back(vec2.x);
-        v.push_back(vec2.y);
+        vec2.x += 10;
+        vec2.y += 10;
+        floatVertices.push_back(vec2.x);
+        floatVertices.push_back(vec2.y);
     }
-    al_draw_filled_polygon(&v[0], vertices.size(), al_map_rgb(255, 255, 255));
+    al_draw_filled_polygon(&floatVertices[0], vertices.size(), al_map_rgb(r, g, b));
 }

@@ -208,4 +208,5 @@ CMakeFiles\UntitledOceanThing.dir\Polygon.cpp.obj.ddi: \
  C:/allegro/include/allegro5/timer.h C:/allegro/include/allegro5/tls.h \
  C:/allegro/include/allegro5/alcompat.h \
  C:/allegro/include/allegro5/platform/alwin.h \
- C:/allegro/include/allegro5/internal/aintern_primitives_types.h
+ C:/allegro/include/allegro5/internal/aintern_primitives_types.h \
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h

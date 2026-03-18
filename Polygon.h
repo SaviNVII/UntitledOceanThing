@@ -12,11 +12,17 @@
 class Polygon {
 public:
     std::vector<Vec2> vertices;
-    std::vector<float> v;
+    std::vector<float> floatVertices;
+    int r;
+    int g;
+    int b;
 
     // Constructors
     Polygon() = default;
-    explicit Polygon(const std::vector<Vec2>& verts);
+    explicit Polygon(const std::vector<Vec2>& verts)
+        : vertices(verts) {}
+
+    explicit Polygon(const std::vector<Vec2>& verts, int r, int g, int b);
 
     // Variadic template for convenient initialization
     template<typename... Args>
@@ -48,6 +54,10 @@ private:
 
     void validateAndCompute();
     void computeEdgesAndNormals();
+
+    struct Color {
+        int r, g, b;
+    } color;
 };
 
 #endif //UNTITLEDOCEANTHING_POLYGON_H

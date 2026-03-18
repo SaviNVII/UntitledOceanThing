@@ -44,13 +44,13 @@ void createWorld() {
     blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
     blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
     blockList.emplace_back(100, 50, 100, 50, 60, 40, 30);
-    std::vector<Vec2> vertices;
-    vertices.emplace_back(Vec2(100,-100));
-    vertices.emplace_back(Vec2(-100,-100));
-    vertices.emplace_back(Vec2(-100,100));
-    vertices.emplace_back(Vec2(100,100));
 
-    polygonList.emplace_back(vertices);
+    polygonList.emplace_back(std::vector<Vec2>{
+    Vec2(100, -100),
+    Vec2(-100, -100),
+    Vec2(-100, 100),
+    Vec2(200, 100)
+    }, 60, 40, 30);
 }
 
 int main() {

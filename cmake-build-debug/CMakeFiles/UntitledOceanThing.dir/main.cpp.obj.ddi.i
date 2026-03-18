@@ -86206,11 +86206,17 @@ namespace ShapeFactory {
 class Polygon {
 public:
     std::vector<Vec2> vertices;
-    std::vector<float> v;
+    std::vector<float> floatVertices;
+    int r;
+    int g;
+    int b;
 
 
     Polygon() = default;
-    explicit Polygon(const std::vector<Vec2>& verts);
+    explicit Polygon(const std::vector<Vec2>& verts)
+        : vertices(verts) {}
+
+    explicit Polygon(const std::vector<Vec2>& verts, int r, int g, int b);
 
 
     template<typename... Args>
@@ -86242,6 +86248,10 @@ private:
 
     void validateAndCompute();
     void computeEdgesAndNormals();
+
+    struct Color {
+        int r, g, b;
+    } color;
 };
 # 17 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 
@@ -86274,13 +86284,13 @@ void createWorld() {
     blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
     blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
     blockList.emplace_back(100, 50, 100, 50, 60, 40, 30);
-    std::vector<Vec2> vertices;
-    vertices.emplace_back(Vec2(100,-100));
-    vertices.emplace_back(Vec2(-100,-100));
-    vertices.emplace_back(Vec2(-100,100));
-    vertices.emplace_back(Vec2(100,100));
 
-    polygonList.emplace_back(vertices);
+    polygonList.emplace_back(std::vector<Vec2>{
+    Vec2(100, -100),
+    Vec2(-100, -100),
+    Vec2(-100, 100),
+    Vec2(200, 100)
+    }, 60, 40, 30);
 }
 
 int main() {
