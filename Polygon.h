@@ -47,7 +47,6 @@ public:
     Vec2 getNormal(size_t index) const;
 
     void render();
-    bool checkCollision();
 
 private:
     std::vector<Vec2> edges;

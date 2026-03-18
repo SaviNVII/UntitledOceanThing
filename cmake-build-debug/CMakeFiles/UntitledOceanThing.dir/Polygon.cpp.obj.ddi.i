@@ -55121,7 +55121,6 @@ public:
     Vec2 getNormal(size_t index) const;
 
     void render();
-    bool checkCollision();
 
 private:
     std::vector<Vec2> edges;
@@ -58859,8 +58858,4 @@ void Polygon::render() {
         floatVertices.push_back(vec2.y);
     }
     al_draw_filled_polygon(&floatVertices[0], vertices.size(), al_map_rgb(r, g, b));
-}
-
-bool Polygon::checkCollision() {
-
 }

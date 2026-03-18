@@ -14,6 +14,7 @@
 #include "Player.h"
 #include "Button.h"
 #include "Polygon.h"
+#include "SAT.h"
 
 double currentTime = 0.0;
 double previousTime = 0.0;
@@ -39,6 +40,8 @@ bool isCollision = false;
 std::list<Block> blockList;
 std::list<Polygon> polygonList;
 std::list<Button> titleButtonList;
+
+SAT2D sat = SAT2D();
 
 void createWorld() {
     blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
@@ -161,6 +164,10 @@ int main() {
 
             for (Block& block : blockList) {
                 isCollision = isCollision || block.checkCollision();
+            }
+
+            for (Polygon& polygon : polygonList) {
+                sat.testOverlap(polygon, Polygon(playerX, playerY, playerX + playerWidth, playerY + playerHeight));
             }
 
             player.render();

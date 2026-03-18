@@ -86241,7 +86241,6 @@ public:
     Vec2 getNormal(size_t index) const;
 
     void render();
-    bool checkCollision();
 
 private:
     std::vector<Vec2> edges;
@@ -86255,6 +86254,7 @@ private:
     } color;
 };
 # 17 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+
 
 double currentTime = 0.0;
 double previousTime = 0.0;
@@ -86280,6 +86280,8 @@ bool isCollision = false;
 std::list<Block> blockList;
 std::list<Polygon> polygonList;
 std::list<Button> titleButtonList;
+
+SAT2D sat = SAT2D();
 
 void createWorld() {
     blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
@@ -86402,6 +86404,10 @@ int main() {
 
             for (Block& block : blockList) {
                 isCollision = isCollision || block.checkCollision();
+            }
+
+            for (Polygon& polygon : polygonList) {
+                sat.testOverlap(polygon, Polygon(playerX, playerY, playerX + playerWidth, playerY + playerHeight));
             }
 
             player.render();

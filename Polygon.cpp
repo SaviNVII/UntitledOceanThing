@@ -143,7 +143,3 @@ void Polygon::render() {
     }
     al_draw_filled_polygon(&floatVertices[0], vertices.size(), al_map_rgb(r, g, b));
 }
-
-bool Polygon::checkCollision() {
-
-}
