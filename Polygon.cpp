@@ -128,11 +128,22 @@ void Polygon::computeEdgesAndNormals() {
 void Polygon::render() {
     floatVertices.clear();
 
-    for (Vec2 vec2 : vertices) {
-        vec2.x += 10;
-        vec2.y += 10;
+    for (Vec2& vec2 : vertices) {
+        if (isCollision) {
+            vec2.x += collisionOverlapX;
+            vec2.y += collisionOverlapY;
+        }
+
+        if (!isCollision) {
+            vec2.x += posX;
+            vec2.y += posY;
+        }
         floatVertices.push_back(vec2.x);
         floatVertices.push_back(vec2.y);
     }
     al_draw_filled_polygon(&floatVertices[0], vertices.size(), al_map_rgb(r, g, b));
+}
+
+bool Polygon::checkCollision() {
+
 }
