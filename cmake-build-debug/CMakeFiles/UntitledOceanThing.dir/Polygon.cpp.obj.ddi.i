@@ -55120,6 +55120,7 @@ public:
     Vec2 getEdge(size_t index) const;
     Vec2 getNormal(size_t index) const;
 
+    void update();
     void render();
 
 private:
@@ -58840,20 +58841,22 @@ void Polygon::computeEdgesAndNormals() {
     }
 }
 
+void Polygon::update() {
+    for (Vec2& vec2 : vertices) {
+        vec2.x += posX;
+        vec2.y += posY;
+    }
+}
 
 void Polygon::render() {
     floatVertices.clear();
 
     for (Vec2& vec2 : vertices) {
         if (isCollision) {
-            vec2.x += collisionOverlapX;
-            vec2.y += collisionOverlapY;
+            vec2.x -= posX;
+            vec2.y -= posY;
         }
 
-        if (!isCollision) {
-            vec2.x += posX;
-            vec2.y += posY;
-        }
         floatVertices.push_back(vec2.x);
         floatVertices.push_back(vec2.y);
     }

@@ -44,8 +44,9 @@ std::list<Button> titleButtonList;
 SAT2D sat = SAT2D();
 
 void createWorld() {
+    blockList.clear();
+    polygonList.clear();
     blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
-    blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
     blockList.emplace_back(100, 50, 100, 50, 60, 40, 30);
 
     polygonList.emplace_back(std::vector<Vec2>{
@@ -145,30 +146,29 @@ int main() {
                 scene = "Title";
             }
 
+
+            player.update(&currentState);
+            for (Block& block : blockList) {
+                block.update();
+            }
+
+            for (Polygon& polygon : polygonList) {
+                polygon.update();
+            }
+
             collisionOverlapX = 0;
             collisionOverlapY = 0;
             isCollision = false;
-
-            if (al_key_down(&currentState, ALLEGRO_KEY_LEFT)) {
-                player.moveLeft();
-            }
-            if (al_key_down(&currentState, ALLEGRO_KEY_RIGHT)) {
-                player.moveRight();
-            }
-            if (al_key_down(&currentState, ALLEGRO_KEY_UP)) {
-                player.moveUp();
-            }
-            if (al_key_down(&currentState, ALLEGRO_KEY_DOWN)) {
-                player.moveDown();
-            }
 
             for (Block& block : blockList) {
                 isCollision = isCollision || block.checkCollision();
             }
 
             for (Polygon& polygon : polygonList) {
-                sat.testOverlap(polygon, Polygon(playerX, playerY, playerX + playerWidth, playerY + playerHeight));
+                isCollision = isCollision || sat.testOverlap(polygon, Polygon(player.getPoints()));
             }
+
+
 
             player.render();
 
@@ -180,13 +180,6 @@ int main() {
                 polygon.render();
             }
 
-            if ((!al_key_down(&currentState, ALLEGRO_KEY_LEFT)) ||
-                (!al_key_down(&currentState, ALLEGRO_KEY_RIGHT)) ||
-                (!al_key_down(&currentState, ALLEGRO_KEY_UP)) ||
-                (!al_key_down(&currentState, ALLEGRO_KEY_DOWN))) {
-                posX = 0;
-                posY = 0;
-            }
         }
 
         previousState = currentState;

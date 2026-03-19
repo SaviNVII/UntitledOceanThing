@@ -25,6 +25,7 @@ class Block {
     int b;
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
+    void update();
     void render();
     bool checkCollision();
 };
@@ -44848,19 +44849,18 @@ Block::Block(float x, float y, float width, float height, int r, int g, int b) {
     this->b = b;
 }
 
+void Block::update() {
+    x += posX;
+    y += posY;
+}
+
 void Block::render() {
     al_draw_filled_rectangle(x, y, x + width, y + height, al_map_rgb(r, g, b));
 
     if (isCollision) {
-        x += collisionOverlapX;
-        y += collisionOverlapY;
+        x -= posX;
+        y -= posY;
     }
-
-    if (!isCollision) {
-        x += posX;
-        y += posY;
-    }
-
 }
 
 bool Block::checkCollision() {

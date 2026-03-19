@@ -46,6 +46,7 @@ public:
     Vec2 getEdge(size_t index) const;
     Vec2 getNormal(size_t index) const;
 
+    void update();
     void render();
 
 private:

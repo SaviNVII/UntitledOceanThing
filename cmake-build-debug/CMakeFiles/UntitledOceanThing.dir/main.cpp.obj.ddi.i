@@ -65225,6 +65225,7 @@ class Block {
     int b;
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
+    void update();
     void render();
     bool checkCollision();
 };
@@ -65256,49 +65257,13 @@ extern float playerSpeed;
 extern bool isCollision;
 # 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 1
-# 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h"
-class Player {
-public:
-    float x;
-    float y;
-    float width;
-    float height;
-    float speed;
-    bool flipped;
-
-    ALLEGRO_BITMAP* bitmap;
-
-    Player(float x, float y, float width, float height, float speed);
-    void moveLeft();
-    void moveRight();
-    void moveUp();
-    void moveDown();
-
-    void render();
-};
-# 15 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
-# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.h" 1
-# 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.h"
-class Button {
-    float x;
-    float y;
-    float width;
-    float height;
-    int r;
-    int g;
-    int b;
-    std::string text;
-    ALLEGRO_FONT *font;
-public:
-    Button(float x, float y, float width, float height, int r, int g, int b, std::string text);
-    void render();
-};
-# 16 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
-# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.h" 1
 
 
 
-       
+
+
+
+
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/vector" 1 3
 # 68 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/vector" 3
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h" 1 3
@@ -69263,7 +69228,9 @@ namespace std
     }
 
 }
-# 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.h" 2
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 2
+
+
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.h" 1
        
 
@@ -86197,7 +86164,56 @@ namespace ShapeFactory {
 
     Polygon createFromPoints(const std::vector<Vec2>& points);
 }
-# 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.h" 2
+# 12 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 2
+
+
+class Player {
+public:
+    float x;
+    float y;
+    float width;
+    float height;
+    float speed;
+    bool flipped;
+
+    ALLEGRO_BITMAP* bitmap;
+
+    Player(float x, float y, float width, float height, float speed);
+    std::vector<Vec2> getPoints();
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
+
+    void update(const ALLEGRO_KEYBOARD_STATE * currentState);
+    void handleCollision();
+    void render();
+};
+# 15 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.h" 1
+# 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.h"
+class Button {
+    float x;
+    float y;
+    float width;
+    float height;
+    int r;
+    int g;
+    int b;
+    std::string text;
+    ALLEGRO_FONT *font;
+public:
+    Button(float x, float y, float width, float height, int r, int g, int b, std::string text);
+    void render();
+};
+# 16 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.h" 1
+
+
+
+       
+
+
 
 
 
@@ -86240,6 +86256,7 @@ public:
     Vec2 getEdge(size_t index) const;
     Vec2 getNormal(size_t index) const;
 
+    void update();
     void render();
 
 private:
@@ -86284,8 +86301,9 @@ std::list<Button> titleButtonList;
 SAT2D sat = SAT2D();
 
 void createWorld() {
+    blockList.clear();
+    polygonList.clear();
     blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
-    blockList.emplace_back(300, 200, 200, 50, 60, 40, 30);
     blockList.emplace_back(100, 50, 100, 50, 60, 40, 30);
 
     polygonList.emplace_back(std::vector<Vec2>{
@@ -86385,30 +86403,29 @@ int main() {
                 scene = "Title";
             }
 
+
+            player.update(&currentState);
+            for (Block& block : blockList) {
+                block.update();
+            }
+
+            for (Polygon& polygon : polygonList) {
+                polygon.update();
+            }
+
             collisionOverlapX = 0;
             collisionOverlapY = 0;
             isCollision = false;
-
-            if (al_key_down(&currentState, ALLEGRO_KEY_LEFT)) {
-                player.moveLeft();
-            }
-            if (al_key_down(&currentState, ALLEGRO_KEY_RIGHT)) {
-                player.moveRight();
-            }
-            if (al_key_down(&currentState, ALLEGRO_KEY_UP)) {
-                player.moveUp();
-            }
-            if (al_key_down(&currentState, ALLEGRO_KEY_DOWN)) {
-                player.moveDown();
-            }
 
             for (Block& block : blockList) {
                 isCollision = isCollision || block.checkCollision();
             }
 
             for (Polygon& polygon : polygonList) {
-                sat.testOverlap(polygon, Polygon(playerX, playerY, playerX + playerWidth, playerY + playerHeight));
+                isCollision = isCollision || sat.testOverlap(polygon, Polygon(player.getPoints()));
             }
+
+
 
             player.render();
 
@@ -86420,13 +86437,6 @@ int main() {
                 polygon.render();
             }
 
-            if ((!al_key_down(&currentState, ALLEGRO_KEY_LEFT)) ||
-                (!al_key_down(&currentState, ALLEGRO_KEY_RIGHT)) ||
-                (!al_key_down(&currentState, ALLEGRO_KEY_UP)) ||
-                (!al_key_down(&currentState, ALLEGRO_KEY_DOWN))) {
-                posX = 0;
-                posY = 0;
-            }
         }
 
         previousState = currentState;

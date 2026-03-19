@@ -52,15 +52,92 @@ CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.ddi: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/stdint.h \
  C:/mingw32/i686-w64-mingw32/include/stdint.h \
  C:/allegro/include/allegro5/platform/astdbool.h \
- C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/vector \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/requires_hosted.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ostream \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ostream.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ios \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iosfwd \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stringfwd.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_algobase.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/functexcept.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/exception_defines.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/cpp_type_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/version.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/type_traits \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/type_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/numeric_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_pair.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/move.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/utility.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/compare \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/concepts \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_types.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/iterator_concepts.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ptr_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_cmp.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_funcs.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/concept_check.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/debug/assertions.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/new \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/exception.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_construct.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/debug/debug.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/predefined_ops.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bit \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/allocator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/c++allocator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/new_allocator.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/memoryfwd.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_uninitialized.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/alloc_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/alloc_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/initializer_list \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_base.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/max_size_type.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/numbers \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_bvector.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/functional_hash.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/hash_bytes.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/refwrap.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/invoke.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_function.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/backward/binders.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/range_access.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/vector.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/memory_resource.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cstddef \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/uses_allocator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/uses_allocator_args.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tuple \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_util.h \
+ C:/allegro/include/allegro5/keyboard.h \
+ C:/allegro/include/allegro5/events.h \
+ C:/allegro/include/allegro5/altime.h \
+ C:/allegro/include/allegro5/keycodes.h \
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cmath \
+ C:/mingw32/i686-w64-mingw32/include/math.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/specfun.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/limits \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/gamma.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/special_function_util.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/bessel_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/beta_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/ell_integral.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/exp_integral.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/hypergeometric.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/legendre_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/modified_bessel_func.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/poly_hermite.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/poly_laguerre.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tr1/riemann_zeta.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/stdexcept \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/exception \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/exception_ptr.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/cxxabi_init_exception.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/typeinfo \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/nested_exception.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/string \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stringfwd.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/char_traits.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/postypes.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cwchar \
  C:/mingw32/i686-w64-mingw32/include/wchar.h \
@@ -69,37 +146,40 @@ CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.ddi: \
  C:/mingw32/i686-w64-mingw32/include/_mingw_stat64.h \
  C:/mingw32/i686-w64-mingw32/include/swprintf.inl \
  C:/mingw32/i686-w64-mingw32/include/sec_api/wchar_s.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/exception \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/exception.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/version.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/exception_ptr.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/exception_defines.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/cxxabi_init_exception.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/typeinfo \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/hash_bytes.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/new \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/move.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/type_traits \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/nested_exception.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/char_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/compare \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/concepts \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_construct.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_types.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/iterator_concepts.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ptr_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_cmp.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator_base_funcs.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/concept_check.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/debug/assertions.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/localefwd.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/c++locale.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/clocale \
  C:/mingw32/i686-w64-mingw32/include/locale.h \
  C:/mingw32/i686-w64-mingw32/include/stdio.h \
  C:/mingw32/i686-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iosfwd \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cctype \
  C:/mingw32/i686-w64-mingw32/include/ctype.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ostream_insert.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/cxxabi_forced.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/basic_string.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/string_view \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/string_view.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/string_conversions.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cstdio \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cerrno \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/charconv.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/basic_string.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/algorithm \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_algo.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/algorithmfwd.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_heap.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/uniform_int_dist.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_tempbuf.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_algo.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_algobase.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/pstl/glue_algorithm_defs.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/pstl/execution_defs.h \
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ostream \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ostream.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ios \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ios_base.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/atomicity.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/gthr.h \
@@ -113,53 +193,9 @@ CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.ddi: \
  C:/mingw32/i686-w64-mingw32/include/pthread_unistd.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/atomic_word.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/locale_classes.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/string \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/allocator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/c++allocator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/new_allocator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/functexcept.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/cpp_type_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ostream_insert.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/cxxabi_forced.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_iterator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/type_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_function.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/backward/binders.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/numeric_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_algobase.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_pair.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/utility.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/debug/debug.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/predefined_ops.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bit \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/refwrap.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/invoke.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/range_access.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/initializer_list \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/basic_string.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/alloc_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/alloc_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/string_view \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/functional_hash.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_base.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/max_size_type.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/numbers \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/string_view.tcc \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ext/string_conversions.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cstdio \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cerrno \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/charconv.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/basic_string.tcc \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/memory_resource.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cstddef \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/uses_allocator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/uses_allocator_args.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/tuple \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ranges_util.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/locale_classes.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/system_error \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/i686-w64-mingw32/bits/error_constants.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/stdexcept \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/streambuf \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/streambuf.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/basic_ios.h \

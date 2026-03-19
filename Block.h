@@ -15,6 +15,7 @@ class Block {
     int b;
 public:
     Block(float x, float y, float width, float height, int r, int g, int b);
+    void update();
     void render();
     bool checkCollision();
 };
