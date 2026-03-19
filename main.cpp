@@ -9,7 +9,6 @@
 #include <allegro5/allegro_primitives.h>
 #include <unistd.h>
 
-#include "Block.h"
 #include "MainData.h"
 #include "Player.h"
 #include "Button.h"
@@ -37,14 +36,12 @@ float playerSpeed = 200;
 
 bool isCollision = false;
 
-std::list<Block> blockList;
 std::list<Polygon> polygonList;
 std::list<Button> titleButtonList;
 
 SAT2D sat = SAT2D();
 
 void createWorld() {
-    blockList.clear();
     polygonList.clear();
 
     polygonList.emplace_back(std::vector<Vec2>{
@@ -96,7 +93,6 @@ int main() {
 
         if (scene != "Play") {
             callCreateWorld = true;
-            blockList.clear();
         }
 
         if (scene == "Title") {
@@ -146,19 +142,12 @@ int main() {
 
 
             player.update(&currentState);
-            for (Block& block : blockList) {
-                block.update();
-            }
 
             for (Polygon& polygon : polygonList) {
                 isCollision = polygon.checkMove(player) || isCollision;
             }
 
             player.render();
-
-            for (Block& block : blockList) {
-                block.render();
-            }
 
             for (Polygon& polygon : polygonList) {
                 polygon.render();

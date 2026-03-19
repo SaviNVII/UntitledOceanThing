@@ -65205,31 +65205,6 @@ int truncate64(const char *, off64_t);
 }
 # 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 
-# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.h" 1
-
-
-
-
-
-
-
-
-# 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Block.h"
-class Block {
-    float x;
-    float y;
-    float width;
-    float height;
-    int r;
-    int g;
-    int b;
-public:
-    Block(float x, float y, float width, float height, int r, int g, int b);
-    void update();
-    void render();
-    bool checkCollision();
-};
-# 13 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
 
 
@@ -65242,8 +65217,6 @@ public:
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/vector" 1 3
 # 68 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/vector" 3
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h" 1 3
-# 84 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h" 3
-
 # 84 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h" 3
 namespace std
 {
@@ -86155,7 +86128,7 @@ extern float playerSpeed;
 extern bool isCollision;
 
 extern SAT2D sat;
-# 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 13 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 1
 # 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h"
 class Player {
@@ -86180,7 +86153,7 @@ public:
     void handleCollision();
     void render();
 };
-# 15 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.h" 1
 # 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.h"
 class Button {
@@ -86197,7 +86170,7 @@ public:
     Button(float x, float y, float width, float height, int r, int g, int b, std::string text);
     void render();
 };
-# 16 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 15 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.h" 1
 
 
@@ -86262,7 +86235,7 @@ private:
         int r, g, b;
     } color;
 };
-# 17 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 16 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
 
 
 double currentTime = 0.0;
@@ -86286,14 +86259,12 @@ float playerSpeed = 200;
 
 bool isCollision = false;
 
-std::list<Block> blockList;
 std::list<Polygon> polygonList;
 std::list<Button> titleButtonList;
 
 SAT2D sat = SAT2D();
 
 void createWorld() {
-    blockList.clear();
     polygonList.clear();
 
     polygonList.emplace_back(std::vector<Vec2>{
@@ -86345,7 +86316,6 @@ int main() {
 
         if (scene != "Play") {
             callCreateWorld = true;
-            blockList.clear();
         }
 
         if (scene == "Title") {
@@ -86395,19 +86365,12 @@ int main() {
 
 
             player.update(&currentState);
-            for (Block& block : blockList) {
-                block.update();
-            }
 
             for (Polygon& polygon : polygonList) {
                 isCollision = polygon.checkMove(player) || isCollision;
             }
 
             player.render();
-
-            for (Block& block : blockList) {
-                block.render();
-            }
 
             for (Polygon& polygon : polygonList) {
                 polygon.render();

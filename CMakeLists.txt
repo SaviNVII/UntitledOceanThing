@@ -13,8 +13,6 @@ add_executable(UntitledOceanThing main.cpp
         Player.cpp
         Player.h
         MainData.h
-        Block.cpp
-        Block.h
         Button.cpp
         Button.h
         SAT.cpp
