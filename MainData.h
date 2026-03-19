@@ -4,6 +4,7 @@
 
 #ifndef UNTITLEDOCEANTHING_MAINDATA_H
 #define UNTITLEDOCEANTHING_MAINDATA_H
+#include "SAT.h"
 
 extern double currentTime;
 extern double deltaTime;
@@ -22,5 +23,7 @@ extern float playerHeight;
 extern float playerSpeed;
 
 extern bool isCollision;
+
+extern SAT2D sat;
 
 #endif //UNTITLEDOCEANTHING_MAINDATA_H

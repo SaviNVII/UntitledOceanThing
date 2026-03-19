@@ -46,8 +46,6 @@ SAT2D sat = SAT2D();
 void createWorld() {
     blockList.clear();
     polygonList.clear();
-    blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
-    blockList.emplace_back(100, 50, 100, 50, 60, 40, 30);
 
     polygonList.emplace_back(std::vector<Vec2>{
     Vec2(100, -100),
@@ -153,22 +151,8 @@ int main() {
             }
 
             for (Polygon& polygon : polygonList) {
-                polygon.update();
+                isCollision = polygon.checkMove(player) || isCollision;
             }
-
-            collisionOverlapX = 0;
-            collisionOverlapY = 0;
-            isCollision = false;
-
-            for (Block& block : blockList) {
-                isCollision = isCollision || block.checkCollision();
-            }
-
-            for (Polygon& polygon : polygonList) {
-                isCollision = isCollision || sat.testOverlap(polygon, Polygon(player.getPoints()));
-            }
-
-
 
             player.render();
 

@@ -176,6 +176,7 @@ CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.ddi: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/pstl/glue_algorithm_defs.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/pstl/execution_defs.h \
  C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h \
+ C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/ostream \
  C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/ostream.h \

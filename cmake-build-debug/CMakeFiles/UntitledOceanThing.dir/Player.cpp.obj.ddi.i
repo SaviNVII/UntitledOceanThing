@@ -56591,7 +56591,7 @@ public:
     ALLEGRO_BITMAP* bitmap;
 
     Player(float x, float y, float width, float height, float speed);
-    std::vector<Vec2> getPoints();
+    Polygon getPoly();
     void moveLeft();
     void moveRight();
     void moveUp();
@@ -56603,13 +56603,7 @@ public:
 };
 # 6 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
-
-
-
-
-
-
-
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h"
 extern double currentTime;
 extern double deltaTime;
 extern double previousTime;
@@ -56627,7 +56621,74 @@ extern float playerHeight;
 extern float playerSpeed;
 
 extern bool isCollision;
+
+extern SAT2D sat;
 # 7 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.h" 1
+
+
+
+       
+
+
+
+
+
+
+class Player;
+
+class Polygon {
+public:
+    std::vector<Vec2> vertices;
+    std::vector<float> floatVertices;
+    int r;
+    int g;
+    int b;
+
+
+    Polygon() = default;
+    explicit Polygon(const std::vector<Vec2>& verts)
+        : vertices(verts) {}
+
+    explicit Polygon(const std::vector<Vec2>& verts, int r, int g, int b);
+
+
+    template<typename... Args>
+    Polygon(Args... args) {
+        (vertices.push_back(args), ...);
+        validateAndCompute();
+    }
+
+
+    void setVertices(const std::vector<Vec2>& verts);
+    void addVertex(const Vec2& v);
+    void insertVertex(size_t index, const Vec2& v);
+    void removeVertex(size_t index);
+
+
+    size_t getSideCount() const;
+    std::vector<Vec2> getAxes() const;
+    Projection projectOntoAxis(const Vec2& axis) const;
+    Vec2 getCentroid() const;
+    Vec2 getCenter() const;
+    Vec2 getEdge(size_t index) const;
+    Vec2 getNormal(size_t index) const;
+
+    bool checkMove(Player &player);
+    void render();
+
+private:
+    std::vector<Vec2> edges;
+    std::vector<Vec2> normals;
+
+    void validateAndCompute();
+    void computeEdgesAndNormals();
+
+    struct Color {
+        int r, g, b;
+    } color;
+};
+# 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 1 3
 # 43 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 3
@@ -66312,7 +66373,7 @@ namespace std
 # 87 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/iostream" 3
 
 }
-# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
+# 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 # 1 "C:/allegro/include/allegro5/bitmap_draw.h" 1
 
 
@@ -66355,7 +66416,7 @@ extern void al_draw_tinted_scaled_rotated_bitmap_region ( ALLEGRO_BITMAP *bitmap
 
 
    }
-# 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
+# 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 # 1 "C:/allegro/include/allegro5/bitmap_io.h" 1
 
 
@@ -66694,7 +66755,7 @@ extern char const * al_identify_bitmap (char const *filename);
 
 
    }
-# 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
+# 12 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp" 2
 
 
 
@@ -66708,13 +66769,14 @@ Player::Player(float x, float y, float width, float height, float speed) {
     this->flipped = false;
 }
 
-std::vector<Vec2> Player::getPoints() {
+Polygon Player::getPoly() {
     std::vector<Vec2> points;
     points.push_back(Vec2(playerX, playerY));
     points.push_back(Vec2(playerX + playerWidth, playerY));
     points.push_back(Vec2(playerX + playerWidth, playerY + playerHeight));
     points.push_back(Vec2(playerX, playerY + playerHeight));
-    return points;
+
+    return Polygon(points);
 }
 
 void Player::moveLeft() {
@@ -66739,19 +66801,15 @@ void Player::update(const ALLEGRO_KEYBOARD_STATE * currentState) {
     posX=0;
     posY=0;
     if (al_key_down(currentState, ALLEGRO_KEY_LEFT)) {
-        std::cout<<"Left\n";
         moveLeft();
     }
     if (al_key_down(currentState, ALLEGRO_KEY_RIGHT)) {
-        std::cout<<"Right\n";
         moveRight();
     }
     if (al_key_down(currentState, ALLEGRO_KEY_UP)) {
-        std::cout<<"Up\n";
         moveUp();
     }
     if (al_key_down(currentState, ALLEGRO_KEY_DOWN)) {
-        std::cout<<"Down\n";
         moveDown();
     }
 }

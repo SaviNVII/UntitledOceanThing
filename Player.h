@@ -23,7 +23,7 @@ public:
     ALLEGRO_BITMAP* bitmap;
 
     Player(float x, float y, float width, float height, float speed);
-    std::vector<Vec2> getPoints();
+    Polygon getPoly();
     void moveLeft();
     void moveRight();
     void moveUp();

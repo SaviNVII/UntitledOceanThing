@@ -65237,33 +65237,8 @@ public:
 
 
 
-
-extern double currentTime;
-extern double deltaTime;
-extern double previousTime;
-
-extern float posX;
-extern float posY;
-
-extern float collisionOverlapX;
-extern float collisionOverlapY;
-
-extern float playerX;
-extern float playerY;
-extern float playerWidth;
-extern float playerHeight;
-extern float playerSpeed;
-
-extern bool isCollision;
-# 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
-# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 1
-
-
-
-
-
-
-
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.h" 1
+       
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/vector" 1 3
 # 68 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/vector" 3
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/bits/stl_vector.h" 1 3
@@ -69228,12 +69203,7 @@ namespace std
     }
 
 }
-# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 2
-
-
-# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.h" 1
-       
-
+# 3 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.h" 2
 # 1 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cmath" 1 3
 # 52 "C:/mingw32/lib/gcc/i686-w64-mingw32/15.2.0/include/c++/cmath" 3
 #pragma GCC diagnostic push
@@ -86164,9 +86134,30 @@ namespace ShapeFactory {
 
     Polygon createFromPoints(const std::vector<Vec2>& points);
 }
-# 12 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 2
+# 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 2
 
+extern double currentTime;
+extern double deltaTime;
+extern double previousTime;
 
+extern float posX;
+extern float posY;
+
+extern float collisionOverlapX;
+extern float collisionOverlapY;
+
+extern float playerX;
+extern float playerY;
+extern float playerWidth;
+extern float playerHeight;
+extern float playerSpeed;
+
+extern bool isCollision;
+
+extern SAT2D sat;
+# 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp" 2
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 1
+# 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h"
 class Player {
 public:
     float x;
@@ -86179,7 +86170,7 @@ public:
     ALLEGRO_BITMAP* bitmap;
 
     Player(float x, float y, float width, float height, float speed);
-    std::vector<Vec2> getPoints();
+    Polygon getPoly();
     void moveLeft();
     void moveRight();
     void moveUp();
@@ -86218,6 +86209,7 @@ public:
 
 
 
+class Player;
 
 class Polygon {
 public:
@@ -86256,7 +86248,7 @@ public:
     Vec2 getEdge(size_t index) const;
     Vec2 getNormal(size_t index) const;
 
-    void update();
+    bool checkMove(Player &player);
     void render();
 
 private:
@@ -86303,8 +86295,6 @@ SAT2D sat = SAT2D();
 void createWorld() {
     blockList.clear();
     polygonList.clear();
-    blockList.emplace_back(100, 100, 50, 50, 60, 40, 30);
-    blockList.emplace_back(100, 50, 100, 50, 60, 40, 30);
 
     polygonList.emplace_back(std::vector<Vec2>{
     Vec2(100, -100),
@@ -86410,22 +86400,8 @@ int main() {
             }
 
             for (Polygon& polygon : polygonList) {
-                polygon.update();
+                isCollision = polygon.checkMove(player) || isCollision;
             }
-
-            collisionOverlapX = 0;
-            collisionOverlapY = 0;
-            isCollision = false;
-
-            for (Block& block : blockList) {
-                isCollision = isCollision || block.checkCollision();
-            }
-
-            for (Polygon& polygon : polygonList) {
-                isCollision = isCollision || sat.testOverlap(polygon, Polygon(player.getPoints()));
-            }
-
-
 
             player.render();
 

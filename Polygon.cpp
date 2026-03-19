@@ -7,6 +7,7 @@
 #include <allegro5/allegro_primitives.h>
 
 #include "MainData.h"
+#include "Player.h"
 
 Polygon::Polygon(const std::vector<Vec2>& verts, int r, int g, int b) {
     setVertices(verts);
@@ -124,21 +125,45 @@ void Polygon::computeEdgesAndNormals() {
     }
 }
 
-void Polygon::update() {
-    for (Vec2& vec2 : vertices) {
-        vec2.x += posX;
-        vec2.y += posY;
+bool Polygon::checkMove(Player &player) {
+    bool collided = false;
+    float oldPosX = posX;
+    float oldPosY = posY;
+    if (posX != 0) {
+        for (Vec2& vec2 : vertices) {
+            vec2.x += posX;
+        }
+        if (sat.testOverlap(*this, player.getPoly())) {
+            posX = 0;
+            collided = true;
+        }
+        for (Vec2& vec2 : vertices) {
+            vec2.x -= oldPosX;
+        }
     }
+    if (posY != 0) {
+        for (Vec2& vec2 : vertices) {
+            vec2.y += posY;
+        }
+        if (sat.testOverlap(*this, player.getPoly())) {
+            posY = 0;
+            collided = true;
+        }
+        for (Vec2& vec2 : vertices) {
+            vec2.y -= oldPosY;
+        }
+    }
+    return collided;
 }
 
 void Polygon::render() {
     floatVertices.clear();
 
     for (Vec2& vec2 : vertices) {
-        if (isCollision) {
-            vec2.x -= posX;
-            vec2.y -= posY;
-        }
+
+        vec2.x += posX;
+        vec2.y += posY;
+
 
         floatVertices.push_back(vec2.x);
         floatVertices.push_back(vec2.y);

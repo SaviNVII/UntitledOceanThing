@@ -55082,6 +55082,7 @@ namespace ShapeFactory {
 
 
 
+class Player;
 
 class Polygon {
 public:
@@ -55120,7 +55121,7 @@ public:
     Vec2 getEdge(size_t index) const;
     Vec2 getNormal(size_t index) const;
 
-    void update();
+    bool checkMove(Player &player);
     void render();
 
 private:
@@ -58699,13 +58700,7 @@ extern void al_draw_filled_polygon_with_holes (const float* vertices, const int*
 # 8 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp" 2
 
 # 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h" 1
-
-
-
-
-
-
-
+# 9 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/MainData.h"
 extern double currentTime;
 extern double deltaTime;
 extern double previousTime;
@@ -58723,7 +58718,34 @@ extern float playerHeight;
 extern float playerSpeed;
 
 extern bool isCollision;
+
+extern SAT2D sat;
 # 10 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp" 2
+# 1 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h" 1
+# 14 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.h"
+class Player {
+public:
+    float x;
+    float y;
+    float width;
+    float height;
+    float speed;
+    bool flipped;
+
+    ALLEGRO_BITMAP* bitmap;
+
+    Player(float x, float y, float width, float height, float speed);
+    Polygon getPoly();
+    void moveLeft();
+    void moveRight();
+    void moveUp();
+    void moveDown();
+
+    void update(const ALLEGRO_KEYBOARD_STATE * currentState);
+    void handleCollision();
+    void render();
+};
+# 11 "C:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp" 2
 
 Polygon::Polygon(const std::vector<Vec2>& verts, int r, int g, int b) {
     setVertices(verts);
@@ -58841,21 +58863,45 @@ void Polygon::computeEdgesAndNormals() {
     }
 }
 
-void Polygon::update() {
-    for (Vec2& vec2 : vertices) {
-        vec2.x += posX;
-        vec2.y += posY;
+bool Polygon::checkMove(Player &player) {
+    bool collided = false;
+    float oldPosX = posX;
+    float oldPosY = posY;
+    if (posX != 0) {
+        for (Vec2& vec2 : vertices) {
+            vec2.x += posX;
+        }
+        if (sat.testOverlap(*this, player.getPoly())) {
+            posX = 0;
+            collided = true;
+        }
+        for (Vec2& vec2 : vertices) {
+            vec2.x -= oldPosX;
+        }
     }
+    if (posY != 0) {
+        for (Vec2& vec2 : vertices) {
+            vec2.y += posY;
+        }
+        if (sat.testOverlap(*this, player.getPoly())) {
+            posY = 0;
+            collided = true;
+        }
+        for (Vec2& vec2 : vertices) {
+            vec2.y -= oldPosY;
+        }
+    }
+    return collided;
 }
 
 void Polygon::render() {
     floatVertices.clear();
 
     for (Vec2& vec2 : vertices) {
-        if (isCollision) {
-            vec2.x -= posX;
-            vec2.y -= posY;
-        }
+
+        vec2.x += posX;
+        vec2.y += posY;
+
 
         floatVertices.push_back(vec2.x);
         floatVertices.push_back(vec2.y);

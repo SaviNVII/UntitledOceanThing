@@ -8,6 +8,7 @@
 #define UNTITLEDOCEANTHING_POLYGON_H
 
 
+class Player;
 
 class Polygon {
 public:
@@ -46,7 +47,7 @@ public:
     Vec2 getEdge(size_t index) const;
     Vec2 getNormal(size_t index) const;
 
-    void update();
+    bool checkMove(Player &player);
     void render();
 
 private:
