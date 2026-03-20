@@ -140,7 +140,6 @@ int main() {
                 scene = "Title";
             }
 
-
             player.update(&currentState);
 
             for (Polygon& polygon : polygonList) {
