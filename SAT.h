@@ -59,22 +59,4 @@ public:
     static bool testOverlap(const Polygon& polyA, const Polygon& polyB);
 };
 
-// Shape factory namespace
-namespace ShapeFactory {
-    // N-sided regular polygon (n >= 3)
-    Polygon createRegularPolygon(int sides, float radius, Vec2 center = Vec2(0, 0));
-
-    // Rectangle (4 sides)
-    Polygon createRectangle(float width, float height, Vec2 center = Vec2(0, 0));
-
-    // Triangle (3 sides)
-    Polygon createTriangle(Vec2 p1, Vec2 p2, Vec2 p3);
-
-    // Convex star shape (2*points sides)
-    Polygon createConvexStar(int points, float outerRadius, float innerRadius, Vec2 center = Vec2(0, 0));
-
-    // Create from arbitrary points (assumes convex, ordered)
-    Polygon createFromPoints(const std::vector<Vec2>& points);
-}
-
 #endif // SAT2D_H

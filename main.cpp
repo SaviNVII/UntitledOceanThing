@@ -45,14 +45,11 @@ void createWorld() {
     polygonList.clear();
 
     polygonList.emplace_back(std::vector<Vec2>{
-    Vec2(100, -100),
-    Vec2(-100, -100),
-    Vec2(-100, 100),
-    Vec2(200, 100)
+        Vec2(100, 100),
+        Vec2(50, 50),
+        Vec2(-100, 200),
+        Vec2(200, 300)
     }, 60, 40, 30);
-    // polygonList.emplace_back(std::vector<Vec2>{
-    //
-    // });
 }
 
 int main() {

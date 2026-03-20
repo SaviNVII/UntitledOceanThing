@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/
+cmake_ninja_workdir = /home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target UntitledOceanThing
 
@@ -49,97 +49,107 @@ cmake_ninja_workdir = C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake
 
 build cmake_object_order_depends_target_UntitledOceanThing: phony || .
 
-build CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.ddi: CXX_SCAN__UntitledOceanThing_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp || cmake_object_order_depends_target_UntitledOceanThing
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\main.cpp.obj.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\UntitledOceanThing.dir\main.cpp.obj.ddi
+build CMakeFiles/UntitledOceanThing.dir/main.cpp.o.ddi: CXX_SCAN__UntitledOceanThing_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/main.cpp || cmake_object_order_depends_target_UntitledOceanThing
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/main.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/UntitledOceanThing.dir/main.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJ_FILE = CMakeFiles\UntitledOceanThing.dir\main.cpp.obj
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles\UntitledOceanThing.dir\main.cpp.obj.ddi.i
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJ_FILE = CMakeFiles/UntitledOceanThing.dir/main.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/UntitledOceanThing.dir/main.cpp.o.ddi.i
 
-build CMakeFiles/UntitledOceanThing.dir/main.cpp.obj: CXX_COMPILER__UntitledOceanThing_scanned_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/main.cpp | CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
+build CMakeFiles/UntitledOceanThing.dir/main.cpp.o: CXX_COMPILER__UntitledOceanThing_scanned_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/main.cpp | CMakeFiles/UntitledOceanThing.dir/main.cpp.o.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\main.cpp.obj.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles\UntitledOceanThing.dir\main.cpp.obj.modmap
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/main.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/UntitledOceanThing.dir/main.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJECT_DIR = CMakeFiles\UntitledOceanThing.dir
-  OBJECT_FILE_DIR = CMakeFiles\UntitledOceanThing.dir
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJECT_DIR = CMakeFiles/UntitledOceanThing.dir
+  OBJECT_FILE_DIR = CMakeFiles/UntitledOceanThing.dir
+  TARGET_COMPILE_PDB = CMakeFiles/UntitledOceanThing.dir/
+  TARGET_PDB = UntitledOceanThing.pdb
   dyndep = CMakeFiles/UntitledOceanThing.dir/CXX.dd
 
-build CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj.ddi: CXX_SCAN__UntitledOceanThing_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp || cmake_object_order_depends_target_UntitledOceanThing
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.ddi
+build CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.ddi: CXX_SCAN__UntitledOceanThing_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/Player.cpp || cmake_object_order_depends_target_UntitledOceanThing
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJ_FILE = CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.ddi.i
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJ_FILE = CMakeFiles/UntitledOceanThing.dir/Player.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.ddi.i
 
-build CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj: CXX_COMPILER__UntitledOceanThing_scanned_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/Player.cpp | CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
+build CMakeFiles/UntitledOceanThing.dir/Player.cpp.o: CXX_COMPILER__UntitledOceanThing_scanned_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/Player.cpp | CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles\UntitledOceanThing.dir\Player.cpp.obj.modmap
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJECT_DIR = CMakeFiles\UntitledOceanThing.dir
-  OBJECT_FILE_DIR = CMakeFiles\UntitledOceanThing.dir
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJECT_DIR = CMakeFiles/UntitledOceanThing.dir
+  OBJECT_FILE_DIR = CMakeFiles/UntitledOceanThing.dir
+  TARGET_COMPILE_PDB = CMakeFiles/UntitledOceanThing.dir/
+  TARGET_PDB = UntitledOceanThing.pdb
   dyndep = CMakeFiles/UntitledOceanThing.dir/CXX.dd
 
-build CMakeFiles/UntitledOceanThing.dir/Button.cpp.obj.ddi: CXX_SCAN__UntitledOceanThing_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.cpp || cmake_object_order_depends_target_UntitledOceanThing
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\Button.cpp.obj.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\UntitledOceanThing.dir\Button.cpp.obj.ddi
+build CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.ddi: CXX_SCAN__UntitledOceanThing_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/Button.cpp || cmake_object_order_depends_target_UntitledOceanThing
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJ_FILE = CMakeFiles\UntitledOceanThing.dir\Button.cpp.obj
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles\UntitledOceanThing.dir\Button.cpp.obj.ddi.i
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJ_FILE = CMakeFiles/UntitledOceanThing.dir/Button.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.ddi.i
 
-build CMakeFiles/UntitledOceanThing.dir/Button.cpp.obj: CXX_COMPILER__UntitledOceanThing_scanned_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/Button.cpp | CMakeFiles/UntitledOceanThing.dir/Button.cpp.obj.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
+build CMakeFiles/UntitledOceanThing.dir/Button.cpp.o: CXX_COMPILER__UntitledOceanThing_scanned_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/Button.cpp | CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\Button.cpp.obj.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles\UntitledOceanThing.dir\Button.cpp.obj.modmap
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJECT_DIR = CMakeFiles\UntitledOceanThing.dir
-  OBJECT_FILE_DIR = CMakeFiles\UntitledOceanThing.dir
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJECT_DIR = CMakeFiles/UntitledOceanThing.dir
+  OBJECT_FILE_DIR = CMakeFiles/UntitledOceanThing.dir
+  TARGET_COMPILE_PDB = CMakeFiles/UntitledOceanThing.dir/
+  TARGET_PDB = UntitledOceanThing.pdb
   dyndep = CMakeFiles/UntitledOceanThing.dir/CXX.dd
 
-build CMakeFiles/UntitledOceanThing.dir/SAT.cpp.obj.ddi: CXX_SCAN__UntitledOceanThing_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.cpp || cmake_object_order_depends_target_UntitledOceanThing
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\SAT.cpp.obj.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\UntitledOceanThing.dir\SAT.cpp.obj.ddi
+build CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.ddi: CXX_SCAN__UntitledOceanThing_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/SAT.cpp || cmake_object_order_depends_target_UntitledOceanThing
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJ_FILE = CMakeFiles\UntitledOceanThing.dir\SAT.cpp.obj
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles\UntitledOceanThing.dir\SAT.cpp.obj.ddi.i
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJ_FILE = CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.ddi.i
 
-build CMakeFiles/UntitledOceanThing.dir/SAT.cpp.obj: CXX_COMPILER__UntitledOceanThing_scanned_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/SAT.cpp | CMakeFiles/UntitledOceanThing.dir/SAT.cpp.obj.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
+build CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o: CXX_COMPILER__UntitledOceanThing_scanned_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/SAT.cpp | CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\SAT.cpp.obj.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles\UntitledOceanThing.dir\SAT.cpp.obj.modmap
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJECT_DIR = CMakeFiles\UntitledOceanThing.dir
-  OBJECT_FILE_DIR = CMakeFiles\UntitledOceanThing.dir
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJECT_DIR = CMakeFiles/UntitledOceanThing.dir
+  OBJECT_FILE_DIR = CMakeFiles/UntitledOceanThing.dir
+  TARGET_COMPILE_PDB = CMakeFiles/UntitledOceanThing.dir/
+  TARGET_PDB = UntitledOceanThing.pdb
   dyndep = CMakeFiles/UntitledOceanThing.dir/CXX.dd
 
-build CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.obj.ddi: CXX_SCAN__UntitledOceanThing_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp || cmake_object_order_depends_target_UntitledOceanThing
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\Polygon.cpp.obj.ddi.d
-  DYNDEP_INTERMEDIATE_FILE = CMakeFiles\UntitledOceanThing.dir\Polygon.cpp.obj.ddi
+build CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.ddi: CXX_SCAN__UntitledOceanThing_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/Polygon.cpp || cmake_object_order_depends_target_UntitledOceanThing
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.ddi.d
+  DYNDEP_INTERMEDIATE_FILE = CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.ddi
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJ_FILE = CMakeFiles\UntitledOceanThing.dir\Polygon.cpp.obj
-  PREPROCESSED_OUTPUT_FILE = CMakeFiles\UntitledOceanThing.dir\Polygon.cpp.obj.ddi.i
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJ_FILE = CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o
+  PREPROCESSED_OUTPUT_FILE = CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.ddi.i
 
-build CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.obj: CXX_COMPILER__UntitledOceanThing_scanned_Debug C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/Polygon.cpp | CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.obj.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
+build CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o: CXX_COMPILER__UntitledOceanThing_scanned_Debug /home/savin7/Documents/GitHub/UntitledOceanThing/Polygon.cpp | CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.modmap || cmake_object_order_depends_target_UntitledOceanThing CMakeFiles/UntitledOceanThing.dir/CXX.dd
   CONFIG = Debug
-  DEP_FILE = CMakeFiles\UntitledOceanThing.dir\Polygon.cpp.obj.d
-  DYNDEP_MODULE_MAP_FILE = CMakeFiles\UntitledOceanThing.dir\Polygon.cpp.obj.modmap
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.d
+  DYNDEP_MODULE_MAP_FILE = CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.modmap
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  INCLUDES = -IC:/allegro/include
-  OBJECT_DIR = CMakeFiles\UntitledOceanThing.dir
-  OBJECT_FILE_DIR = CMakeFiles\UntitledOceanThing.dir
+  INCLUDES = -I/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/include
+  OBJECT_DIR = CMakeFiles/UntitledOceanThing.dir
+  OBJECT_FILE_DIR = CMakeFiles/UntitledOceanThing.dir
+  TARGET_COMPILE_PDB = CMakeFiles/UntitledOceanThing.dir/
+  TARGET_PDB = UntitledOceanThing.pdb
   dyndep = CMakeFiles/UntitledOceanThing.dir/CXX.dd
 
-build CMakeFiles/UntitledOceanThing.dir/CXX.dd | CMakeFiles/UntitledOceanThing.dir/CXXModules.json CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.modmap CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj.modmap CMakeFiles/UntitledOceanThing.dir/Button.cpp.obj.modmap CMakeFiles/UntitledOceanThing.dir/SAT.cpp.obj.modmap CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.obj.modmap: CXX_DYNDEP__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.obj.ddi CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj.ddi CMakeFiles/UntitledOceanThing.dir/Button.cpp.obj.ddi CMakeFiles/UntitledOceanThing.dir/SAT.cpp.obj.ddi CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.obj.ddi | C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/CXXDependInfo.json
+build CMakeFiles/UntitledOceanThing.dir/CXX.dd | CMakeFiles/UntitledOceanThing.dir/CXXModules.json CMakeFiles/UntitledOceanThing.dir/main.cpp.o.modmap CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.modmap CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.modmap CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.modmap CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.modmap: CXX_DYNDEP__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.o.ddi CMakeFiles/UntitledOceanThing.dir/Player.cpp.o.ddi CMakeFiles/UntitledOceanThing.dir/Button.cpp.o.ddi CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o.ddi CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o.ddi | /home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug/CMakeFiles/UntitledOceanThing.dir/CXXDependInfo.json
 
 
 # =============================================================================
@@ -147,26 +157,28 @@ build CMakeFiles/UntitledOceanThing.dir/CXX.dd | CMakeFiles/UntitledOceanThing.d
 
 
 #############################################
-# Link the executable UntitledOceanThing.exe
+# Link the executable UntitledOceanThing
 
-build UntitledOceanThing.exe: CXX_EXECUTABLE_LINKER__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.obj CMakeFiles/UntitledOceanThing.dir/Player.cpp.obj CMakeFiles/UntitledOceanThing.dir/Button.cpp.obj CMakeFiles/UntitledOceanThing.dir/SAT.cpp.obj CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.obj
+build UntitledOceanThing: CXX_EXECUTABLE_LINKER__UntitledOceanThing_Debug CMakeFiles/UntitledOceanThing.dir/main.cpp.o CMakeFiles/UntitledOceanThing.dir/Player.cpp.o CMakeFiles/UntitledOceanThing.dir/Button.cpp.o CMakeFiles/UntitledOceanThing.dir/SAT.cpp.o CMakeFiles/UntitledOceanThing.dir/Polygon.cpp.o
   CONFIG = Debug
+  DEP_FILE = CMakeFiles/UntitledOceanThing.dir/link.d
   FLAGS = -g
-  LINK_LIBRARIES = -lallegro  -lallegro_image  -lallegro_font  -lallegro_ttf  -lallegro_audio  -lallegro_acodec  -lallegro_primitives  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LC:/allegro/lib
-  OBJECT_DIR = CMakeFiles\UntitledOceanThing.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = UntitledOceanThing.exe
-  TARGET_IMPLIB = libUntitledOceanThing.dll.a
-  TARGET_PDB = UntitledOceanThing.exe.dbg
+  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/UntitledOceanThing.dir/link.d
+  LINK_LIBRARIES = -Wl,-rpath,/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/lib  -lallegro  -lallegro_image  -lallegro_font  -lallegro_ttf  -lallegro_audio  -lallegro_acodec  -lallegro_primitives
+  LINK_PATH = -L/home/savin7/Documents/GitHub/UntitledOceanThing/C:/allegro/lib
+  OBJECT_DIR = CMakeFiles/UntitledOceanThing.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_COMPILE_PDB = CMakeFiles/UntitledOceanThing.dir/
+  TARGET_FILE = UntitledOceanThing
+  TARGET_PDB = UntitledOceanThing.pdb
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\om0002\Documents\GitHub\UntitledOceanThing\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.3.3\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cd /home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug && /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -177,7 +189,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = C:\Windows\system32\cmd.exe /C "cd /D C:\Users\om0002\Documents\GitHub\UntitledOceanThing\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2025.3.3\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SC:\Users\om0002\Documents\GitHub\UntitledOceanThing -BC:\Users\om0002\Documents\GitHub\UntitledOceanThing\cmake-build-debug"
+  COMMAND = cd /home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug && /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/savin7/Documents/GitHub/UntitledOceanThing -B/home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -187,24 +199,22 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build UntitledOceanThing: phony UntitledOceanThing.exe
-
 # =============================================================================
 # Folder targets.
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug
+# Folder: /home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug
 
 build codegen: phony
 
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug
+# Folder: /home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug
 
-build all: phony UntitledOceanThing.exe
+build all: phony UntitledOceanThing
 
 # =============================================================================
 # Built-in targets
@@ -213,14 +223,14 @@ build all: phony UntitledOceanThing.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/cmake-build-debug/cmake_install.cmake: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/CMakeLists.txt CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeRCCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake
+build build.ninja /home/savin7/Documents/GitHub/UntitledOceanThing/cmake-build-debug/cmake_install.cmake: RERUN_CMAKE | /home/savin7/Documents/GitHub/UntitledOceanThing/CMakeLists.txt /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCCompiler.cmake.in /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCCompilerABI.c /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCXXCompiler.cmake.in /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCXXInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCompilerIdDetection.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCompilerSupport.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeGenericSystem.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeParseImplicitIncludeInfo.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeParseImplicitLinkInfo.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeParseLibraryArchitecture.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeSystem.cmake.in /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeTestCompilerCommon.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/ADSP-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/ARMCC-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/ARMClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/AppleClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Borland-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Clang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Cray-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/CrayClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Diab-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GHS-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-C.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX-CXXImportStd.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/HP-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IAR-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Intel-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/LCC-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/MSVC-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/NVHPC-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/OrangeC-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/PGI-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/PathScale-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Renesas-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/SCO-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/TI-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/TIClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Tasking-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Watcom-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/XL-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/zOS-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeInspectCLinker.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeInspectCXXLinker.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/FeatureTesting.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Linker/GNU-C.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Linker/GNU-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Linker/GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linker/Linux-GNU-C.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linker/Linux-GNU-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linker/Linux-GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-Determine-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-GNU-C.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-GNU-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-Initialize.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Linker/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-Initialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2025.3.3/bin/cmake/win/x64/share/cmake-4.1/Modules/Platform/WindowsPaths.cmake C$:/Users/om0002/Documents/GitHub/UntitledOceanThing/CMakeLists.txt CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeRCCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake: phony
+build /home/savin7/Documents/GitHub/UntitledOceanThing/CMakeLists.txt /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCCompiler.cmake.in /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCCompilerABI.c /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCXXCompiler.cmake.in /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCXXCompilerABI.cpp /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCXXInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCommonLanguageInclude.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeCompilerIdDetection.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCXXCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCompilerABI.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCompilerId.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineCompilerSupport.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeDetermineSystem.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeFindBinUtils.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeGenericSystem.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeInitializeConfigs.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeLanguageInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeParseImplicitIncludeInfo.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeParseImplicitLinkInfo.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeParseLibraryArchitecture.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeSystem.cmake.in /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeSystemSpecificInitialize.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeTestCCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeTestCXXCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/CMakeTestCompilerCommon.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/ADSP-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/ARMCC-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/ARMClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/AppleClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Borland-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Bruce-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/CMakeCommonCompilerMacros.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Clang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Clang-DetermineCompilerInternal.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Compaq-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Cray-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/CrayClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Diab-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Embarcadero-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Fujitsu-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GHS-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-C.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX-CXXImportStd.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU-FindBinUtils.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/HP-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/HP-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IAR-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IBMCPP-C-DetermineVersionInternal.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IBMClang-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Intel-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/LCC-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/MSVC-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/NVHPC-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/NVIDIA-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/OrangeC-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/PGI-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/PathScale-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Renesas-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/SCO-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/SDCC-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/SunPro-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/TI-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/TIClang-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Tasking-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/TinyCC-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/VisualAge-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/Watcom-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/XL-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/XL-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/XLClang-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/zOS-C-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeCLinkerInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeCXXLinkerInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeCommonLinkerInformation.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeDetermineLinkerId.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeInspectCLinker.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/CMakeInspectCXXLinker.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Internal/FeatureTesting.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Linker/GNU-C.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Linker/GNU-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Linker/GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linker/GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linker/Linux-GNU-C.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linker/Linux-GNU-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linker/Linux-GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-Determine-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-GNU-C.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-GNU-CXX.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-GNU.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux-Initialize.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/Linux.cmake /var/lib/snapd/snap/clion/425/bin/cmake/linux/x64/share/cmake-4.1/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/4.1.2/CMakeCCompiler.cmake CMakeFiles/4.1.2/CMakeCXXCompiler.cmake CMakeFiles/4.1.2/CMakeSystem.cmake: phony
 
 
 #############################################
