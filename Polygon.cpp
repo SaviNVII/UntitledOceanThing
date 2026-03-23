@@ -164,7 +164,6 @@ void Polygon::render() {
         vec2.x += posX;
         vec2.y += posY;
 
-
         floatVertices.push_back(vec2.x);
         floatVertices.push_back(vec2.y);
     }

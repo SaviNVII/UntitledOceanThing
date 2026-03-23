@@ -50,6 +50,27 @@ void createWorld() {
         Vec2(-100, 200),
         Vec2(200, 300)
     }, 60, 40, 30);
+    polygonList.emplace_back(std::vector<Vec2>{
+        Vec2(800, 0),
+        Vec2(610, -50),
+        Vec2(500, 150),
+        Vec2(600, 300)
+    }, 60, 40, 30);
+    polygonList.emplace_back(std::vector<Vec2>{
+        Vec2(50, -200),
+        Vec2(0, -300),
+        Vec2(-100, -250),
+        Vec2(-75, -225),
+        Vec2(50, -150)
+    }, 60, 40, 30);
+    polygonList.emplace_back(std::vector<Vec2>{
+        Vec2(500, 500),
+        Vec2(440, 400),
+        Vec2(100, 450),
+        Vec2(-50, 475),
+        Vec2(-200, 550),
+        Vec2(100, 600)
+    }, 60, 40, 30);
 }
 
 int main() {
