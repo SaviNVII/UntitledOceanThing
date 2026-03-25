@@ -86296,7 +86296,9 @@ int main() {
         return -1;
     }
 
-    string scene = "Title";
+    string scene = "Dead";
+
+    ALLEGRO_FONT *font = al_load_ttf_font("fonts/brass_mono/BrassMono-Regular.ttf", 36, 0);
 
     int titleIteration = 0;
 
@@ -86378,6 +86380,13 @@ int main() {
                 polygon.render();
             }
 
+        }else if (scene == "Dead") {
+            al_clear_to_color(al_map_rgb(0,0,0));
+            if (al_key_down(&currentState, ALLEGRO_KEY_ESCAPE)) {
+                scene = "Title";
+            }
+            string text = "You Died";
+            al_draw_text(font, al_map_rgb(255,255,255), screenWidth/2, screenHeight/2, ALLEGRO_ALIGN_CENTRE, text.c_str());
         }
 
         previousState = currentState;
